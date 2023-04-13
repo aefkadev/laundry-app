@@ -15,7 +15,7 @@
       <div class="card-body p-3 mb-2 bg-secondary text-white">      
             @csrf
           <div class="d-flex justify-content-center m-4">
-            <label for="file_input"><i class="fa-solid fa-camera fa-2xl"></i></label><input type="file" id="file_input" class="visually-hidden">
+            <label for="file_input" style="cursor: pointer"><i class="fa-solid fa-camera fa-2xl"></i></label><input type="file" id="file_input" class="visually-hidden">
           </div>
           <div class="mb-3 pb-4 row">
             <label class="col-sm-3 col-form-label">Nama Pelayanan : </label>

@@ -30,8 +30,7 @@
             >
                 <b>Medium</b>
             </div>
-            <div class="col-1"></div>
-            <div class="col-4">
+            <div class="col-5 text-right">
                 <button
                     type="submit"
                     class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1"
@@ -62,8 +61,7 @@
             >
                 <b>Hard 1</b>
             </div>
-            <div class="col-1"></div>
-            <div class="col-4">
+            <div class="col-5 text-right">
                 <button
                     type="submit"
                     class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1"
@@ -94,8 +92,7 @@
             >
                 <b>Hard 2</b>
             </div>
-            <div class="col-1"></div>
-            <div class="col-4">
+            <div class="col-5 text-right">
                 <button
                     type="submit"
                     class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1"

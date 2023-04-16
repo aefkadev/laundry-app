@@ -32,6 +32,21 @@
                     />
                 </div>
                 <div class="mb-2 pb-2 row">
+                    <label class="col-sm-3 col-form-label"
+                        >Nama Jenis Pelayanan:
+                    </label>
+                    <div class="col-sm-9">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="nama-jenislayanan"
+                            id="nama-jenislayanan"
+                            value="Medium"
+                            required disabled
+                        />
+                    </div>
+                </div>
+                <div class="mb-2 pb-2 row">
                     <label class="col-sm-3 col-form-label">Deskripsi : </label>
                     <div class="col-sm-9">
                         <textarea

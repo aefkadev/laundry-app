@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('admin.jenislayanan.update');
+    return view('admin.jenislayanan.read');
 });
 
 Auth::routes();

@@ -4,50 +4,96 @@
 
 @section('content')
 
-<!--Detail jenislayanan-->
+<!--detail jenislayanan-->
 <div class="col-lg-12 col-lg-12 form-wrapper" id="detail-jenislayanan">
-
-    <div class="card">
-    <div class="card-header">
-    <h4 class="card-title">Detail</h4>
-    </div>
-    <div class="card-body">
-    @if(auth()->user()->roles_id == 1)
-        <form method="POST" action="{{ route('super.jenislayanan.show',$jenislayanan->id) }}" enctype='multipart/form-data'>
-    @elseif(auth()->user()->roles_id == 2)
-        <form method="POST" action="{{ route('admin.jenislayanan.show',$jenislayanan->id) }}" enctype='multipart/form-data'>
-    @endif
-      @method('PUT')
-      @csrf
-      <input type="hidden" value="$jenislayanan->id" name="id">
-        <div class="mb-3 row">
-          <label class="col-sm-3 col-form-label">Judul</label>
-          <div class="col-sm-9">
-            <textarea class="form-control custom-txt-area" placeholder="Judul..." name="judul" id="judul" value="{{  $jenislayanan->judul  }}" disabled>{{ $jenislayanan->judul }}</textarea>
-          </div>
-        </div>
-        <div class="mb-3 row">
-          <label class="col-sm-3 col-form-label">Deskripsi</label>
-          <div class="col-sm-9">
-            <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi" id="deskripsi" value="{{  $jenislayanan->deskripsi  }}" disabled>{{ $jenislayanan->deskripsi }}</textarea>
-          </div>
-        </div>
-        <div class="mb-3 row">
-            <div class="col-sm-9">
-              <a>
-                @if(auth()->user()->roles_id == 1)
-                    <a class="btn btn-primary" href="{{ route('super.jenislayanan.index') }}">Kembali</a>
-                @elseif(auth()->user()->roles_id == 2)
-                    <a class="btn btn-primary" href="{{ route('admin.jenislayanan.index') }}">Kembali</a>
-                @endif
-              </a>
+    <form action="">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    <a class="pr-3 text-dark" href="#"
+                        ><i class="fa fa-arrow-left" aria-hidden="true"></i></a
+                    ><b>Detail Jenis Pelayanan</b>
+                </h4>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-dark btn-sm">
+                        Simpan
+                    </button>
+                </div>
             </div>
-        </div><br><br><br>
-        </form>
-      </div>
-    </div>
-  </div>
-  <!--./Detail jenislayanan-->
+            <div class="card-body p-3 mb-2 bg-secondary text-white">
+                @csrf
+                <div class="d-flex justify-content-center m-4">
+                    <img src="assets/img/splash1.png" alt="" width="100">
+                </div>
+                <div class="mb-2 pb-2 row">
+                    <label class="col-sm-3 col-form-label"
+                        >Nama Jenis Pelayanan:
+                    </label>
+                    <div class="col-sm-9">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="nama-jenislayanan"
+                            id="nama-jenislayanan"
+                            value="Medium"
+                            required disabled
+                        />
+                    </div>
+                </div>
+                <div class="mb-2 pb-2 row">
+                    <label class="col-sm-3 col-form-label">Deskripsi : </label>
+                    <div class="col-sm-9">
+                        <textarea
+                            class="form-control"
+                            name="deskripsi-jenislayanan"
+                            id="deskripsi-jenislayanan"
+                            required disabled cols="30" rows="10">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem eaque, iste similique eum maxime amet perspiciatis recusandae aliquid officia ad tempora, quos molestiae nemo! Nesciunt, nihil nostrum? Exercitationem, a adipisci!</textarea>
+                    </div>
+                </div>
+                <div class="mb-2 pb-2 row">
+                    <label class="col-sm-3 col-form-label"
+                        >Estimasi Waktu :
+                    </label>
+                    <div class="col-sm-9">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="waktu-jenislayanan"
+                            id="waktu-jenislayanan"
+                            value="10"
+                            required disabled
+                        />
+                    </div>
+                </div>
+                <div class="mb-2 pb-2 row">
+                    <label class="col-sm-3 col-form-label">Harga : </label>
+                    <div class="col-sm-9">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="harga-jenislayanan"
+                            id="harga-jenislayanan"
+                            value="10000"
+                            required disabled
+                        />
+                    </div>
+                </div>
+                <div class="mb-2 pb-2 row">
+                    <label class="col-sm-3 col-form-label"
+                        >Jenis Barang :
+                    </label>
+                    <select class="col-sm-9 col-form-label rounded-2" name="barang" id="barang">
+                      <option value="sepatu">sepatu</option>
+                      <option value="sendal">sendal</option>
+                      <option value="baju">baju</option>
+                      <option value="celana">Audi</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!--./detail jenislayanan-->
 
 @endsection
 

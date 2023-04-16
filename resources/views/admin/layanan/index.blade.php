@@ -4,32 +4,81 @@
 
 @section('content')
 
-  <!--Layanan-->
-  <div class="col-lg-12 col-lg-12 form-wrapper" id="layanan">
-      <div class="card">
-      <div class="card-header">
-      <h4 class="card-title"><b>Service Pelayanan</b></h4>
-      <div class="d-flex justify-content-end"><button type="submit" class="btn btn-dark btn-sm">Tambah</button></div>
-      <div class="card-body">
-        <h4 class="card-title mb-2 p-2 bg-secondary text-white rounded-3">
-          <img src="assets/img/splash1.png" alt="" height="40" width="40">
-          <b>Premium Deep Clean</b> 
-        </h4>
+<!--Layanan-->
+<div class="col-lg-12 form-wrapper" id="layanan">
+    <div class="container">
+        <h4 class="card-title mb-4"><b>Service Pelayanan</b></h4>
         <div class="d-flex justify-content-end">
-          <button type="submit" class="btn btn-dark btn-sm mb-3 ml-1 mt-2 p-2 ">Edit</button>
-          <button type="submit" class="btn btn-dark btn-sm mb-3 ml-1 mt-2 p-2 ">Hapus</button>
+            <button type="submit" class="btn btn-dark btn-sm mb-4">
+                Tambah
+            </button>
         </div>
-        <h4 class="card-title mb-2 p-2 bg-secondary text-white rounded-3">
-          <img src="assets/img/splash1.png" alt="" height="40" width="40">
-          <b>Repaint</b> 
-        </h4>
-        <div class="d-flex justify-content-end">
-          <button type="submit" class="btn btn-dark btn-sm mb-3 ml-1 mt-2 p-2 ">Edit</button>
-          <button type="submit" class="btn btn-dark btn-sm mb-3 ml-1 mt-2 p-2 ">Hapus</button>
+        <div class="row mb-3">
+            <div
+                class="col-2 bg-secondary text-white d-flex align-items-center rounded-start"
+            >
+                <img
+                    src="assets/img/splash1.png"
+                    alt=""
+                    height="40"
+                    width="40"
+                />
+            </div>
+            <div
+                class="col-5 bg-secondary text-white d-flex align-items-center text-center rounded-end"
+            >
+                <b>Premium Deep Clean</b>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-4">
+                <button
+                    type="submit"
+                    class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1"
+                >
+                    Edit
+                </button>
+                <button
+                    type="submit"
+                    class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1"
+                >
+                    Hapus
+                </button>
+            </div>
         </div>
-      </div>
-      </div>
+        <div class="row mb-3">
+            <div
+                class="col-2 bg-secondary text-white d-flex align-items-center rounded-start"
+            >
+                <img
+                    src="assets/img/splash1.png"
+                    alt=""
+                    height="40"
+                    width="40"
+                />
+            </div>
+            <div
+                class="col-5 bg-secondary text-white d-flex align-items-center text-center rounded-end"
+            >
+                <b>Premium Deep Clean</b>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-4">
+                <button
+                    type="submit"
+                    class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1"
+                >
+                    Edit
+                </button>
+                <button
+                    type="submit"
+                    class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1"
+                >
+                    Hapus
+                </button>
+            </div>
+        </div>
     </div>
-    <!--./Layanan-->
+</div>
+<!--./Layanan-->
 
 @endsection

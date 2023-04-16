@@ -4,8 +4,8 @@
 
 @section('content')
 
-<!--jenisLayanan-->
-<div class="col-lg-12 form-wrapper" id="jenislayanan">
+<!--subLayanan-->
+<div class="col-lg-12 form-wrapper" id="sublayanan">
   <form action="">
     <div class="container">
         <h4 class="card-title mb-4"><b>Premium Deep Clean</b></h4>
@@ -110,6 +110,6 @@
     </div>
   </form>
 </div>
-<!--./jenisLayanan-->
+<!--./subLayanan-->
 
 @endsection

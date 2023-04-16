@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\SubLayanan;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class AdminSubLayananController extends Controller
      */
     public function index()
     {
-        //
+        $sublayanans = SubLayanan::all();
+        return view('admin.sublayanan.index', compact('sublayanans'));
     }
 
     /**

@@ -12,7 +12,8 @@ class ClientSubLayananController extends Controller
      */
     public function index()
     {
-        //
+        $sublayanans = SubLayanan::all();
+        return view('client.sublayanan.index', compact('sublayanans'));
     }
 
     /**

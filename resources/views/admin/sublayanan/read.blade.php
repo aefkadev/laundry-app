@@ -4,8 +4,8 @@
 
 @section('content')
 
-<!--detail jenislayanan-->
-<div class="col-lg-12 col-lg-12 form-wrapper" id="detail-jenislayanan">
+<!--detail sublayanan-->
+<div class="col-lg-12 col-lg-12 form-wrapper" id="detail-sublayanan">
     <form action="">
         <div class="card">
             <div class="card-header">
@@ -33,8 +33,8 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="nama-jenislayanan"
-                            id="nama-jenislayanan"
+                            name="nama-sublayanan"
+                            id="nama-sublayanan"
                             value="Medium"
                             required disabled
                         />
@@ -45,8 +45,8 @@
                     <div class="col-sm-9">
                         <textarea
                             class="form-control"
-                            name="deskripsi-jenislayanan"
-                            id="deskripsi-jenislayanan"
+                            name="deskripsi-sublayanan"
+                            id="deskripsi-sublayanan"
                             required disabled cols="30" rows="10">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem eaque, iste similique eum maxime amet perspiciatis recusandae aliquid officia ad tempora, quos molestiae nemo! Nesciunt, nihil nostrum? Exercitationem, a adipisci!</textarea>
                     </div>
                 </div>
@@ -58,8 +58,8 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="waktu-jenislayanan"
-                            id="waktu-jenislayanan"
+                            name="waktu-sublayanan"
+                            id="waktu-sublayanan"
                             value="10"
                             required disabled
                         />
@@ -71,8 +71,8 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="harga-jenislayanan"
-                            id="harga-jenislayanan"
+                            name="harga-sublayanan"
+                            id="harga-sublayanan"
                             value="10000"
                             required disabled
                         />
@@ -93,7 +93,7 @@
         </div>
     </form>
 </div>
-<!--./detail jenislayanan-->
+<!--./detail sublayanan-->
 
 @endsection
 

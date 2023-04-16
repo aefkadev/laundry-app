@@ -12,7 +12,8 @@ class ClientOrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = ListOrder::all();
+        return view('client.listorder.index', compact('orders'));
     }
 
     /**

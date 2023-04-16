@@ -12,7 +12,8 @@ class ClientLayananController extends Controller
      */
     public function index()
     {
-        //
+        $layanans = Layanan::all();
+        return view('client.layanan.index', compact('layanans'));
     }
 
     /**

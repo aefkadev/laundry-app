@@ -1,18 +1,18 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Tambah Jenis')
+@section('title', 'Edit Deskripsi')
 
 @section('content')
 
-<!--tambah jenislayanan-->
-<div class="col-lg-12 col-lg-12 form-wrapper" id="tambah-jenislayanan">
+<!--edit sublayanan-->
+<div class="col-lg-12 col-lg-12 form-wrapper" id="edit-sublayanan">
     <form action="">
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">
                     <a class="pr-3 text-dark" href="#"
                         ><i class="fa fa-arrow-left" aria-hidden="true"></i></a
-                    ><b>Tambah Jenis Pelayanan</b>
+                    ><b>Edit Jenis Pelayanan</b>
                 </h4>
                 <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-dark btn-sm">
@@ -33,15 +33,16 @@
                 </div>
                 <div class="mb-2 pb-2 row">
                     <label class="col-sm-3 col-form-label"
-                        >Nama Jenis Pelayanan :
+                        >Nama Jenis Pelayanan:
                     </label>
                     <div class="col-sm-9">
                         <input
                             type="text"
                             class="form-control"
-                            name="nama-jenislayanan"
-                            id="nama-jenislayanan"
-                            required
+                            name="nama-sublayanan"
+                            id="nama-sublayanan"
+                            value="Medium"
+                            required disabled
                         />
                     </div>
                 </div>
@@ -50,9 +51,9 @@
                     <div class="col-sm-9">
                         <textarea
                             class="form-control"
-                            name="deskripsi-jenislayanan"
-                            id="deskripsi-jenislayanan"
-                            required cols="30" rows="10"></textarea>
+                            name="deskripsi-sublayanan"
+                            id="deskripsi-sublayanan"
+                            required cols="30" rows="10">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem eaque, iste similique eum maxime amet perspiciatis recusandae aliquid officia ad tempora, quos molestiae nemo! Nesciunt, nihil nostrum? Exercitationem, a adipisci!</textarea>
                     </div>
                 </div>
                 <div class="mb-2 pb-2 row">
@@ -63,8 +64,9 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="waktu-jenislayanan"
-                            id="waktu-jenislayanan"
+                            name="waktu-sublayanan"
+                            id="waktu-sublayanan"
+                            value="10"
                             required
                         />
                     </div>
@@ -75,8 +77,9 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="harga-jenislayanan"
-                            id="harga-jenislayanan"
+                            name="harga-sublayanan"
+                            id="harga-sublayanan"
+                            value="10000"
                             required
                         />
                     </div>
@@ -96,6 +99,6 @@
         </div>
     </form>
 </div>
-<!--./tambah jenislayanan-->
+<!--./edit sublayanan-->
 
 @endsection

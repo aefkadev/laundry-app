@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\ListOrder;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class AdminOrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = ListOrder::all();
+        return view('admin.listorder.index', compact('orders'));
     }
 
     /**

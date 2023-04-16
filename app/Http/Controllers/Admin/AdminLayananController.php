@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Layanan;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -13,7 +14,8 @@ class AdminLayananController extends Controller
      */
     public function index():View
     {
-        return view('admin.layanan.index');
+        $layanans = Layanan::all();
+        return view('admin.layanan.index', compact('layanans'));
     }
 
     /**

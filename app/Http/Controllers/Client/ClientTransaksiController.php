@@ -1,18 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Client;
 
+use App\Models\Transaksi;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class UserProfileController extends Controller
+class ClientTransaksiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $profiles = User::all();
-        return view('client.profile.index', compact('profiles'));
+        $transaksis = Transaksi::all();
+        return view('client.transaksi.index', compact('transaksis'));
     }
 
     /**

@@ -56,11 +56,11 @@ Route::middleware(['auth'])->group(function () {
   
     // PROFILE
     Route::get('/profile', [UserProfileController::class, 'index'])->name('profile');
-    Route::get('/edit-profile', [UserProfileController::class, 'editProfile'])->name('edit-profile');
-    Route::get('edit-fotoProfile/{id}', [UserProfileController::class, 'editProfile']);
-    Route::put('update-fotoProfile/{id}', [UserProfileController::class, 'updateProfile']);
-    Route::get('edit-profile/{id}', [UserProfileController::class, 'editProfile']);
-    Route::put('update-profile/{id}', [UserProfileController::class, 'updateProfile']);
+    Route::get('/edit-profile', [UserProfileController::class, 'index'])->name('edit-profile');
+    Route::get('edit-fotoProfile/{id}', [UserProfileController::class, 'edit']);
+    Route::put('update-fotoProfile/{id}', [UserProfileController::class, 'update']);
+    Route::get('edit-profile/{id}', [UserProfileController::class, 'edit']);
+    Route::put('update-profile/{id}', [UserProfileController::class, 'update']);
   
   });
   

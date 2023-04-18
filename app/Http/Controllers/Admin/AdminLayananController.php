@@ -23,7 +23,7 @@ class AdminLayananController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.layanan.create');
     }
 
     /**

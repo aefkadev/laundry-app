@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Models\ListOrder;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 

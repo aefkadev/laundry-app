@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('email')->unique();
-            $table->string('no_telpon');
+            $table->string('gambar_user')->nullable();
+            $table->string('no_telepon')->nullable();
             $table->string('password');
             $table->unsignedBigInteger('roles_id')->nullable()->default(0);
             $table->foreign('roles_id')->references('id')->on('roles');

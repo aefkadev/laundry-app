@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@yield('title') | Admin</title>
+  <title>@yield('title') - Laundry</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -28,8 +28,6 @@
   <script src="https://kit.fontawesome.com/2a99f4df77.js" crossorigin="anonymous"></script>
   @yield('style')
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
 
   <!-- Splash Screen -->
   <div class="preloader flex-row justify-content-center align-items-center">
@@ -37,13 +35,9 @@
     <img class="animation__shake" src="assets/img/splash2.png" alt="splash" height="100" width="100">
   </div>
 
-  <div style="margin-top: 20px;">
-
   @yield('content')
 
-  </div>
 
-</div>
 <!-- ./wrapper -->
 
 <!-- jQuery -->
@@ -79,5 +73,4 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
 @yield('script')
-</body>
 </html>

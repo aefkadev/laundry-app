@@ -12,7 +12,7 @@ class UserProfileController extends Controller
     public function index()
     {
         $profiles = User::all();
-        return view('client.profile.index', compact('profiles'));
+        return view('profile.index', compact('profiles'));
     }
 
     /**

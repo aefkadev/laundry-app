@@ -6,9 +6,11 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Middleware\SuperAdmin;
 use App\Http\Middleware\Admin;
 use App\Http\Middleware\Client;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminLayananController;
 use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\Admin\AdminSubLayananController;
+use App\Http\Controllers\Admin\AdminTransaksiController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Client\ClientLayananController;
 use App\Http\Controllers\Client\ClientOrderController;
@@ -34,6 +36,7 @@ Route::middleware([SuperAdmin::class])->name('super.')->prefix('super')->group(f
     Route::resource('layanan', AdminLayananController::class);
     Route::resource('order', AdminOrderController::class);
     Route::resource('sublayanan', AdminSubLayananController::class);
+    Route::resource('transaksi', AdminTransaksiController::class);
     Route::resource('user', AdminUserController::class);
   });
 
@@ -43,6 +46,7 @@ Route::middleware([Admin::class])->name('admin.')->prefix('admin')->group(functi
     Route::resource('layanan', AdminLayananController::class);
     Route::resource('order', AdminOrderController::class);
     Route::resource('sublayanan', AdminSubLayananController::class);
+    Route::resource('transaksi', AdminTransaksiController::class);
   });
 
 // CLIENT
@@ -64,7 +68,3 @@ Route::middleware(['auth'])->group(function () {
   
   });
   
-
-Route::get('/', function () {
-    return view('admin.pembukuan.laporan');
-});

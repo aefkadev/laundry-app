@@ -8,6 +8,11 @@
 <div class="col-lg-12 form-wrapper" id="sublayanan">
   <form action="">
     <div class="container">
+        @if(auth()->user()->roles_id == 1)
+            <a class="pr-3 text-dark" href="{{ route('super.layanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        @elseif(auth()->user()->roles_id == 2)
+            <a class="pr-3 text-dark" href="{{ route('admin.layanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        @endif
         @foreach ($layanans as $layanan)
             <h4 class="card-title mb-4"><b>{{$layanan->nama_layanan}}</b></h4>
         @endforeach

@@ -3,10 +3,16 @@
 @section('title', 'Beranda')
 
 @section('content')
+@if(auth()->user()->roles_id == 1 || auth()->user()->roles_id == 2)
 <body>
+    <div class="vh-100 bg-dark">
+        <section class="nev-section py-5 px-4 d-flex justify-content-between align-items-center">
+            <div class="p-2 d-flex rounded-4" style="background-color: #f1f1f1; color:black;">
+@else
     <div class="vh-100" style="background-color: #AD48FA;">
         <section class="nev-section py-5 px-4 d-flex justify-content-between align-items-center">
             <div class="p-2 d-flex rounded-4" style="background-color: #D6C37E;">
+@endif
                 <span>Laundry Sepatu SOC CLEAN Lampung</span>
             </div>
             <div class="button-container d-flex justify-content-center align-items-center">
@@ -14,7 +20,7 @@
                     <i class="fa-solid fa-clock-rotate-left" style="font-size: 3rem; color: #E2DFEB;"></i>
                 </a>
                 <a class="px-2" href="#">
-                    <img src="../assets/img/user-profile.png" class="rounded-4" style="width: 60px;" alt="">
+                    <img src="{{ asset('assets/img/user-profile.png')}}" class="rounded-4" style="width: 60px;" alt="">
                 </a>
             </div>
         </section>
@@ -42,19 +48,18 @@
         </section>
         <section class="d-flex flex-column gap-3 px-4 pt-5">
             <a href="" class="d-flex align-items-center gap-4 bg-white ps-4 text-decoration-none font-weight-bolder text-black rounded-4">
-                <img src="../assets/img/clean-shoes.png" style="width: 4.2rem;" alt="">
+                <img src="{{ asset('assets/img/clean-shoes.png')}}" style="width: 4.2rem;" alt="">
                 <span>Premium Deep Clean</span>
             </a>
             <a href="" class="d-flex align-items-center gap-4 bg-white ps-4 text-decoration-none font-weight-bolder text-black rounded-4">
-                <img src="../assets/img/pain-shoes.png" style="width: 4.2rem;" alt="">
+                <img src="{{ asset('assets/img/pain-shoes.png')}}" style="width: 4.2rem;" alt="">
                 <span>Repaint</span>
             </a>
             <a href="" class="d-flex align-items-center gap-4 bg-white ps-4 text-decoration-none font-weight-bolder text-black rounded-4">
-                <img src="../assets/img/clean-shoes.png" style="width: 4.2rem;" alt="">
+                <img src="{{ asset('assets/img/clean-shoes.png')}}" style="width: 4.2rem;" alt="">
                 <span>Other</span>
             </a>
         </section>
     </div>
-    
 </body>
 @endsection

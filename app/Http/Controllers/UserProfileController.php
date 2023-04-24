@@ -36,14 +36,7 @@ class UserProfileController extends Controller
      */
     public function show(string $id)
     {
-        $user = User::where('id', $id)->first();
-        if (auth()->user()->roles_id == 1) {
-            return view('admin.profile.read', compact('user'));
-        } else if (auth()->user()->roles_id == 2) {
-            return view('admin.profile.read', compact('user'));
-        } else if (auth()->user()->roles_id == 3) {
-            return view('client.profile.read', compact('user'));
-        }
+        //
     }
 
     /**

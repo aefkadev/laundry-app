@@ -42,23 +42,6 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <label class="col-sm-3 col-form-label">Password</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" placeholder="password" name="password" id="password" value="{{$user->password}}" disabled>
-          </div>
-        </div>
-        <div class="mb-3 row">
-          <label class="col-sm-3 col-form-label">Roles ID</label>
-          <div class="col-sm-9">
-            <select class="form-control" name="roles_id" id="roles_id" value="{{$user->roles_id}}" disabled>
-              <option value="1">Super Admin</option>
-              <option value="2">Admin</option>
-              <option value="3">Member</option>
-              <option value="0">Guest</option>
-            </select>
-          </div>
-        </div>
-        <div class="mb-3 row">
           <div class="col-sm-9">
             <a>
               @if(auth()->user()->roles_id == 1)

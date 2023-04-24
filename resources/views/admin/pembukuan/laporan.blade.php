@@ -5,7 +5,7 @@
 @section('content')
 
 <!--pemasukan-->
-<div class="col-lg-12 form-wrapper" id="pemasukan">
+<div class="col-lg-12 form-wrapper pb-5" id="pemasukan">
   <form action="">
     <div class="container">
         <div class="card">

@@ -9,14 +9,11 @@
   <form action="">
     <div class="container">
         <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">
-                <a class="pr-3 text-dark" href="#">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                </a>
-                <b>Laporan Pembukuan</b>
-                </h3>
-              </div>
+            <div class="card-header">
+              <h4 class="text-center">
+                  <b>Laporan Pembukuan</b>
+              </h4>
+          </div>
               <div class="py-3 px-4 row">
                     <label class="col-sm-3 col-form-label"
                         >Bulan :

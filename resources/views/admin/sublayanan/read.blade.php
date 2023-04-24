@@ -56,7 +56,7 @@
                             class="form-control"
                             name="deskripsi_sub"
                             id="deskripsi_sub"
-                            required disabled cols="30" rows="10">{{$sublayanan->deskripsi_sub}}</textarea>
+                            required disabled>{{$sublayanan->deskripsi_sub}}</textarea>
                     </div>
                 </div>
                 <div class="mb-2 pb-2 row">

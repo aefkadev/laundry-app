@@ -5,9 +5,13 @@
 @section('content')
 
 <div class="col-lg-12 col-lg-12 form-wrapper" id="Transaksi">
-    <form action="">
+    @if(auth()->user()->roles_id == 1)
+        <form method="POST" action="{{ route('super.transaksi.store') }}" enctype='multipart/form-data'>
+    @elseif(auth()->user()->roles_id == 2)
+        <form method="POST" action="{{ route('admin.transaksi.store') }}" enctype='multipart/form-data'>
+    @endif
+    @csrf
         <div class="card">
-            @csrf
             <div class="card-header">
                 <h4 class="text-center">
                     <b>Transaksi</b>

@@ -37,9 +37,9 @@
                     <i class="fa-solid fa-bar-chart" aria-hidden="true"></i>
                     <span>Laporan</span>
                 </a>
-                <a href="/super/transaksi" class="d-flex flex-column align-items-center text-decoration-none fw-bold" style="color: #f1f1f1;">
+                <a href="/super/input-transaksi" class="d-flex flex-column align-items-center text-decoration-none fw-bold" style="color: #f1f1f1;">
                     <i class="fa-solid fa-receipt"></i>
-                    <span>Transaksi</span>
+                    <span>Input Transaksi</span>
                 </a>
             </ul>
         </div>

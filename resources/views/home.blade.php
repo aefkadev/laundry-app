@@ -37,8 +37,12 @@
                                         <p class="text-black m-0 px-2 text-lg">Riwayat Transaksi</p>
                                     </a>
                                     <a href="" class="d-flex align-items-center px-5 w-100">
-                                        <i class="fa-solid fa-user" style="color: #2b2b2b"></i>
-                                        <p class="text-black m-0 px-2 text-lg">Profile</p>
+                                        <i class="fa-solid fa-book" style="color: #2b2b2b"></i>
+                                        <p class="text-black m-0 px-2 text-lg">Pembukuan</p>
+                                    </a>
+                                    <a href="" class="d-flex align-items-center px-5 w-100">
+                                        <i class="fa-solid fa-users" style="color: #2b2b2b"></i>
+                                        <p class="text-black m-0 px-2 text-lg">Kelola User</p>
                                     </a>
                                     <a href="" class="d-flex align-items-center px-5 w-100">
                                         <i class="fa-solid fa-person-walking-arrow-right" style="color: #ce1a1a"></i>

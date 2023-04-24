@@ -11,6 +11,7 @@ class SubLayanan extends Model
     protected $table = 'sublayanan';
     protected $fillable = [
         'layanan_id',
+        'ikon_sub',
         'nama_sub',
         'deskripsi_sub',
         'waktu_sub',

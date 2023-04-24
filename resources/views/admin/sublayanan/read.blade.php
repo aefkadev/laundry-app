@@ -10,9 +10,12 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">
-                    <a class="pr-3 text-dark" href="#"
-                        ><i class="fa fa-arrow-left" aria-hidden="true"></i></a
-                    ><b>Detail Jenis Pelayanan</b>
+                    @if(auth()->user()->roles_id == 1)
+                        <a class="pr-3 text-dark" href="{{ route('super.sublayanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                    @elseif(auth()->user()->roles_id == 2)
+                        <a class="pr-3 text-dark" href="{{ route('admin.sublayanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                    @endif
+                    <b>Detail Jenis Pelayanan</b>
                 </h4>
                 <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-dark btn-sm">

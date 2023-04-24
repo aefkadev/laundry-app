@@ -5,14 +5,17 @@
 @section('content')
 
 <!--edit sublayanan-->
-<div class="col-lg-12 col-lg-12 form-wrapper" id="edit-sublayanan">
+<div class="col-lg-12 col-lg-12 form-wrapper" id="edit_sub">
     <form action="">
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">
-                    <a class="pr-3 text-dark" href="#"
-                        ><i class="fa fa-arrow-left" aria-hidden="true"></i></a
-                    ><b>Edit Jenis Pelayanan</b>
+                    @if(auth()->user()->roles_id == 1)
+                        <a class="pr-3 text-dark" href="{{ route('super.sublayanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                    @elseif(auth()->user()->roles_id == 2)
+                        <a class="pr-3 text-dark" href="{{ route('admin.sublayanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                    @endif
+                    <b>Edit Jenis Pelayanan</b>
                 </h4>
                 <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-dark btn-sm">
@@ -39,8 +42,8 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="nama-sublayanan"
-                            id="nama-sublayanan"
+                            name="nama_sub"
+                            id="nama_sub"
                             value="Medium"
                             required disabled
                         />
@@ -51,8 +54,8 @@
                     <div class="col-sm-9">
                         <textarea
                             class="form-control"
-                            name="deskripsi-sublayanan"
-                            id="deskripsi-sublayanan"
+                            name="deskripsi_sub"
+                            id="deskripsi_sub"
                             required cols="30" rows="10">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem eaque, iste similique eum maxime amet perspiciatis recusandae aliquid officia ad tempora, quos molestiae nemo! Nesciunt, nihil nostrum? Exercitationem, a adipisci!</textarea>
                     </div>
                 </div>
@@ -64,8 +67,8 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="waktu-sublayanan"
-                            id="waktu-sublayanan"
+                            name="waktu_sub"
+                            id="waktu_sub"
                             value="10"
                             required
                         />
@@ -77,8 +80,8 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="harga-sublayanan"
-                            id="harga-sublayanan"
+                            name="harga_sub"
+                            id="harga_sub"
                             value="10000"
                             required
                         />

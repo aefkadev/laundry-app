@@ -38,7 +38,8 @@ class AdminSubLayananController extends Controller
             'nama_sub' => $request->nama_sub,
             'deskripsi_sub' => $request->deskripsi_sub,
             'waktu_sub' => $request->waktu_sub,
-            'harga_sub' => $request->harga_sub
+            'harga_sub' => $request->harga_sub,
+            'barang_sub' => $request->barang_sub
         ]);
 
         if (auth()->user()->roles_id == 1) {
@@ -78,7 +79,8 @@ class AdminSubLayananController extends Controller
                 'nama_sub' => $request->nama_sub,
                 'deskripsi_sub' => $request->deskripsi_sub,
                 'waktu_sub' => $request->waktu_sub,
-                'harga_sub' => $request->harga_sub
+                'harga_sub' => $request->harga_sub,
+                'barang_sub' => $request->barang_sub
             ]
         );
         if (auth()->user()->roles_id == 1) {

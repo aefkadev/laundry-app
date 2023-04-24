@@ -11,9 +11,13 @@
             <div class="card-header">
                 <h4 class="card-title">
                     @if(auth()->user()->roles_id == 1)
-                        <a class="pr-3 text-dark" href="{{ route('super.sublayanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                        <a href="{{ route('super.sublayanan.show',$sublayanan->id) }}" class="pr-3 text-dark">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                        </a>
                     @elseif(auth()->user()->roles_id == 2)
-                        <a class="pr-3 text-dark" href="{{ route('admin.sublayanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                        <a href="{{ route('admin.sublayanan.show',$sublayanan->id) }}" class="pr-3 text-dark">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                        </a>
                     @endif
                     <b>Edit Jenis Pelayanan</b>
                 </h4>
@@ -44,8 +48,8 @@
                             class="form-control"
                             name="nama_sub"
                             id="nama_sub"
-                            value="Medium"
-                            required disabled
+                            value="{{$sublayanan->nama_sub}}"
+                            enabled
                         />
                     </div>
                 </div>
@@ -56,7 +60,7 @@
                             class="form-control"
                             name="deskripsi_sub"
                             id="deskripsi_sub"
-                            required cols="30" rows="10">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem eaque, iste similique eum maxime amet perspiciatis recusandae aliquid officia ad tempora, quos molestiae nemo! Nesciunt, nihil nostrum? Exercitationem, a adipisci!</textarea>
+                            enabled cols="30" rows="10">{{$sublayanan->deskripsi_sub}}</textarea>
                     </div>
                 </div>
                 <div class="mb-2 pb-2 row">
@@ -69,8 +73,8 @@
                             class="form-control"
                             name="waktu_sub"
                             id="waktu_sub"
-                            value="10"
-                            required
+                            value="{{$sublayanan->waktu_sub}}"
+                            enabled
                         />
                     </div>
                 </div>
@@ -82,8 +86,8 @@
                             class="form-control"
                             name="harga_sub"
                             id="harga_sub"
-                            value="10000"
-                            required
+                            value="{{$sublayanan->harga_sub}}"
+                            enabled
                         />
                     </div>
                 </div>
@@ -91,7 +95,7 @@
                     <label class="col-sm-3 col-form-label"
                         >Jenis Barang :
                     </label>
-                    <select class="col-sm-9 col-form-label rounded-2" name="barang" id="barang">
+                    <select class="col-sm-9 col-form-label rounded-2" name="barang" id="barang" value="{{$sublayanan->barang_sub}}">
                       <option value="sepatu">sepatu</option>
                       <option value="sendal">sendal</option>
                       <option value="baju">baju</option>

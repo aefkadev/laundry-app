@@ -14,7 +14,8 @@ class SubLayanan extends Model
         'nama_sub',
         'deskripsi_sub',
         'waktu_sub',
-        'harga_sub'
+        'harga_sub',
+        'barang_sub'
     ];
 
 }

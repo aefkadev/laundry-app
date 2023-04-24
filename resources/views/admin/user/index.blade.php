@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 
 @section('title', 'Kelola user')
 
@@ -27,11 +27,13 @@
             <div class="panel-heading border">
             </div>
           <div class="panel-body">
-                <table class=" table-responsive table table-bordered bordered table-striped table-condensed datatable" ui-jq="dataTable" ui-options="dataTableOpt">
+            <table id="example1" class="table table-bordered table-striped fs-6">
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>judul</th>
+                    <th>Nama</th>
+                    <th>email </th>
+                    <th>Roles ID</th>
                     <th>More</th>
                   </tr>
                 </thead>
@@ -39,7 +41,9 @@
                   @foreach ($users as $user)
                   <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $user->judul }}</td>
+                    <td>{{ $user->nama }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->roles_id }}</td>
                     <td class="manage-row">
                     @if(auth()->user()->roles_id == 1)
                       <a href="{{ route('super.user.show',$user->id) }}" class="edit-button">
@@ -48,21 +52,12 @@
                       <a href="{{ route('super.user.edit',$user->id) }}" class="edit-button">
                         <i class="fa-solid fa-marker"></i>
                       </a>
-                    @elseif(auth()->user()->roles_id == 2)
-                      <a href="{{ route('admin.user.show',$user->id) }}" class="edit-button">
-                        <i class="fa-solid fa-eye"></i>
-                      </a>
-                      <a href="{{ route('admin.user.edit',$user->id) }}" class="edit-button">
-                        <i class="fa-solid fa-marker"></i>
-                      </a>
-                    @endif
-                    @if(auth()->user()->roles_id == 1)
                       <!-- Button trigger modal -->
                       <a role="button"  class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$user->id}}">
                         <i class="fa-solid fa-trash-can"></i>
                       </a>
                       <!-- Modal -->
-                      <div class="modal fade bd-example-modal-sm{{$user->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal fade bd-example-modal-sm{{$user->id}}" tabindex="-1" role="dialog" aria-hidden="false">
                         <div class="modal-dialog ">
                             <div class="modal-content">
                                 <div class="modal-header">

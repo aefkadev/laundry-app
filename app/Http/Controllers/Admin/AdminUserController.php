@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -35,14 +36,12 @@ class AdminUserController extends Controller
             'email' => $request->email,
             'gambar_user' => $request->gambar_user,
             'no_telepon' => $request->no_telepon,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
             'roles_id' => $request->roles_id
         ]);
 
         if (auth()->user()->roles_id == 1) {
             return redirect('super/user')->with('sukses', 'Berhasil Tambah Data!');
-        } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/user')->with('sukses', 'Berhasil Tambah Data!');
         }
     }
 
@@ -76,14 +75,12 @@ class AdminUserController extends Controller
                 'email' => $request->email,
                 'gambar_user' => $request->gambar_user,
                 'no_telepon' => $request->no_telepon,
-                'password' => $request->password,
+                'password' => Hash::make($request->password),
                 'roles_id' => $request->roles_id
             ]
         );
         if (auth()->user()->roles_id == 1) {
             return redirect('super/user')->with('sukses', 'Berhasil Edit Data!');
-        } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/user')->with('sukses', 'Berhasil Edit Data!');
         }
     }
 

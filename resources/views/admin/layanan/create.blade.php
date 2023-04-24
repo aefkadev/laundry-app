@@ -34,6 +34,7 @@
                         id="ikon_layanan"
                         class="visually-hidden"
                     />
+                    <img class="w-25" id="blah" src="#" alt="your image" />
                 </div>
                 <div class="mb-3 pb-4 row">
                     <label class="col-sm-3 col-form-label"
@@ -67,5 +68,23 @@
     </form>
 </div>
 <!--./tambah layanan-->
+@endsection
+@section('script')
+<script>
+    function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
+        reader.onload = function (e) {
+            $('#blah').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#ikon_layanan").change(function(){
+    readURL(this);
+});
+</script>
 @endsection

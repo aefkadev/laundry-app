@@ -24,6 +24,12 @@ class AdminTransaksiController extends Controller
         return view('admin.pembukuan.laporan', compact('laporans'));
     }
 
+    public function indexChart()
+    {
+        $charts = Transaksi::all();
+        return view('admin.pembukuan.index', compact('charts'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

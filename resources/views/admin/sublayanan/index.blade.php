@@ -56,7 +56,7 @@
     </div>
   </form>
 </div>
-@include('admin.menu')
+@include('menu')
 <!--./subLayanan-->
 
 @endsection

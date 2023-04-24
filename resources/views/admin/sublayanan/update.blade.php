@@ -30,11 +30,11 @@
             <div class="card-body p-3 mb-2 bg-secondary text-white">
                 @csrf
                 <div class="d-flex justify-content-center m-4">
-                    <label for="file_input"
+                    <label for="ikon_sub"
                         ><i class="fa-solid fa-camera fa-2xl"></i></label
                     ><input
                         type="file"
-                        id="file_input"
+                        id="ikon_sub"
                         class="visually-hidden"
                     />
                 </div>

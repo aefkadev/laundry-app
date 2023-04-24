@@ -21,13 +21,11 @@
         @foreach ($sublayanans as $sublayanan)
         <div class="row mb-3">
             <div class="col-2 bg-secondary text-white d-flex align-items-center rounded-start">
-                @foreach ($layanans as $layanan)
-                @if ($layanan->ikon_layanan == Null)
+                @if ($sublayanan->ikon_sub == Null)
                     <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" height="40" width="40"/>
                 @else
-                    <img src="{{ asset('assets/ikon') }}/{{ $layanan->ikon_layanan }}" alt="ikon" height="40" width="40"/>
+                    <img src="{{ asset('assets/ikon') }}/{{ $sublayanan->ikon_sub }}" alt="ikon" height="40" width="40"/>
                 @endif
-                @endforeach
             </div>
             <div
                 class="col-5 bg-secondary text-white d-flex align-items-center text-center rounded-end"

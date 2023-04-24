@@ -1,43 +1,53 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Pengeluaran')
+@section('title', 'Transaksi')
 
 @section('content')
 
-<!--pengeluaran-->
-<div class="col-lg-12 col-lg-12 form-wrapper" id="pengeluaran">
+<div class="col-lg-12 col-lg-12 form-wrapper" id="Transaksi">
     <form action="">
         <div class="card">
+            @csrf
             <div class="card-header">
                 <h4 class="text-center">
-                    <b>Pengeluaran</b>
+                    <b>Transaksi</b>
                 </h4>
             </div>
             <div class="card-body p-3 mb-2 bg-secondary text-white">
-                @csrf
+                <div class="mb-2 pb-2 row">
+                    <label class="col-sm-3 col-form-label"
+                        >Jenis Transaksi :
+                    </label>
+                    <div class="col-sm-9">
+                        <select class="col-sm-12 col-form-label rounded-2" name="jenis_transaksi" id="jenis_transaksi" value="" required enabled>
+                          <option value="1">Pemasukan</option>
+                          <option value="2">Pengeluaran</option>
+                        </select>
+                      </div>
+                </div>
                 <div class="mb-2 pb-2 row">
                     <label class="col-sm-3 col-form-label"
                         >Tanggal :
                     </label>
                     <div class="col-sm-9">
                         <input
-                            type="text"
+                            type="date"
                             class="form-control"
-                            name="tanggal-pengeluaran"
-                            id="tanggal-pengeluaran"
-                            value="Medium"
-                            required disabled
+                            name="tanggal_transaksi"
+                            id="tanggal_transaksi"
+                            required enabled
                         />
                     </div>
                 </div>
                 <div class="mb-2 pb-2 row">
                     <label class="col-sm-3 col-form-label">Deskripsi : </label>
                     <div class="col-sm-9">
-                        <textarea
+                        <input
                             class="form-control"
-                            name="deskripsi-pengeluaran"
-                            id="deskripsi-pengeluaran"
-                            required cols="30" rows="10">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem eaque, iste similique eum maxime amet perspiciatis recusandae aliquid officia ad tempora, quos molestiae nemo! Nesciunt, nihil nostrum? Exercitationem, a adipisci!</textarea>
+                            name="deskripsi_transaksi"
+                            id="deskripsi_transaksi"
+                            placeholder="Deskripsi..."
+                            required enabled cols="10" rows="10">
                     </div>
                 </div>
                 <div class="mb-2 pb-2 row">
@@ -46,10 +56,10 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="total-pengeluaran"
-                            id="total-pengeluaran"
-                            value="10000"
-                            required
+                            name="total_transaksi"
+                            id="total_transaksi"
+                            placeholder="10000"
+                            required enabled
                         />
                     </div>
                 </div>
@@ -69,6 +79,5 @@
         </div>
     </form>
 </div>
-<!--./pengeluaran-->
-
+@include('admin.menu')
 @endsection

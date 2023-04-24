@@ -18,6 +18,12 @@ class AdminTransaksiController extends Controller
         return view('admin.transaksi.index', compact('transaksis'));
     }
 
+    public function indexLaporan()
+    {
+        $laporans = Transaksi::all();
+        return view('admin.pembukuan.laporan', compact('laporans'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

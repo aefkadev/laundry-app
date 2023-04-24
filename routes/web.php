@@ -39,6 +39,7 @@ Route::middleware([SuperAdmin::class])->name('super.')->prefix('super')->group(f
     Route::resource('transaksi', AdminTransaksiController::class);
     Route::resource('user', AdminUserController::class);
     Route::resource('profile', UserProfileController::class);
+    Route::get('laporan', [AdminTransaksiController::class, 'indexLaporan']);
   });
 
 // CMS ADMIN
@@ -49,6 +50,7 @@ Route::middleware([Admin::class])->name('admin.')->prefix('admin')->group(functi
     Route::resource('sublayanan', AdminSubLayananController::class);
     Route::resource('transaksi', AdminTransaksiController::class);
     Route::resource('profile', UserProfileController::class);
+    Route::get('laporan', [AdminTransaksiController::class, 'indexLaporan']);
   });
 
 // MEMBER
@@ -68,3 +70,6 @@ Route::middleware(['auth'])->group(function () {
   
   });
   
+Route::get('/transaksi', function () {
+    return view('client.transaksi.index');
+});

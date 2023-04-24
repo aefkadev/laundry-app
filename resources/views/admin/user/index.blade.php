@@ -15,11 +15,14 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table-responsive table table-bordered bordered table-striped table-condensed datatable" ui-jq="dataTable" ui-options="dataTableOpt">
+                <table class="table-responsive table table-bordered bordered table-striped table-condensed datatable" ui-jq="dataTable" ui-options="dataTableOpt"">
                   <thead>
                     <tr>
                       <th>No</th>
                       <th>Nama</th>
+                      <th>Email</th>
+                      <th>No Telepon</th>
+                      <th>Roles ID</th>
                       <th>More</th>
                     </tr>
                   </thead>
@@ -28,6 +31,9 @@
                     <tr>
                       <td>{{ $loop->iteration }}</td>
                       <td>{{ $user->nama }}</td>
+                      <td>{{ $user->email }}</td>
+                      <td>{{ $user->no_telepon }}</td>
+                      <td>{{ $user->roles_id }}</td>
                       <td class="manage-row">
                       @if(auth()->user()->roles_id == 1)
                         <a href="{{ route('super.user.show',$user->id) }}" class="edit-button">
@@ -70,6 +76,9 @@
                     <tr>
                       <th>No</th>
                       <th>Nama</th>
+                      <th>Email</th>
+                      <th>No Telepon</th>
+                      <th>Roles ID</th>
                       <th>More</th>
                     </tr>
                   </tfoot>

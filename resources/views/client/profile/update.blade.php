@@ -9,7 +9,7 @@
     <h4 class="card-title">Edit Profile</h4>
     </div>
     <div class="card-body">
-      @if(auth()->user()->roles_id == 1)
+      @if(auth()->user()->roles_id == 3)
           <form method="POST" action="{{ route('member.profile.update', $user->id) }}" enctype='multipart/form-data'>
       @endif
       @csrf

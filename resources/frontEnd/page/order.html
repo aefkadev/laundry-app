@@ -79,7 +79,7 @@
                     </div>
 
                     <!-- Modal -->
-                    <div class="modal fade show" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-modal="false" role="dialog">
+                    <div class="modal fade show d-block" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-modal="false" role="dialog">
                         <div class="modal-dialog modal-fullscreen">
                             <div class="modal-content" style="background-color: #AD48FA;">
                                 <div class="d-flex px-3 pt-4">
@@ -88,12 +88,31 @@
                                     </button>
                                     <span class="font-weight-bolder px-2" style="color: #E2DFEB; font-size: 20px;">Pembayaran</span>
                                 </div>
-                            <div class="d-flex justify-content-center gap-3 align-items-center flex-column">
-                                <div class="d-flex flex-column gap-3 justify-content-center align-items-center w-100">
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="email" name="email" placeholder="Email" required>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="no_telepon" placeholder="Nomor Telepon" required>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="alamat" id="alamat" placeholder="Alamat" required>
+                            <div class="d-flex justify-content-center gap-3 align-items-center flex-column w-100">
+                                <div class="input-group d-flex flex-column justify-content-center w-75">
+                                    <label class="fw-bold text-md text-white border-0" style="background-color: #AD48FA;" for="pembayaran">Metode Pembayaran</label>
+                                    <select class="custom-select border-0 rounded-3 py-2 px-3 w-100" id="pembayaran">
+                                        <option selected value="tunai">Tunai</option>
+                                        <option value="QRIS">QRIS</option>
+                                        <option value="BCA">Transfer BCA</option>
+                                    </select>
                                 </div>
+
+                                <div class="input-group d-flex flex-column justify-content-center w-75">
+                                    <label class="fw-bold text-md text-white border-0" style="background-color: #AD48FA;" for="opsi_pengiriman">Opsi Pengiriman</label>
+                                    <select class="custom-select border-0 rounded-3 py-2 px-3 w-100" id="opsi_pengiriman">
+                                        <option selected value="pickup">Pick Up</option>
+                                        <option value="delivery">Delivery</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="d-flex flex-column w-100 align-items-center">
+                                    <div class="d-flex w-75">
+                                        <label class="fw-bold text-md text-white" for="no_rekening">No. Rekening (optional)</label>
+                                    </div>
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="no_rekening" id="Keluhan" placeholder="12131">
+                                </div>
+
                                 <div class="d-flex flex-column w-100 align-items-center">
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="foto-keluhan">Foto Keluhan</label>

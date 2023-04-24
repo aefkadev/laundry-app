@@ -37,7 +37,7 @@
     <img class="animation__shake" src="{{asset('assets/img/splash2.png')}}" alt="splash" height="100" width="100">
   </div>
 
-  <div style="margin-top: 20px;">
+  <div class="container pt-4 px-3">
 
   @yield('content')
 

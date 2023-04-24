@@ -63,6 +63,7 @@
         @endforeach
     </div>
 </div>
+@include('admin.menu')
 <!--./Layanan-->
 
 @endsection

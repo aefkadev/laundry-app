@@ -1,11 +1,11 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Edit Deskripsi')
+@section('title', 'Edit Sublayanan')
 
 @section('content')
 
 <!--edit sublayanan-->
-<div class="col-lg-12 col-lg-12 form-wrapper" id="edit_sub">
+<div class="col-lg-12 col-lg-12 form-wrapper" id="edit-sublayanan">
     <form action="">
         <div class="card">
             <div class="card-header">

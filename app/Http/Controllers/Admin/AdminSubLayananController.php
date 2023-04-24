@@ -73,7 +73,6 @@ class AdminSubLayananController extends Controller
         $sublayanan->update(
             [
                 'layanan_id' => $request->layanan_id,
-                'ikon_sub' => $request->ikon_sub,
                 'nama_sub' => $request->nama_sub,
                 'deskripsi_sub' => $request->deskripsi_sub,
                 'waktu_sub' => $request->waktu_sub,

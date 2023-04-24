@@ -71,7 +71,3 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/sublayanan', [ClientSubLayananController::class, 'index'])->name('sublayanan');
   
   });
-  
-Route::get('/transaksi', function () {
-    return view('client.transaksi.index');
-});

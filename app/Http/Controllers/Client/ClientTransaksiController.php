@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Models\Transaksi;
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class ClientTransaksiController extends Controller

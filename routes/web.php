@@ -38,6 +38,7 @@ Route::middleware([SuperAdmin::class])->name('super.')->prefix('super')->group(f
     Route::resource('sublayanan', AdminSubLayananController::class);
     Route::resource('transaksi', AdminTransaksiController::class);
     Route::resource('user', AdminUserController::class);
+    Route::resource('profile', UserProfileController::class);
   });
 
 // CMS ADMIN
@@ -47,6 +48,13 @@ Route::middleware([Admin::class])->name('admin.')->prefix('admin')->group(functi
     Route::resource('order', AdminOrderController::class);
     Route::resource('sublayanan', AdminSubLayananController::class);
     Route::resource('transaksi', AdminTransaksiController::class);
+    Route::resource('profile', UserProfileController::class);
+  });
+
+// MEMBER
+Route::middleware([Admin::class])->name('admin.')->prefix('admin')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('index');
+    Route::resource('profile', UserProfileController::class);
   });
 
 // CLIENT
@@ -57,14 +65,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/layanan', [ClientLayananController::class, 'index'])->name('layanan');
     Route::get('/order', [ClientOrderController::class, 'index'])->name('order');
     Route::get('/sublayanan', [ClientSubLayananController::class, 'index'])->name('sublayanan');
-  
-    // PROFILE
-    Route::get('/profile', [UserProfileController::class, 'index'])->name('profile');
-    Route::get('/edit-profile', [UserProfileController::class, 'index'])->name('edit-profile');
-    Route::get('edit-fotoProfile/{id}', [UserProfileController::class, 'edit']);
-    Route::put('update-fotoProfile/{id}', [UserProfileController::class, 'update']);
-    Route::get('edit-profile/{id}', [UserProfileController::class, 'edit']);
-    Route::put('update-profile/{id}', [UserProfileController::class, 'update']);
   
   });
   

@@ -94,8 +94,6 @@ class AdminUserController extends Controller
 
         if (auth()->user()->roles_id == 1) {
             return redirect('super/user')->with('sukses', 'Berhasil Hapus Data!');
-        } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/user')->with('sukses', 'Berhasil Hapus Data!');
         }
     }
 }

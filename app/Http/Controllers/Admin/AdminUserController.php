@@ -22,7 +22,7 @@ class AdminUserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.user.create');
     }
 
     /**
@@ -30,7 +30,20 @@ class AdminUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create([
+            'nama' => $request->nama,
+            'email' => $request->email,
+            'gambar_user' => $request->gambar_user,
+            'no_telepon' => $request->no_telepon,
+            'password' => $request->password,
+            'roles_id' => $request->roles_id
+        ]);
+
+        if (auth()->user()->roles_id == 1) {
+            return redirect('super/user')->with('sukses', 'Berhasil Tambah Data!');
+        } elseif (auth()->user()->roles_id == 2) {
+            return redirect('admin/user')->with('sukses', 'Berhasil Tambah Data!');
+        }
     }
 
     /**
@@ -38,7 +51,8 @@ class AdminUserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::where('id', $id)->first();
+        return view('admin.user.read', compact('user'));
     }
 
     /**
@@ -46,7 +60,8 @@ class AdminUserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $user = User::where('id', $id)->first();
+        return view('admin.user.update', compact('user'));
     }
 
     /**
@@ -54,7 +69,22 @@ class AdminUserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $user = User::where('id', $id)->first();
+        $user->update(
+            [
+                'nama' => $request->nama,
+                'email' => $request->email,
+                'gambar_user' => $request->gambar_user,
+                'no_telepon' => $request->no_telepon,
+                'password' => $request->password,
+                'roles_id' => $request->roles_id
+            ]
+        );
+        if (auth()->user()->roles_id == 1) {
+            return redirect('super/user')->with('sukses', 'Berhasil Edit Data!');
+        } elseif (auth()->user()->roles_id == 2) {
+            return redirect('admin/user')->with('sukses', 'Berhasil Edit Data!');
+        }
     }
 
     /**
@@ -62,6 +92,13 @@ class AdminUserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = User::where('id', $id)->first();
+        $data->delete();
+
+        if (auth()->user()->roles_id == 1) {
+            return redirect('super/user')->with('sukses', 'Berhasil Hapus Data!');
+        } elseif (auth()->user()->roles_id == 2) {
+            return redirect('admin/user')->with('sukses', 'Berhasil Hapus Data!');
+        }
     }
 }

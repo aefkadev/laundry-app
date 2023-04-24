@@ -22,7 +22,7 @@ class AdminTransaksiController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.transaksi.create');
     }
 
     /**
@@ -30,7 +30,17 @@ class AdminTransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Transaksi::create([
+            'user_id' => $request->user_id,
+            'jenis_transaksi' => $request->jenis_transaksi,
+            'nominal_transaksi' => $request->nominal_transaksi
+        ]);
+
+        if (auth()->user()->roles_id == 1) {
+            return redirect('super/transaksi')->with('sukses', 'Berhasil Tambah Data!');
+        } elseif (auth()->user()->roles_id == 2) {
+            return redirect('admin/transaksi')->with('sukses', 'Berhasil Tambah Data!');
+        }
     }
 
     /**
@@ -38,7 +48,8 @@ class AdminTransaksiController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $transaksi = Transaksi::where('id', $id)->first();
+        return view('admin.transaksi.read', compact('transaksi'));
     }
 
     /**
@@ -46,7 +57,8 @@ class AdminTransaksiController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $transaksi = Transaksi::where('id', $id)->first();
+        return view('admin.transaksi.update', compact('transaksi'));
     }
 
     /**
@@ -54,7 +66,19 @@ class AdminTransaksiController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $transaksi = Transaksi::where('id', $id)->first();
+        $transaksi->update(
+            [
+                'user_id' => $request->user_id,
+                'jenis_transaksi' => $request->jenis_transaksi,
+                'nominal_transaksi' => $request->nominal_transaksi
+            ]
+        );
+        if (auth()->user()->roles_id == 1) {
+            return redirect('super/transaksi')->with('sukses', 'Berhasil Edit Data!');
+        } elseif (auth()->user()->roles_id == 2) {
+            return redirect('admin/transaksi')->with('sukses', 'Berhasil Edit Data!');
+        }
     }
 
     /**
@@ -62,6 +86,13 @@ class AdminTransaksiController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Transaksi::where('id', $id)->first();
+        $data->delete();
+
+        if (auth()->user()->roles_id == 1) {
+            return redirect('super/transaksi')->with('sukses', 'Berhasil Hapus Data!');
+        } elseif (auth()->user()->roles_id == 2) {
+            return redirect('admin/transaksi')->with('sukses', 'Berhasil Hapus Data!');
+        }
     }
 }

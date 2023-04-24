@@ -22,15 +22,7 @@ class ClientLayananController extends Controller
      */
     public function create()
     {
-        Layanan::create([
-            'nama' => $request->nama,
-        ]);
-
-        if (auth()->user()->roles_id == 1) {
-            return redirect('super/layanan')->with('sukses', 'Berhasil Tambah Data!');
-        } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/layanan')->with('sukses', 'Berhasil Tambah Data!');
-        }
+        //
     }
 
     /**

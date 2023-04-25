@@ -28,14 +28,15 @@
   <script src="https://kit.fontawesome.com/2a99f4df77.js" crossorigin="anonymous"></script>
   @yield('style')
 </head>
-
+<body style="background-color: #AD48FA; color: #f1f1f1">
   <!-- Splash Screen -->
   <div class="preloader flex-row justify-content-center align-items-center">
     <img class="animation__shake" src="{{asset('assets/img/splash1.png')}}" alt="splash" height="100" width="100">
     <img class="animation__shake" src="{{asset('assets/img/splash2.png')}}" alt="splash" height="100" width="100">
   </div>
 
-  @yield('content')
+    @yield('content')
+
 
 
 <!-- ./wrapper -->
@@ -75,4 +76,6 @@
 {{-- script js bootstrap 5 --}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 @yield('script')
+</body>
+  
 </html>

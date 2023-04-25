@@ -17,11 +17,17 @@
       @csrf
       @method('PUT')
         <div class="d-flex justify-content-center mb-3">
-          @if ($user->fotoProfil == Null)
+          @if ($user->gambar_user == Null)
             <img src="{{ asset('assets/profile') }}/default.png" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="User Image">
             @else
             <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="User Image">
             @endif
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Gambar User</label>
+          <div class="col-sm-9">
+            <input type="file" class="form-control" placeholder="gambar_user" name="gambar_user" id="gambar_user" value="{{$user->gambar_user}}" enabled>
+          </div>
         </div>
         <div class="mb-3 row">
           <label class="col-sm-3 col-form-label">Nama</label>
@@ -33,12 +39,6 @@
           <label class="col-sm-3 col-form-label">Email</label>
           <div class="col-sm-9">
             <input type="text" class="form-control" placeholder="email" name="email" id="email" value="{{$user->email}}" enabled>
-          </div>
-        </div>
-        <div class="mb-3 row">
-          <label class="col-sm-3 col-form-label">Gambar User</label>
-          <div class="col-sm-9">
-            <input type="file" class="form-control" placeholder="gambar_user" name="gambar_user" id="gambar_user" value="{{$user->gambar_user}}" enabled>
           </div>
         </div>
         <div class="mb-3 row">

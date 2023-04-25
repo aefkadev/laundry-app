@@ -32,11 +32,7 @@
                 <div class="d-flex justify-content-center m-4">
                     <label for="ikon_sub"
                         ><i class="fa-solid fa-camera fa-2xl"></i></label
-                    ><input
-                        type="file"
-                        id="ikon_sub"
-                        class="visually-hidden"
-                    />
+                    ><input type="file" class="form-control" placeholder="ikon_sub" name="ikon_sub" id="ikon_sub" value="" enabled>
                 </div>
                 <div class="mb-2 pb-2 row">
                     <label class="col-sm-3 col-form-label"

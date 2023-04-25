@@ -58,16 +58,10 @@ Route::middleware([Admin::class])->name('admin.')->prefix('admin')->group(functi
 // MEMBER
 Route::middleware([Client::class])->name('member.')->prefix('member')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
+    Route::resource('m-layanan', ClientLayananController::class);
+    Route::resource('m-order', ClientOrderController::class);
+    Route::resource('m-sublayanan', ClientSubLayananController::class);
+    Route::resource('m-transaksi', ClientTransaksiController::class);
     Route::resource('profile', UserProfileController::class);
   });
 
-// CLIENT
-Route::middleware(['auth'])->group(function () {
-
-    // UTAMA
-    Route::get('/', [HomeController::class, 'index']);
-    Route::get('/layanan', [ClientLayananController::class, 'index'])->name('layanan');
-    Route::get('/order', [ClientOrderController::class, 'index'])->name('order');
-    Route::get('/sublayanan', [ClientSubLayananController::class, 'index'])->name('sublayanan');
-  
-  });

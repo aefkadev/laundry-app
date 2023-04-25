@@ -13,11 +13,9 @@ class AdminSubLayananController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index():View
+    public function index()
     {
-        $sublayanans = SubLayanan::all();
-        $layanans = Layanan::all();
-        return view('admin.sublayanan.index', compact('sublayanans','layanans'));
+        //
     }
 
     /**
@@ -33,14 +31,26 @@ class AdminSubLayananController extends Controller
      */
     public function store(Request $request)
     {
-        SubLayanan::create([
+        $sublayanan = SubLayanan::create([
             'layanan_id' => $request->layanan_id,
-            'ikon_sub' => $request->ikon_sub,
             'nama_sub' => $request->nama_sub,
             'deskripsi_sub' => $request->deskripsi_sub,
             'waktu_sub' => $request->waktu_sub,
             'harga_sub' => $request->harga_sub
         ]);
+
+        $validasi = $request->validate([
+            'ikon_sub' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+        ]);
+
+        $file = $validasi[('ikon_sub')];
+        $sublayanan->ikon_sub = time().'_'.$file->getClientOriginalName();
+        $sublayanan->update();
+        $nama_file = time().'_'.$file->getClientOriginalName();
+
+        $location = '../public/assets/ikon/';
+
+        $file->move($location,$nama_file);
 
         if (auth()->user()->roles_id == 1) {
             return redirect('super/sublayanan')->with('sukses', 'Berhasil Tambah Data!');
@@ -76,13 +86,26 @@ class AdminSubLayananController extends Controller
         $sublayanan->update(
             [
                 'layanan_id' => $request->layanan_id,
-                'ikon_sub' => $request->ikon_sub,
                 'nama_sub' => $request->nama_sub,
                 'deskripsi_sub' => $request->deskripsi_sub,
                 'waktu_sub' => $request->waktu_sub,
                 'harga_sub' => $request->harga_sub
             ]
         );
+        
+        $validasi = $request->validate([
+            'ikon_sub' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+        ]);
+
+        $file = $validasi[('ikon_sub')];
+        $sublayanan->ikon_sub = time().'_'.$file->getClientOriginalName();
+        $sublayanan->update();
+        $nama_file = time().'_'.$file->getClientOriginalName();
+
+        $location = '../public/assets/ikon/';
+
+        $file->move($location,$nama_file);
+
         if (auth()->user()->roles_id == 1) {
             return redirect('super/sublayanan')->with('sukses', 'Berhasil Edit Data!');
         } elseif (auth()->user()->roles_id == 2) {

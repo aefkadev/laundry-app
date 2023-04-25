@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Layanan;
+use App\Models\SubLayanan;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -31,11 +32,23 @@ class AdminLayananController extends Controller
      */
     public function store(Request $request)
     {
-        Layanan::create([
-            'ikon_layanan' => $request->ikon_layanan,
+        $layanan = Layanan::create([
             'nama_layanan' => $request->nama_layanan,
             'deskripsi_layanan' => $request->deskripsi_layanan
         ]);
+
+        $validasi = $request->validate([
+            'ikon_layanan' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+        ]);
+
+        $file = $validasi[('ikon_layanan')];
+        $layanan->ikon_layanan = time().'_'.$file->getClientOriginalName();
+        $layanan->update();
+        $nama_file = time().'_'.$file->getClientOriginalName();
+
+        $location = '../public/assets/ikon/';
+
+        $file->move($location,$nama_file);
 
         if (auth()->user()->roles_id == 1) {
             return redirect('super/layanan')->with('sukses', 'Berhasil Tambah Data!');
@@ -68,13 +81,26 @@ class AdminLayananController extends Controller
         $layanan = Layanan::where('id', $id)->first();
         $layanan->update(
             [
-                'ikon_layanan' => $request->ikon_layanan,
                 'nama_layanan' => $request->nama_layanan,
                 'deskripsi_layanan' => $request->deskripsi_layanan
             ]
         );
+
+        $validasi = $request->validate([
+            'ikon_layanan' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+        ]);
+
+        $file = $validasi[('ikon_layanan')];
+        $layanan->ikon_layanan = time().'_'.$file->getClientOriginalName();
+        $layanan->update();
+        $nama_file = time().'_'.$file->getClientOriginalName();
+
+        $location = '../public/assets/ikon/';
+
+        $file->move($location,$nama_file);
+
         if (auth()->user()->roles_id == 1) {
-            return redirect('super/layanan')->with('sukses', 'Berhasil Edit Data!');
+            return redirect('super/layanan/'.$id.'/edit')->with('sukses', 'Berhasil Edit Data!');
         }
     }
 

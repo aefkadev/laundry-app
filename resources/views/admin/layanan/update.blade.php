@@ -27,20 +27,18 @@
             </div>
             <div class="card-body p-3 mb-2 bg-secondary text-white">
                 @csrf
-                <div class="d-flex justify-content-center m-4">
-                    <label for="file-input">
-                        @if ($layanan->ikon_layanan == Null)
-                            <i class="fa-solid fa-camera fa-2xl"></i>
-                        @else
-                            <img src="{{ asset('assets/ikon') }}/{{ $layanan->ikon_layanan }}" alt="ikon" height="40" width="40"/>
-                        @endif
-                    </label>
-                    <input
-                        type="file"
-                        id="file-input"
-                        class="visually-hidden"
-                    />
-                </div>
+                @if ($layanan->ikon_layanan == Null)
+          <img src="{{ asset('assets/ikon') }}/default.png" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="User Image">
+          @else
+          <img src="{{ asset('assets/ikon') }}/{{ $layanan->ikon_layanan }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="User Image">
+          @endif
+      </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Gambar User</label>
+          <div class="col-sm-9">
+            <input type="file" class="form-control" placeholder="ikon_layanan" name="ikon_layanan" id="ikon_layanan" value="{{$layanan->ikon_layanan}}" enabled>
+          </div>
+        </div>
                 <div class="mb-3 pb-4 row">
                     <label class="col-sm-3 col-form-label"
                         >Nama Pelayanan :

@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="col-lg-12 col-lg-12 form-wrapper" id="edit-user">
-    <div class="card">
+    <div class="card" style="background-color: #AD48FA; color: #f1f1f1">
     <div class="card-header">
     <h4 class="card-title">Edit Profile</h4>
     </div>
@@ -15,12 +15,18 @@
       @csrf
       @method('PUT')
       <div class="d-flex justify-content-center mb-3">
-        @if ($user->fotoProfil == Null)
+        @if ($user->gambar_user == Null)
           <img src="{{ asset('assets/profile') }}/default.png" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="User Image">
           @else
           <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="User Image">
           @endif
       </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label">Gambar User</label>
+          <div class="col-sm-9">
+            <input type="file" class="form-control" placeholder="gambar_user" name="gambar_user" id="gambar_user" value="{{$user->gambar_user}}" enabled>
+          </div>
+        </div>
         <div class="mb-3 row">
           <label class="col-sm-3 col-form-label">Nama</label>
           <div class="col-sm-9">
@@ -31,12 +37,6 @@
           <label class="col-sm-3 col-form-label">Email</label>
           <div class="col-sm-9">
             <input type="text" class="form-control" placeholder="email" name="email" id="email" value="{{$user->email}}" enabled>
-          </div>
-        </div>
-        <div class="mb-3 row">
-          <label class="col-sm-3 col-form-label">Gambar User</label>
-          <div class="col-sm-9">
-            <input type="file" class="form-control" placeholder="gambar_user" name="gambar_user" id="gambar_user" value="{{$user->gambar_user}}" enabled>
           </div>
         </div>
         <div class="mb-3 row">

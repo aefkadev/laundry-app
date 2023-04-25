@@ -65,3 +65,10 @@ Route::middleware([Client::class])->name('member.')->prefix('member')->group(fun
     Route::resource('profile', UserProfileController::class);
   });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', [HomeController::class, 'index']);
+  });
+
+  Route::get('/verifikasi', function () {
+    return view('auth.verify');
+  });

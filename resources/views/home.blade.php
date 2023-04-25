@@ -1,3 +1,4 @@
+@if(auth()->user()->roles_id != 99)
 @extends('layouts.client.app')
 
 @section('title', 'Beranda')
@@ -187,3 +188,6 @@
     </div>
 </body>
 @endsection
+@else
+@include('auth.verify')
+@endif

@@ -100,20 +100,20 @@
                     </button>
                     <a class="px-2" href="{{route('admin.profile.edit',$user->id)}}">
                         @if ($user->gambar_user == Null)
-                            <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-4" style="width: 60px; border:4px solid #E2DFEB;">
+                            <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-circle" style="width: 60px; border:4px solid #E2DFEB;">
                         @else
-                            <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-4" style="width: 60px; border:4px solid #E2DFEB;">
+                            <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-circle" style="width: 60px; border:4px solid #E2DFEB; background-color: #E2DFEB">
                         @endif
                     </a> 
                 @else
                     <a class="px-2" href="/member/transaksi">
                         <i class="fa-solid fa-clock-rotate-left" style="font-size: 3rem; color: #E2DFEB;"></i>
                     </a>
-                    <a class="px-2" href="{{route('member.profile.edit',$user->id)}}">
+                    <a class="mx-2" href="{{route('member.profile.edit',$user->id)}}">
                         @if ($user->gambar_user == Null)
-                            <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-4" style="width: 60px; border:4px solid #E2DFEB;">
+                            <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-circle" style="width: 60px; border:4px solid #E2DFEB;">
                         @else
-                            <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-4" style="width: 60px; border:4px solid #E2DFEB;">
+                            <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-circle" style="width: 60px; border:4px solid #E2DFEB; background-color: #E2DFEB">
                         @endif
                     </a> 
                 @endif

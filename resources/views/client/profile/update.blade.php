@@ -15,18 +15,16 @@
       @csrf
       @method('PUT')
       <div class="d-flex justify-content-center mb-3">
-        @if ($user->gambar_user == Null)
-          <img src="{{ asset('assets/profile') }}/default.png" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="User Image">
-          @else
-          <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="User Image">
-          @endif
+          <label for="gambar_user">
+              @if ($user->gambar_user == Null)
+                  <i class="fa-solid fa-camera fa-2xl"></i>
+                  <input type="file" class="visually-hidden" placeholder="gambar_user" name="gambar_user" id="gambar_user" enabled>
+              @else
+                  <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="">
+                  <input type="file" class="visually-hidden" placeholder="gambar_user" name="gambar_user" id="gambar_user" enabled>
+              @endif
+          </label>
       </div>
-        <div class="mb-3 row">
-          <label class="col-sm-3 col-form-label">Gambar User</label>
-          <div class="col-sm-9">
-            <input type="file" class="form-control" placeholder="gambar_user" name="gambar_user" id="gambar_user" value="{{$user->gambar_user}}" enabled>
-          </div>
-        </div>
         <div class="mb-3 row">
           <label class="col-sm-3 col-form-label">Nama</label>
           <div class="col-sm-9">

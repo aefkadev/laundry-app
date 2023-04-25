@@ -107,9 +107,9 @@ class AdminSubLayananController extends Controller
         $file->move($location,$nama_file);
 
         if (auth()->user()->roles_id == 1) {
-            return redirect('super/sublayanan')->with('sukses', 'Berhasil Edit Data!');
+            return redirect('super/sublayanan/'.$id.'/edit')->with('sukses', 'Berhasil Edit Data!');
         } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/sublayanan')->with('sukses', 'Berhasil Edit Data!');
+            return redirect('admin/sublayanan/'.$id.'/edit')->with('sukses', 'Berhasil Edit Data!');
         }
     }
 

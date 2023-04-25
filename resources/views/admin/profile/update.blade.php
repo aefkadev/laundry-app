@@ -5,13 +5,19 @@
 @section('content')
 <div class="col-lg-12 col-lg-12 form-wrapper" id="edit-user">
     <div class="card">
-    <div class="card-header">
-    <h4 class="card-title">Edit Profile</h4>
-    </div>
-    <div class="card-body">
       @if(auth()->user()->roles_id == 1)
+      <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="color: #E2DFEB; font-size: 20px;">
+        <a href="/super"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+        <span class="fw-bolder px-2">Edit Profile</span>
+      </section>
+    <div class="card-body">
           <form method="POST" action="{{ route('super.profile.update', $user->id) }}" enctype='multipart/form-data'>
       @elseif(auth()->user()->roles_id == 2)
+      <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="color: #E2DFEB; font-size: 20px;">
+        <a href="/admin"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+        <span class="fw-bolder px-2">Edit Profile</span>
+      </section>
+    <div class="card-body">
           <form method="POST" action="{{ route('admin.profile.update', $user->id) }}" enctype='multipart/form-data'>
       @endif
       @csrf

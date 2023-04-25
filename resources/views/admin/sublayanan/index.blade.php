@@ -13,7 +13,7 @@
             @elseif(auth()->user()->roles_id == 2)
                 <a class="pr-3 text-dark" href="{{ route('admin.layanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
             @endif
-                <h4 class="card-title mb-4"><b>{{$layanan->layanan_id}}</b></h4> 
+                <h4 class="card-title mb-4"><b>Belum</b></h4> 
         </div>      
             <div class="d-flex justify-content-end">
                 @if(auth()->user()->roles_id == 1)

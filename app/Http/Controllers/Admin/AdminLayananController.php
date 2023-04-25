@@ -60,7 +60,7 @@ class AdminLayananController extends Controller
      */
     public function show(string $id)
     {
-        $layanan = SubLayanan::where('id', $id)->first();
+        $layanan = SubLayanan::all();
         return view('admin.sublayanan.index', compact('layanan'));
     }
 

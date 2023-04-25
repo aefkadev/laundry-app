@@ -58,9 +58,9 @@
                     </button>
                     <a class="px-2" href="{{route('super.profile.edit',$user->id)}}">
                         @if ($user->gambar_user == Null)
-                            <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-4" style="width: 60px; border:4px solid #E2DFEB;">
+                            <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-circle" style="width: 60px; border:4px solid #E2DFEB;">
                         @else
-                            <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-4" style="width: 60px; border:4px solid #E2DFEB;">
+                            <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-circle" style="width: 60px; border:4px solid #E2DFEB; background-color: #E2DFEB">
                         @endif
                     </a> 
                 @elseif(auth()->user()->roles_id == 2)

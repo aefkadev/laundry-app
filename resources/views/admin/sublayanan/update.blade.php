@@ -36,7 +36,7 @@
             <div class="card-body p-3 mb-2 bg-secondary text-white">
                 @csrf
                 <div class="d-flex justify-content-center m-4">
-                <label for="ikon_sub">
+                <label for="ikon_sub" style="cursor: pointer">
                     @if ($sublayanan->ikon_sub == Null)
                         <i class="fa-solid fa-camera fa-2xl"></i>
                         <input type="file" class="visually-hidden" placeholder="ikon_sub" name="ikon_sub" id="ikon_sub" enabled>

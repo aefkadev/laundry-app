@@ -30,13 +30,11 @@
             <div class="col-5 text-right">
                 @if(auth()->user()->roles_id == 1)
                     <a href="{{ route('super.layanan.edit',$layanan->id) }}">
-                    <button 
-                        class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1"
-                    >
+                    <button class="btn btn-dark w-25">
                         Edit
                     </button>
                 </a>
-                <button type="submit" class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1" role="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$layanan->id}}">
+                <button type="submit" class="btn btn-dark w-25" role="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$layanan->id}}">
                     Hapus
                 </button>
                 <!-- Modal -->

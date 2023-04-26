@@ -33,7 +33,7 @@
                                             <i class="fa-solid fa-cart-arrow-down" style="color: #2b2b2b"></i>
                                             <p class="text-black m-0 px-2 text-lg">Layanan</p>
                                         </a>
-                                        <a href="/super/transaksi" class="d-flex align-items-center px-5 w-100">
+                                        <a href="/super/order" class="d-flex align-items-center px-5 w-100">
                                             <i class="fa-solid fa-clock-rotate-left" style="color: #2b2b2b"></i>
                                             <p class="text-black m-0 px-2 text-lg">Riwayat Transaksi</p>
                                         </a>
@@ -82,7 +82,7 @@
                                             <i class="fa-solid fa-cart-arrow-down" style="color: #2b2b2b"></i>
                                             <p class="text-black m-0 px-2 text-lg">Layanan</p>
                                         </a>
-                                        <a href="/admin/transaksi" class="d-flex align-items-center px-5 w-100">
+                                        <a href="/admin/order" class="d-flex align-items-center px-5 w-100">
                                             <i class="fa-solid fa-clock-rotate-left" style="color: #2b2b2b"></i>
                                             <p class="text-black m-0 px-2 text-lg">Riwayat Transaksi</p>
                                         </a>
@@ -112,17 +112,47 @@
                             <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-circle" style="width: 60px; height: 60px; border:4px solid #E2DFEB; background-color: #E2DFEB">
                         @endif
                     </a> 
-                @else
-                    <a class="px-2" href="/member/transaksi">
-                        <i class="fa-solid fa-clock-rotate-left" style="font-size: 3rem; color: #E2DFEB;"></i>
-                    </a>
-                    <a class="mx-2" href="{{route('member.profile.edit',$user->id)}}">
-                        @if ($user->gambar_user == Null)
-                            <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-circle" style="width: 60px; height: 60px; border:4px solid #E2DFEB;">
-                        @else
-                            <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-circle" style="width: 60px; height: 60px; border:4px solid #E2DFEB; background-color: #E2DFEB">
-                        @endif
-                    </a> 
+                @elseif(auth()->user()->roles_id == 3)
+                <div class="modal fade show" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-modal="false" role="dialog">
+                    <div class="modal-dialog fixed-bottom bottom-0">
+                        <div class="modal-content" style="background-color: #E2DFEB;">
+                            <div class="d-flex px-3 py-4">
+                                <button type="button" class="border-0" data-bs-dismiss="modal" aria-label="Close" style="background-color: #E2DFEB; color: #2b2b2b; font-size: 20px;">
+                                    <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
+                                </button>
+                                <span class="font-weight-bolder px-2" style="color: #2b2b2b; font-size: 20px;">Menu</span>
+                            </div>
+                            <div class="d-flex flex-column gap-3 justify-content-start align-items-start w-100 pb-4">
+                                    <a href="/member/m-layanan" class="d-flex align-items-center px-5 w-100">
+                                        <i class="fa-solid fa-cart-arrow-down" style="color: #2b2b2b"></i>
+                                        <p class="text-black m-0 px-2 text-lg">Layanan</p>
+                                    </a>
+                                    <a href="/member/m-order" class="d-flex align-items-center px-5 w-100">
+                                        <i class="fa-solid fa-clock-rotate-left" style="color: #2b2b2b"></i>
+                                        <p class="text-black m-0 px-2 text-lg">Riwayat Transaksi</p>
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>
+                                        @csrf
+                                    </form>
+                                    <a href="#" class="d-flex align-items-center px-5 w-100" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <i class="fa-solid fa-person-walking-arrow-right" style="color: #ce1a1a"></i>
+                                        <p class="text-black m-0 px-2 text-lg text-danger" >Logout</p>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button data-bs-target="#exampleModalFullscreen" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn" style="background-color: transparent">
+                    <i class="fa-solid fa-bars" style="font-size: 3rem; color: #E2DFEB;"></i>
+                </button>
+                <a class="px-2" href="{{route('member.profile.edit',$user->id)}}">
+                    @if ($user->gambar_user == Null)
+                        <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-circle" style="width: 60px; height: 60px; border:4px solid #E2DFEB;">
+                    @else
+                        <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-circle" style="width: 60px; height: 60px; border:4px solid #E2DFEB; background-color: #E2DFEB">
+                    @endif
+                </a>  
                 @endif
                 
             </div>

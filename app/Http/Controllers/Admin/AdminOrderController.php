@@ -30,18 +30,12 @@ class AdminOrderController extends Controller
         return view('admin.pembukuan.index', compact('charts'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $transaksis = ListOrder::all();
         return view('admin.transaksi.create', compact('transaksis'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         ListOrder::create([
@@ -51,33 +45,24 @@ class AdminOrderController extends Controller
         ]);
 
         if (auth()->user()->roles_id == 1) {
-            return redirect('super/transaksi')->with('sukses', 'Berhasil Tambah Data!');
+            return redirect('super/order')->with('sukses', 'Berhasil Tambah Data!');
         } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/transaksi')->with('sukses', 'Berhasil Tambah Data!');
+            return redirect('admin/order')->with('sukses', 'Berhasil Tambah Data!');
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         $transaksi = ListOrder::where('id', $id)->first();
         return view('admin.transaksi.read', compact('transaksi'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         $transaksi = ListOrder::where('id', $id)->first();
         return view('admin.transaksi.update', compact('transaksi'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         $transaksi = ListOrder::where('id', $id)->first();
@@ -89,24 +74,21 @@ class AdminOrderController extends Controller
             ]
         );
         if (auth()->user()->roles_id == 1) {
-            return redirect('super/transaksi')->with('sukses', 'Berhasil Edit Data!');
+            return redirect('super/order')->with('sukses', 'Berhasil Edit Data!');
         } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/transaksi')->with('sukses', 'Berhasil Edit Data!');
+            return redirect('admin/order')->with('sukses', 'Berhasil Edit Data!');
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $data = ListOrder::where('id', $id)->first();
         $data->delete();
 
         if (auth()->user()->roles_id == 1) {
-            return redirect('super/transaksi')->with('sukses', 'Berhasil Hapus Data!');
+            return redirect('super/order')->with('sukses', 'Berhasil Hapus Data!');
         } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/transaksi')->with('sukses', 'Berhasil Hapus Data!');
+            return redirect('admin/order')->with('sukses', 'Berhasil Hapus Data!');
         }
     }
 }

@@ -37,7 +37,6 @@ Route::middleware([SuperAdmin::class])->name('super.')->prefix('super')->group(f
     Route::resource('layanan', AdminLayananController::class);
     Route::resource('order', AdminOrderController::class);
     Route::resource('sublayanan', AdminSubLayananController::class);
-    Route::resource('transaksi', AdminTransaksiController::class);
     Route::resource('user', AdminUserController::class);
     Route::resource('profile', UserProfileController::class);
     Route::get('laporan', [AdminTransaksiController::class, 'indexLaporan']);
@@ -50,7 +49,6 @@ Route::middleware([Admin::class])->name('admin.')->prefix('admin')->group(functi
     Route::resource('layanan', AdminLayananController::class);
     Route::resource('order', AdminOrderController::class);
     Route::resource('sublayanan', AdminSubLayananController::class);
-    Route::resource('transaksi', AdminTransaksiController::class);
     Route::resource('profile', UserProfileController::class);
     Route::get('laporan', [AdminTransaksiController::class, 'indexLaporan']);
     Route::get('chart', [AdminTransaksiController::class, 'indexChart']);
@@ -62,7 +60,6 @@ Route::middleware([Client::class])->name('member.')->prefix('member')->group(fun
     Route::resource('m-layanan', ClientLayananController::class);
     Route::resource('m-order', ClientOrderController::class);
     Route::resource('m-sublayanan', ClientSubLayananController::class);
-    Route::resource('m-transaksi', ClientTransaksiController::class);
     Route::resource('profile', UserProfileController::class);
   });
 

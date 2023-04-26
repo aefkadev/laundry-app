@@ -14,7 +14,7 @@
                 <i class="fa-solid fa-bar-chart" aria-hidden="true"></i>
                 <span>Laporan</span>
             </a>
-            <a href="/super/transaksi/create" class="d-flex flex-column align-items-center text-decoration-none fw-bold" style="color: #f1f1f1;">
+            <a href="/super/order/create" class="d-flex flex-column align-items-center text-decoration-none fw-bold" style="color: #f1f1f1;">
                 <i class="fa-solid fa-receipt"></i>
                 <span>Transaksi</span>
             </a>
@@ -37,7 +37,7 @@
                     <i class="fa-solid fa-bar-chart" aria-hidden="true"></i>
                     <span>Laporan</span>
                 </a>
-                <a href="/admin/transaksi/create" class="d-flex flex-column align-items-center text-decoration-none fw-bold" style="color: #f1f1f1;">
+                <a href="/admin/order/create" class="d-flex flex-column align-items-center text-decoration-none fw-bold" style="color: #f1f1f1;">
                     <i class="fa-solid fa-receipt"></i>
                     <span>Input Transaksi</span>
                 </a>

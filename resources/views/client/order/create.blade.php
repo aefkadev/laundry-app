@@ -15,7 +15,7 @@
                         <div class="d-flex w-75">
                             <label class="fw-bold text-md text-white" for="nama">Nama</label>
                         </div>
-                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="nama" id="nama" value="ayu" disabled>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="nama" id="nama" value="{{auth()->user()->nama}}" disabled>
                     </div>
 
                     <div class="d-flex flex-column w-100 align-items-center">
@@ -29,7 +29,7 @@
                         <div class="d-flex w-75">
                             <label class="fw-bold text-md text-white" for="no_telepon">Nomor Whatsapp</label>
                         </div>
-                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="no_telepon" id="no_telepon" value="08122131313" disabled>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="no_telepon" id="no_telepon" value="{{auth()->user()->no_telepon}}" disabled>
                     </div>
 
                     <div class="d-flex flex-column w-100 align-items-center">
@@ -43,14 +43,14 @@
                         <div class="d-flex w-75">
                             <label class="fw-bold text-md text-white" for="jenis_layanan">Jenis layanan</label>
                         </div>
-                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="jenis_layanan" id="jenis_layanan" value="medium" disabled>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="jenis_layanan" id="jenis_layanan" value="{{$order->nama_sub}}" disabled>
                     </div>
 
                     <div class="d-flex flex-column w-100 align-items-center">
                         <div class="d-flex w-75">
                             <label class="fw-bold text-md text-white" for="harga">Harga</label>
                         </div>
-                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="number" name="harga" id="harga" value="50.0000" disabled>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="number" name="harga" id="harga" value="{{$order->harga_sub}}" disabled>
                     </div>
 
                     <div class="d-flex flex-column w-100 align-items-center">

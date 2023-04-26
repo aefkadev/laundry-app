@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Models\ListOrder;
 use App\Http\Controllers\Controller;
+use App\Models\SubLayanan;
 use Illuminate\Http\Request;
 
 class ClientOrderController extends Controller
@@ -16,7 +17,8 @@ class ClientOrderController extends Controller
 
     public function create()
     {
-        return view('client.order.create');
+        $order = SubLayanan::get();
+        return view('client.order.create', compact('order'));
     }
 
     public function store(Request $request)

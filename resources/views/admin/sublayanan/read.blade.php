@@ -9,16 +9,16 @@
     <form action="">
         <div class="card">
             <div class="d-flex px-3 py-3 flex-row justify-content-between align-items-center">
-                <div class="">
+                <div>
                     @if(auth()->user()->roles_id == 1)
-                        <div class="">
+                        <div>
                             <a href="{{ route('super.sublayanan.index') }}" class="bg-opacity-10 btn" style="font-size: 1.2rem;">
                                 <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
                                 <span class="font-weight-bolder px-2">Detail Jenis Pelayanan</span>
                             </a>
                         </div>
                     @elseif(auth()->user()->roles_id == 2)
-                        <div class="">
+                        <div>
                             <a href="{{ route('admin.sublayanan.index') }}" class="bg-opacity-10 btn" style="font-size: 1.2rem;">
                                 <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
                                 <span class="font-weight-bolder px-2">Detail Jenis Pelayanan</span>
@@ -26,7 +26,7 @@
                         </div>
                     @endif
                 </div>
-                <div class="">
+                <div>
                     @if(auth()->user()->roles_id == 1)
                         <a href="{{ route('super.sublayanan.edit',$sublayanan->id) }}" class="text-decoration-none">
                             <button class="btn btn-dark">Simpan</button>

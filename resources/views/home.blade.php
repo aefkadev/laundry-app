@@ -59,9 +59,9 @@
                     </button>
                     <a class="px-2" href="{{route('super.profile.edit',$user->id)}}">
                         @if ($user->gambar_user == Null)
-                            <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-circle" style="width: 60px; border:4px solid #E2DFEB;">
+                            <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-circle" style="width: 60px; height: 60px; border:4px solid #E2DFEB;">
                         @else
-                            <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-circle" style="width: 60px; border:4px solid #E2DFEB; background-color: #E2DFEB">
+                            <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-circle" style="width: 60px; height: 60px; border:4px solid #E2DFEB; background-color: #E2DFEB">
                         @endif
                     </a> 
                 @elseif(auth()->user()->roles_id == 2)
@@ -101,9 +101,9 @@
                     </button>
                     <a class="px-2" href="{{route('admin.profile.edit',$user->id)}}">
                         @if ($user->gambar_user == Null)
-                            <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-circle" style="width: 60px; border:4px solid #E2DFEB;">
+                            <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-circle" style="width: 60px; height: 60px; border:4px solid #E2DFEB;">
                         @else
-                            <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-circle" style="width: 60px; border:4px solid #E2DFEB; background-color: #E2DFEB">
+                            <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-circle" style="width: 60px; height: 60px; border:4px solid #E2DFEB; background-color: #E2DFEB">
                         @endif
                     </a> 
                 @else
@@ -112,9 +112,9 @@
                     </a>
                     <a class="mx-2" href="{{route('member.profile.edit',$user->id)}}">
                         @if ($user->gambar_user == Null)
-                            <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-circle" style="width: 60px; border:4px solid #E2DFEB;">
+                            <img src="{{ asset('assets/profile') }}/default.png" alt="profile" class="rounded-circle" style="width: 60px; height: 60px; border:4px solid #E2DFEB;">
                         @else
-                            <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-circle" style="width: 60px; border:4px solid #E2DFEB; background-color: #E2DFEB">
+                            <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" alt="profile" class="rounded-circle" style="width: 60px; height: 60px; border:4px solid #E2DFEB; background-color: #E2DFEB">
                         @endif
                     </a> 
                 @endif
@@ -147,32 +147,18 @@
             @foreach ($layanans as $layanan)
             @if(auth()->user()->roles_id == 1)
                 <a href="{{ route('super.layanan.show',$layanan->id) }}" class="d-flex align-items-center gap-4 bg-white ps-4 text-decoration-none font-weight-bolder text-black rounded-4">
-                    @if ($layanan->ikon_layanan == Null)
-                        <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" style="width: 4.2rem;" alt="">
-                    @else
-                        <img src="{{ asset('assets/ikon') }}/{{ $layanan->ikon_layanan }}" alt="ikon" style="width: 4.2rem;" alt="">
-                    @endif
-                    <span>{{ $layanan->nama_layanan }}</span>
-                </a>
             @elseif(auth()->user()->roles_id == 2)
                 <a href="{{ route('admin.layanan.show',$layanan->id) }}" class="d-flex align-items-center gap-4 bg-white ps-4 text-decoration-none font-weight-bolder text-black rounded-4">
-                    @if ($layanan->ikon_layanan == Null)
-                        <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" style="width: 4.2rem;" alt="">
-                    @else
-                        <img src="{{ asset('assets/ikon') }}/{{ $layanan->ikon_layanan }}" alt="ikon" style="width: 4.2rem;" alt="">
-                    @endif
-                    <span>{{ $layanan->nama_layanan }}</span>
-                </a>
             @elseif(auth()->user()->roles_id == 3)
                 <a href="{{ route('member.m-layanan.show',$layanan->id) }}" class="d-flex align-items-center gap-4 bg-white ps-4 text-decoration-none font-weight-bolder text-black rounded-4">
+            @endif
                     @if ($layanan->ikon_layanan == Null)
-                        <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" style="width: 4.2rem;" alt="">
+                        <img src="{{ asset('assets/ikon/default.png') }}" alt="ikon" style="width: 4.2rem; height: 4.2rem;" alt="">
                     @else
-                        <img src="{{ asset('assets/ikon') }}/{{ $layanan->ikon_layanan }}" alt="ikon" style="width: 4.2rem;" alt="">
+                        <img src="{{ asset("assets/ikon/{$layanan->ikon_layanan}") }}" alt="ikon" style="width: 4.2rem; height: 4.2rem;" alt="">
                     @endif
                     <span>{{ $layanan->nama_layanan }}</span>
                 </a>
-            @endif
             @endforeach
             @if(auth()->user()->roles_id == 1)
                 <a href="{{ route('super.layanan.index') }}" class="d-flex align-items-center gap-4 bg-white ps-4 text-decoration-none font-weight-bolder text-black rounded-4"> 
@@ -181,7 +167,7 @@
             @elseif(auth()->user()->roles_id == 3)
                 <a href="{{ route('member.m-layanan.index') }}" class="d-flex align-items-center gap-4 bg-white ps-4 text-decoration-none font-weight-bolder text-black rounded-4">
             @endif
-                    <img src="{{ asset('assets/img/clean-shoes.png')}}" style="width: 4.2rem;" alt="">
+                    <img src="{{ asset('assets/img/clean-shoes.png')}}" style="width: 4.2rem; height: 4.2rem;" alt="">
                     <span>Other</span>
                 </a>
         </section>

@@ -9,17 +9,17 @@
     <div class="container">
         <div class="d-flex flex-row">
             @if(auth()->user()->roles_id == 1)
-                <a class="pr-3 text-dark" href="{{ route('super.layanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <a class="pr-3 text-dark" href="{{ route('super.layanan.show',$layanan->id) }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
             @elseif(auth()->user()->roles_id == 2)
-                <a class="pr-3 text-dark" href="{{ route('admin.layanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                <a class="pr-3 text-dark" href="{{ route('admin.layanan.show',$layanan->id) }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
             @endif
                 <h4 class="card-title mb-4"><b>Belum</b></h4> 
         </div>      
             <div class="d-flex justify-content-end">
                 @if(auth()->user()->roles_id == 1)
-                    <a href="{{ route('super.sublayanan.create') }}" class="btn btn-dark btn-sm mb-4">Tambah</a>  
+                    <a href="{{ route('super.layanan.create') }}" class="btn btn-dark btn-sm mb-4">Tambah</a>  
                 @elseif(auth()->user()->roles_id == 2)
-                    <a href="{{ route('admin.sublayanan.create') }}" class="btn btn-dark btn-sm mb-4">Tambah</a> 
+                    <a href="{{ route('admin.layanan.create') }}" class="btn btn-dark btn-sm mb-4">Tambah</a> 
                 @endif
             </div>
         @foreach ($layanan as $sublayanan)

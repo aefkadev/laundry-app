@@ -8,7 +8,6 @@ use App\Http\Middleware\Admin;
 use App\Http\Middleware\Client;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminLayananController;
-use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\Admin\AdminSubLayananController;
 use App\Http\Controllers\Admin\AdminTransaksiController;
 use App\Http\Controllers\Admin\AdminUserController;

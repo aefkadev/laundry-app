@@ -12,14 +12,14 @@
                 <div>
                     @if(auth()->user()->roles_id == 1)
                         <div>
-                            <a href="{{ route('super.sublayanan.index') }}" class="bg-opacity-10 btn" style="font-size: 1.2rem;">
+                            <a href="{{ route('super.layanan.show',$layanan->id) }}" class="bg-opacity-10 btn" style="font-size: 1.2rem;">
                                 <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
                                 <span class="font-weight-bolder px-2">Detail Jenis Pelayanan</span>
                             </a>
                         </div>
                     @elseif(auth()->user()->roles_id == 2)
                         <div>
-                            <a href="{{ route('admin.sublayanan.index') }}" class="bg-opacity-10 btn" style="font-size: 1.2rem;">
+                            <a href="{{ route('admin.layanan.show',$layanan->id) }}" class="bg-opacity-10 btn" style="font-size: 1.2rem;">
                                 <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
                                 <span class="font-weight-bolder px-2">Detail Jenis Pelayanan</span>
                             </a>

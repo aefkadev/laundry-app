@@ -17,7 +17,7 @@ class ClientLayananController extends Controller
 
     public function show(string $id)
     {
-        $sublayanans = SubLayanan::all();
+        $sublayanans = SubLayanan::where('id', $id)->first();
         return view('client.sublayanan.index', compact('sublayanans'));
     }
 }

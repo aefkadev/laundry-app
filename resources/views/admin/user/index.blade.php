@@ -5,7 +5,6 @@
 @section('content')
 
 <div class="col-lg-12 form-wrapper pb-5" id="kelola-user">
-  <form action="">
     <div class="container">
         <div class="card">
               <div class="card-header">
@@ -13,6 +12,25 @@
                 <b>Tabel Data User</b>
                 </h3>
               </div>
+              <div class="d-flex">
+                @if(auth()->user()->roles_id == 1)
+                  <div class="d-flex justify-content-end">
+                    <a href="{{ route('super.user.create') }}" class="btn">
+                      <button type="submit" class="btn btn-dark btn-sm">
+                        Tambah user
+                      </button>
+                    </a>
+                  </div>
+                @elseif(auth()->user()->roles_id == 2)
+                  <div class="d-flex justify-content-end">
+                    <a href="{{ route('admin.user.create') }}" class="btn">
+                      <button type="submit" class="btn btn-dark btn-sm">
+                        Tambah user
+                      </button>
+                    </a>
+                  </div>
+                @endif
+            </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table class="table-responsive table table-bordered bordered table-striped table-condensed datatable" ui-jq="dataTable" ui-options="dataTableOpt"">
@@ -88,7 +106,6 @@
             </div>
             @include('menu')
     </div>
-  </form>
 </div>
 
 @endsection

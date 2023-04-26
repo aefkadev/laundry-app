@@ -31,8 +31,7 @@ class AdminTransaksiController extends Controller
 
     public function create()
     {
-        $transaksis = ListOrder::all();
-        return view('admin.transaksi.create', compact('transaksis'));
+        return view('admin.transaksi.create');
     }
 
     public function store(Request $request)
@@ -86,8 +85,6 @@ class AdminTransaksiController extends Controller
 
         if (auth()->user()->roles_id == 1) {
             return redirect('super/transaksi')->with('sukses', 'Berhasil Hapus Data!');
-        } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/transaksi')->with('sukses', 'Berhasil Hapus Data!');
         }
     }
 }

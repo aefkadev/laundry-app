@@ -11,12 +11,12 @@ class ClientOrderController extends Controller
     public function index()
     {
         $orders = ListOrder::all();
-        return view('client.listorder.index', compact('orders'));
+        return view('client.order.index', compact('orders'));
     }
 
     public function create()
     {
-        //
+        return view('client.order.create');
     }
 
     public function store(Request $request)
@@ -26,6 +26,7 @@ class ClientOrderController extends Controller
 
     public function show(string $id)
     {
-        //
+        $order = ListOrder::where('id', $id)->first();
+        return view('admin.order.read', compact('order'));
     }
 }

@@ -36,16 +36,20 @@ class AdminTransaksiController extends Controller
 
     public function store(Request $request)
     {
+
+        $token = "1324" . Time();
         ListOrder::create([
-            'user_id' => $request->user_id,
+            'token' => $token,
+            'user_order' => $request->user_order,
             'jenis_transaksi' => $request->jenis_transaksi,
-            'nominal_transaksi' => $request->nominal_transaksi
+            'waktu_order' => $request->waktu_order,
+            'harga_order' => $request->harga_order
         ]);
 
         if (auth()->user()->roles_id == 1) {
-            return redirect('super/transaksi')->with('sukses', 'Berhasil Tambah Data!');
+            return redirect('super/laporan')->with('sukses', 'Berhasil Tambah Data!');
         } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/transaksi')->with('sukses', 'Berhasil Tambah Data!');
+            return redirect('admin/laporan')->with('sukses', 'Berhasil Tambah Data!');
         }
     }
 
@@ -63,12 +67,16 @@ class AdminTransaksiController extends Controller
 
     public function update(Request $request, string $id)
     {
+
         $transaksi = ListOrder::where('id', $id)->first();
+        $token = "1324" . Time();
         $transaksi->update(
             [
-                'user_id' => $request->user_id,
+                'token' => $token,
+                'user_order' => $request->user_order,
                 'jenis_transaksi' => $request->jenis_transaksi,
-                'nominal_transaksi' => $request->nominal_transaksi
+                'waktu_order' => $request->waktu_order,
+                'harga_order' => $request->harga_order
             ]
         );
         if (auth()->user()->roles_id == 1) {

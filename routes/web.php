@@ -35,7 +35,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::middleware([SuperAdmin::class])->name('super.')->prefix('super')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::resource('layanan', AdminLayananController::class);
-    Route::resource('order', AdminOrderController::class);
+    Route::resource('transaksi', AdminTransaksiController::class);
     Route::resource('sublayanan', AdminSubLayananController::class);
     Route::resource('user', AdminUserController::class);
     Route::resource('profile', UserProfileController::class);
@@ -47,7 +47,7 @@ Route::middleware([SuperAdmin::class])->name('super.')->prefix('super')->group(f
 Route::middleware([Admin::class])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::resource('layanan', AdminLayananController::class);
-    Route::resource('order', AdminOrderController::class);
+    Route::resource('transaksi', AdminTransaksiController::class);
     Route::resource('sublayanan', AdminSubLayananController::class);
     Route::resource('profile', UserProfileController::class);
     Route::get('laporan', [AdminTransaksiController::class, 'indexLaporan']);

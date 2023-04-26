@@ -33,7 +33,7 @@
                                             <i class="fa-solid fa-cart-arrow-down" style="color: #2b2b2b"></i>
                                             <p class="text-black m-0 px-2 text-lg">Layanan</p>
                                         </a>
-                                        <a href="/super/order" class="d-flex align-items-center px-5 w-100">
+                                        <a href="/super/transaksi" class="d-flex align-items-center px-5 w-100">
                                             <i class="fa-solid fa-clock-rotate-left" style="color: #2b2b2b"></i>
                                             <p class="text-black m-0 px-2 text-lg">Riwayat Transaksi</p>
                                         </a>
@@ -82,7 +82,7 @@
                                             <i class="fa-solid fa-cart-arrow-down" style="color: #2b2b2b"></i>
                                             <p class="text-black m-0 px-2 text-lg">Layanan</p>
                                         </a>
-                                        <a href="/admin/order" class="d-flex align-items-center px-5 w-100">
+                                        <a href="/admin/transaksi" class="d-flex align-items-center px-5 w-100">
                                             <i class="fa-solid fa-clock-rotate-left" style="color: #2b2b2b"></i>
                                             <p class="text-black m-0 px-2 text-lg">Riwayat Transaksi</p>
                                         </a>

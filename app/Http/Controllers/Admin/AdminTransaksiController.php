@@ -6,7 +6,7 @@ use App\Models\ListOrder;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AdminOrderController extends Controller
+class AdminTransaksiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -44,9 +44,9 @@ class AdminOrderController extends Controller
         ]);
 
         if (auth()->user()->roles_id == 1) {
-            return redirect('super/order')->with('sukses', 'Berhasil Tambah Data!');
+            return redirect('super/transaksi')->with('sukses', 'Berhasil Tambah Data!');
         } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/order')->with('sukses', 'Berhasil Tambah Data!');
+            return redirect('admin/transaksi')->with('sukses', 'Berhasil Tambah Data!');
         }
     }
 
@@ -73,9 +73,9 @@ class AdminOrderController extends Controller
             ]
         );
         if (auth()->user()->roles_id == 1) {
-            return redirect('super/order')->with('sukses', 'Berhasil Edit Data!');
+            return redirect('super/transaksi')->with('sukses', 'Berhasil Edit Data!');
         } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/order')->with('sukses', 'Berhasil Edit Data!');
+            return redirect('admin/transaksi')->with('sukses', 'Berhasil Edit Data!');
         }
     }
 
@@ -85,9 +85,9 @@ class AdminOrderController extends Controller
         $data->delete();
 
         if (auth()->user()->roles_id == 1) {
-            return redirect('super/order')->with('sukses', 'Berhasil Hapus Data!');
+            return redirect('super/transaksi')->with('sukses', 'Berhasil Hapus Data!');
         } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/order')->with('sukses', 'Berhasil Hapus Data!');
+            return redirect('admin/transaksi')->with('sukses', 'Berhasil Hapus Data!');
         }
     }
 }

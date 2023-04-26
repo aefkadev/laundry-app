@@ -27,6 +27,6 @@ class ClientOrderController extends Controller
     public function show(string $id)
     {
         $order = ListOrder::where('id', $id)->first();
-        return view('admin.order.read', compact('order'));
+        return view('client.order.read', compact('order'));
     }
 }

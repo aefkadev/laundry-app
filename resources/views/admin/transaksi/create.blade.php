@@ -39,8 +39,8 @@
                     </label>
                     <div class="col-sm-9">
                         <select class="col-sm-12 col-form-label rounded-2" name="jenis_transaksi" id="jenis_transaksi" value="" required enabled>
-                          <option value="1">Pemasukan</option>
-                          <option value="2">Pengeluaran</option>
+                            <option value="pemasukan">Pemasukan</option>
+                            <option value="pengeluaran">Pengeluaran</option>
                         </select>
                       </div>
                 </div>

@@ -21,32 +21,40 @@
           <hr class="row w-75" style="background-color: #E2DFEB; color: #fff; height: 3px;">
       </section>
       
-      <section class="w-100 d-flex justify-content-center">
-          <div class="card p-2 rounded-3" style="width: 75%;">
-              <div class="d-flex mb-3">
-                  <div class="d-flex justify-content-center align-content-center">
-                      <i class="fa-regular fa-file-lines p-3" style="font-size: 2rem;"></i>
-                  </div>
-                  <div class="d-flex flex-column justify-content-center">
-                      <p class="text-md fw-bolder">Pesanan #nama_user</p>
-                      <div class="d-flex">
-                          <span class="text-md">
-                              12/23
-                          </span>
-                          <span class="text-md px-2 text-truncate w-50">
-                              Cuci-cuci ubi tak perlu di bajek, orang beli babi bawa rujak jejek
-                          </span>
-                      </div>
-                  </div>
-              </div>
-              <hr class="col mt-0" style="background-color: white; color: #3d3c42; height: 3px;">
-              <div class="d-flex px-2 flex-row justify-content-between align-items-center">
-                  <span class="">Sedang dikerjakan</span>
-                  <a href="" class="text-decoration-none">
-                      <button class="btn border border-3">Detail</button>
-                  </a>
-              </div>
-          </div>
+      <section class="w-100 d-flex flex-column justify-content-center">
+        @foreach ($transaksis as $transaksi)
+            <div class="card p-2 rounded-3" style="width: 75%;">
+                <div class="d-flex mb-3">
+                    <div class="d-flex justify-content-center align-content-center">
+                        <i class="fa-regular fa-file-lines p-3" style="font-size: 2rem;"></i>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <p class="text-md fw-bolder">Pesanan #{{$transaksi->user_order}}</p>
+                        <div class="d-flex">
+                            <span class="text-md">
+                                {{$transaksi->waktu_order}}
+                            </span>
+                            <span class="text-md px-2 text-truncate w-50">
+                                {{$transaksi->keluhan}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="col mt-0" style="background-color: white; color: #3d3c42; height: 3px;">
+                <div class="d-flex px-2 flex-row justify-content-between align-items-center">
+                    <span class="">{{$transaksi->status}}</span>
+                    @if (auth()->user()->roles_id == 1)
+                    <a href="{{route('super.transaksi.show',$transaksi->id)}}" class="text-decoration-none">
+                        <button class="btn border border-3">Detail</button>
+                    </a> 
+                    @elseif (auth()->user()->roles_id == 2)
+                    <a href="{{route('admin.transaksi.show',$transaksi->id)}}" class="text-decoration-none">
+                        <button class="btn border border-3">Detail</button>
+                    </a>                         
+                    @endif
+                </div>
+            </div>
+        @endforeach
       </section>
   </div>
 

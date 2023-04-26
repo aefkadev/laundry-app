@@ -29,6 +29,7 @@ use App\Http\Controllers\UserProfileController;
 */
 
 Auth::routes();
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // CMS SUPER ADMIN
 Route::middleware([SuperAdmin::class])->name('super.')->prefix('super')->group(function () {

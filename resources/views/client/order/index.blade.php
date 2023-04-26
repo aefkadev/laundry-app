@@ -3,8 +3,6 @@
 @section('title', 'List Order')
 
 @section('content')
-
-<body style="background-color: #AD48FA;">
     <div class="vh-100">
         <div class="d-flex px-3 pt-4">
             <a href="" class="text-decoration-none">
@@ -29,7 +27,7 @@
                         <i class="fa-regular fa-file-lines p-3" style="font-size: 2rem;"></i>
                     </div>
                     <div class="d-flex flex-column justify-content-center">
-                        <p class="text-md fw-bolder">Pesanan # {{user->users.name}}</p>
+                        <p class="text-md fw-bolder">Pesanan #nama_user</p>
                         <div class="d-flex">
                             <span class="text-md">
                                 12/23
@@ -50,7 +48,6 @@
             </div>
         </section>
     </div>
-</body>
 
 @endsection
 

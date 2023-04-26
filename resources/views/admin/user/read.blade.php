@@ -50,10 +50,12 @@
         <label class="col-sm-3 col-form-label">Roles ID</label>
         <div class="col-sm-9">
           <select class="form-control" name="roles_id" id="roles_id" value="{{$user->roles_id}}" disabled>
+            @if (auth()->user()->roles_id == 1)
             <option value="1">Super Admin</option>
             <option value="2">Admin</option>
+            @endif
             <option value="3">Member</option>
-            <option value="0">Guest</option>
+            <option value="99">Guest</option>
           </select>
         </div>
       </div>

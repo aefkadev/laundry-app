@@ -4,134 +4,125 @@
 
 @section('content')
 
-<!--detail order-->
-<div class="col-lg-12 col-lg-12 form-wrapper" id="detail-order">
-    <form action="">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">
-                    <a class="pr-3 text-dark" href="#"
-                        ><i class="fa fa-arrow-left" aria-hidden="true"></i></a
-                    ><b>Detail Order</b>
-                </h4>
+<body class="">
+    <div class="vh-100">
+        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="color: #E2DFEB; font-size: 20px;">
+            <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
+            <span class="fw-bolder px-2">Order</span>
+        </section>
+        <section class="px-4">
+                <form action="" class="py-3 d-flex flex-column gap-3 justify-content-center align-items-center w-100">
+                    <div class="d-flex flex-column w-100 align-items-center">
+                        <div class="d-flex w-75">
+                            <label class="fw-bold text-md text-white" for="nama">Nama</label>
+                        </div>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="nama" id="nama" value="ayu" disabled>
+                    </div>
+
+                    <div class="d-flex flex-column w-100 align-items-center">
+                        <div class="d-flex w-75">
+                            <label class="fw-bold text-md text-white" for="tanggal">Tanggal Order</label>
+                        </div>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75" type="date" name="tanggal" id="tanggal" placeholder="dummy__">
+                    </div>
+
+                    <div class="d-flex flex-column w-100 align-items-center">
+                        <div class="d-flex w-75">
+                            <label class="fw-bold text-md text-white" for="no_telepon">Nomor Whatsapp</label>
+                        </div>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="no_telepon" id="no_telepon" value="08122131313" disabled>
+                    </div>
+
+                    <div class="d-flex flex-column w-100 align-items-center">
+                        <div class="d-flex w-75">
+                            <label class="fw-bold text-md text-white" for="alamat">Alamat</label>
+                        </div>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="alamat" id="alamat" placeholder="dummy__">
+                    </div>
+
+                    <div class="d-flex flex-column w-100 align-items-center">
+                        <div class="d-flex w-75">
+                            <label class="fw-bold text-md text-white" for="jenis_layanan">Jenis layanan</label>
+                        </div>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="jenis_layanan" id="jenis_layanan" value="medium" disabled>
+                    </div>
+
+                    <div class="d-flex flex-column w-100 align-items-center">
+                        <div class="d-flex w-75">
+                            <label class="fw-bold text-md text-white" for="harga">Harga</label>
+                        </div>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="number" name="harga" id="harga" value="50.0000" disabled>
+                    </div>
+
+                    <div class="d-flex flex-column w-100 align-items-center">
+                        <div class="d-flex w-75">
+                            <label class="fw-bold text-md text-white" for="Keluhan">Keluhan</label>
+                        </div>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="Keluhan" id="Keluhan" placeholder="dummy__">
+                    </div>
+
+                    <div class="d-flex flex-column w-100 align-items-center">
+                        <div class="d-flex w-75">
+                            <label class="fw-bold text-md text-white" for="foto-keluhan">Foto Keluhan</label>
+                        </div>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto-keluhan" id="foto-keluhan" placeholder="dummy__">
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade show" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-modal="false" role="dialog">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                                <div class="d-flex px-3 pt-4">
+                                    <button type="button" class="border-0" data-bs-dismiss="modal" aria-label="Close color: #E2DFEB; font-size: 20px;">
+                                        <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
+                                    </button>
+                                    <span class="font-weight-bolder px-2" style="color: #E2DFEB; font-size: 20px;">Pembayaran</span>
+                                </div>
+                            <div class="d-flex justify-content-center gap-3 align-items-center flex-column w-100">
+                                <div class="input-group d-flex flex-column justify-content-center w-75">
+                                    <label class="fw-bold text-md text-white border-0" for="pembayaran">Metode Pembayaran</label>
+                                    <select class="custom-select border-0 rounded-3 py-2 px-3 w-100" id="pembayaran">
+                                        <option selected value="tunai">Tunai</option>
+                                        <option value="QRIS">QRIS</option>
+                                        <option value="BCA">Transfer BCA</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-group d-flex flex-column justify-content-center w-75">
+                                    <label class="fw-bold text-md text-white border-0" for="opsi_pengiriman">Opsi Pengiriman</label>
+                                    <select class="custom-select border-0 rounded-3 py-2 px-3 w-100" id="opsi_pengiriman">
+                                        <option selected value="pickup">Pick Up</option>
+                                        <option value="delivery">Delivery</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="d-flex flex-column w-100 align-items-center">
+                                    <div class="d-flex w-75">
+                                        <label class="fw-bold text-md text-white" for="no_rekening">No. Rekening (optional)</label>
+                                    </div>
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="no_rekening" id="Keluhan" placeholder="12131">
+                                </div>
+
+                                <div class="d-flex flex-column w-100 align-items-center">
+                                    <div class="d-flex w-75">
+                                        <label class="fw-bold text-md text-white" for="foto-keluhan">Foto Keluhan</label>
+                                    </div>
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto-keluhan" id="foto-keluhan" placeholder="dummy__">
+                                </div>
+                                <button type="submit" class="btn w-25 mt-2">Order</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            <div class="pb-5 d-flex justify-content-center align-items-center w-100">
+                <button data-bs-target="#exampleModalFullscreen" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn w-50 mt-4">Next</button>
             </div>
-            <div class="card-body p-3 mb-2 bg-secondary text-white">
-                @csrf
-                <div class="d-flex justify-content-center m-4">
-                    <img src="assets/img/splash2.png" alt="" width="100">
-                </div>
-                <div class="mb-2 pb-2 row">
-                    <label class="col-sm-3 col-form-label"
-                        >Nama:
-                    </label>
-                    <div class="col-sm-9">
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="nama-order"
-                            id="nama-order"
-                            value="Medium"
-                            required disabled
-                        />
-                    </div>
-                </div>
-                <div class="mb-2 pb-2 row">
-                    <label class="col-sm-3 col-form-label"
-                        >Tanggal :
-                    </label>
-                    <div class="col-sm-9">
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="tanggal-order"
-                            id="tanggal-order"
-                            value="10"
-                            required disabled
-                        />
-                    </div>
-                </div>
-                <div class="mb-2 pb-2 row">
-                    <label class="col-sm-3 col-form-label">Nomor Whatsapp : </label>
-                    <div class="col-sm-9">
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="no-wa-order"
-                            id="no-wa-order"
-                            value="08234567890"
-                            required disabled
-                        />
-                    </div>
-                </div>
-                <div class="mb-2 pb-2 row">
-                    <label class="col-sm-3 col-form-label">Alamat : </label>
-                    <div class="col-sm-9">
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="alamat-order"
-                            id="alamat-order"
-                            value="Jl.xxxxx"
-                            required disabled
-                        />
-                    </div>
-                </div>
-                <div class="mb-2 pb-2 row">
-                    <label class="col-sm-3 col-form-label">Jenis Pelayanan : </label>
-                    <div class="col-sm-9">
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="jenis-order"
-                            id="jenis-order"
-                            value="Medium"
-                            required disabled
-                        />
-                    </div>
-                </div>
-                <div class="mb-2 pb-2 row">
-                    <label class="col-sm-3 col-form-label">Harga : </label>
-                    <div class="col-sm-9">
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="harga-order"
-                            id="harga-order"
-                            value="30000"
-                            required disabled
-                        />
-                    </div>
-                </div>
-                <div class="mb-2 pb-2 row">
-                    <label class="col-sm-3 col-form-label">Keluhan : </label>
-                    <div class="col-sm-9">
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="keluhan-order"
-                            id="keluhan-order"
-                            value="keluhan"
-                            required disabled
-                        />
-                    </div>
-                </div>
-                <div class="mb-2 pb-2 row">
-                    <label class="col-sm-3 col-form-label">Foto Keluhan: </label>
-                    <div class="col-sm-9">
-                        <input
-                            type="file"
-                            class="form-control"
-                            name="foto-order"
-                            id="foto-order"
-                            value=""
-                            required disabled
-                        />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
-<!--./detail order-->
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+</body>
 
 @endsection

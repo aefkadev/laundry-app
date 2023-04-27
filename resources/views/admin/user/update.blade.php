@@ -12,7 +12,17 @@
   </div>
   <div class="card-body">
     @if(auth()->user()->roles_id == 1)
-        <form method="POST" action="{{ route('super.user.update', $user->id) }}" enctype='multipart/form-data'>
+        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+          <a href="{{ route('super.user.index') }}" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+          <span class="fw-bolder px-2">Edit User</span>
+        </section>
+            <form method="POST" action="{{ route('super.user.update', $user->id) }}" enctype='multipart/form-data'>
+    @elseif(auth()->user()->roles_id == 2)
+        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+          <a href="{{ route('admin.user.index') }}" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+          <span class="fw-bolder px-2">Edit User</span>
+        </section>
+            <form method="POST" action="{{ route('super.user.update', $user->id) }}" enctype='multipart/form-data'>
     @endif
     @csrf
     @method('PUT')

@@ -6,11 +6,18 @@
 
 <body class="">
     <div class="vh-100">
-        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="color: #E2DFEB; font-size: 20px;">
-            <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
-            <span class="fw-bolder px-2">Order</span>
+        @if(auth()->user()->roles_id == 1)
+        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+            <a href="/super" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+            <span class="fw-bolder px-2">Detail Transaksi</span>
         </section>
-        <section class="px-4">
+        @elseif(auth()->user()->roles_id == 2)
+        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+            <a href="/admin" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+            <span class="fw-bolder px-2">Detail Transaksi</span>
+        </section>
+        @endif
+        <section class="px-4 bg-dark rounded-sm">
                 <form action="" class="py-3 d-flex flex-column gap-3 justify-content-center align-items-center w-100">
                     <div class="d-flex flex-column w-100 align-items-center">
                         <div class="d-flex w-75">
@@ -116,7 +123,7 @@
                     </div>
                 </form>
             <div class="pb-5 d-flex justify-content-center align-items-center w-100">
-                <button data-bs-target="#exampleModalFullscreen" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn w-50 mt-4">Next</button>
+                <button data-bs-target="#exampleModalFullscreen" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn w-50 bg-white mt-4">Next</button>
             </div>
         </section>
     </div>

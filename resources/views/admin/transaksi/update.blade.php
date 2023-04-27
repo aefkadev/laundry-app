@@ -8,13 +8,21 @@
 <div class="col-lg-12 col-lg-12 form-wrapper" id="detail-order">
     <form action="">
         <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">
-                    <a class="pr-3 text-dark" href="#"
-                        ><i class="fa fa-arrow-left" aria-hidden="true"></i></a
-                    ><b>Detail Order</b>
-                </h4>
-            </div>
+        @if(auth()->user()->roles_id == 1)
+        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+            <a href="/super" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+            <span class="fw-bolder px-2">Edit Profile</span>
+        </section>
+        <div class="card-body">
+            <form method="POST" action="{{ route('super.transaksi.update', $transaksi->id) }}" enctype='multipart/form-data'>
+        @elseif(auth()->user()->roles_id == 2)
+        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+            <a href="/admin" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+            <span class="fw-bolder px-2">Edit Profile</span>
+        </section>
+        <div class="card-body">
+            <form method="POST" action="{{ route('admin.transaksi.update', $transaksi->id) }}" enctype='multipart/form-data'>
+        @endif
             <div class="card-body p-3 mb-2 bg-secondary text-white">
                 @csrf
                 <div class="d-flex justify-content-center m-4">

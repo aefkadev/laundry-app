@@ -5,20 +5,23 @@
 @section('content')
 
   <div class="vh-100">
-      <div class="d-flex px-3 pt-4">
-          <a href="" class="text-decoration-none">
-              <button type="button" class="border-0" data-bs-dismiss="modal" aria-label="Close">
-                  <i class="fa-solid fa-arrow-left fw-bolder"></i>
-              </button>
-              <span class="fw-bolder px-2" style="color: #E2DFEB; font-size: 20px;">Transaksi</span>
-          </a>
-      </div>
+    @if(auth()->user()->roles_id == 1)
+        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+        <a href="/super" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+        <span class="fw-bolder px-2">Transaksi</span>
+        </section>
+    @elseif(auth()->user()->roles_id == 2)
+        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+        <a href="/admin" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+        <span class="fw-bolder px-2">Transaksi</span>
+        </section>
+    @endif
 
       <section class="row d-flex justify-content-center">
-          <p class="row justify-content-center text-white">
+          <p class="row justify-content-center">
               Menampilkan semua riwayat transaksi
           </p>
-          <hr class="row w-75" style="background-color: #E2DFEB; color: #fff; height: 3px;">
+          <hr class="row w-75" style="background-color: rgb(48, 48, 48);; color: #fff; height: 3px;">
       </section>
       
       <section class="w-100 d-flex flex-column justify-content-center">

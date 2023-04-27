@@ -23,12 +23,25 @@
                 @endif
             </div>
         </div>
-        <section class="px-4 body-section d-flex flex-column gap-3 py-3">
+        <section class="body-section d-flex flex-column gap-3 py-3">
             @foreach ($layanans as $layanan)
             <div class="d-flex align-items-center justify-content-between">
-                @if(auth()->user()->roles_id == 1 || auth()->user()->roles_id == 2)
-                    <a href="{{ route('super.layanan.show',$layanan->id) }}" class="text-decoration-none bg-dark rounded-4 px-4 w-75 d-flex align-items-center">
-                        <div class="d-flex align-items-center w-100 px-1">
+                @if(auth()->user()->roles_id == 1)
+                    <a href="{{ route('super.layanan.show',$layanan->id) }}" class="text-decoration-none bg-dark px-3 rounded-4 w-60 d-flex align-items-center">
+                        <div class="d-flex align-items-center px-1">
+                            @if ($layanan->ikon_layanan == Null)
+                                <img src="{{ asset('assets/ikon') }}/default.png" style="width: 45px;" alt="ikon">
+                            @else
+                                <img src="{{ asset('assets/ikon') }}/{{ $layanan->ikon_layanan }}"  style="width: 45px;" alt="ikon"/>
+                            @endif
+                        </div>
+                        <div class="d-flex align-items-center w-100">
+                            <span class="fw-bolder text-sm px-1 text-white">{{ $layanan->nama_layanan }}</span>
+                        </div>
+                    </a>
+                @elseif(auth()->user()->roles_id == 2)
+                    <a href="{{ route('admin.layanan.show',$layanan->id) }}" class="text-decoration-none bg-dark px-3 rounded-4 w-60 d-flex align-items-center">
+                        <div class="d-flex align-items-center px-1">
                             @if ($layanan->ikon_layanan == Null)
                                 <img src="{{ asset('assets/ikon') }}/default.png" style="width: 45px;" alt="ikon">
                             @else
@@ -43,11 +56,11 @@
                 <div class="d-flex gap-2">
                     @if(auth()->user()->roles_id == 1)
                         <a href="{{ route('super.layanan.edit',$layanan->id) }}">
-                        <button class="btn btn-dark">
+                        <button class="btn-sm btn-dark rounded-2">
                             Edit
                         </button>
                     </a>
-                    <button type="submit" class="btn btn-dark" role="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$layanan->id}}">
+                    <button type="submit" class="btn-sm btn-dark rounded-2" role="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$layanan->id}}">
                         Hapus
                     </button>
                     <!-- Modal -->

@@ -6,13 +6,12 @@
 
   <!--Tambah user-->
   <div class="col-lg-12 col-lg-12 form-wrapper" id="tambah-user">
-      <div class="card">
-      <div class="card-header">
-      <h4 class="card-title">Input Data user</h4>
-      </div>
-      <div class="card-body">
         @if(auth()->user()->roles_id == 1)
-            <form method="POST" action="{{ route('super.user.store') }}" enctype='multipart/form-data'>
+        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+          <a href="/super/user" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+          <span class="fw-bolder px-2">Tambah User</span>
+        </section>
+            <form method="POST" action="{{ route('super.profile.store') }}" enctype='multipart/form-data'>
         @endif
             @csrf
           <div class="mb-3 row">

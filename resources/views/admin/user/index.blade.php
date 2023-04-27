@@ -7,23 +7,15 @@
 <div class="col-lg-12 form-wrapper pb-5" id="kelola-user">
     <div class="container">
         <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">
-                <b>Tabel Data User</b>
-                </h3>
-              </div>
+          <div class="card-header py-4">
+              <h4 class="text-center">
+                  <b>Tabel Kelola User</b>
+              </h4>
+          </div>
               <div class="d-flex">
                 @if(auth()->user()->roles_id == 1)
                   <div class="d-flex justify-content-end">
                     <a href="{{ route('super.user.create') }}" class="btn">
-                      <button type="submit" class="btn btn-dark btn-sm">
-                        Tambah user
-                      </button>
-                    </a>
-                  </div>
-                @elseif(auth()->user()->roles_id == 2)
-                  <div class="d-flex justify-content-end">
-                    <a href="{{ route('admin.user.create') }}" class="btn">
                       <button type="submit" class="btn btn-dark btn-sm">
                         Tambah user
                       </button>
@@ -54,7 +46,7 @@
                       <td>{{ $user->roles_id }}</td>
                       <td class="manage-row">
                       @if(auth()->user()->roles_id == 1)
-                        <a href="{{ route('super.user.show',$user->id) }}" class="edit-button">
+                        <a href="{{ route('super.user.show',$user->id) }}" class="show-button">
                           <i class="fa-solid fa-eye"></i>
                         </a>
                         <a href="{{ route('super.user.edit',$user->id) }}" class="edit-button">
@@ -84,9 +76,16 @@
                                   </div>
                               </div>
                           </div>
-                      </div>
-                      </td>
+                        </div>
+                        @elseif(auth()->user()->roles_id == 2)
+                        <a href="{{ route('admin.user.show',$user->id) }}" class="show-button">
+                          <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a href="{{ route('admin.user.edit',$user->id) }}" class="edit-button">
+                          <i class="fa-solid fa-marker"></i>
+                        </a>
                       @endif
+                      </td>
                     </tr>
                     @endforeach
                   </tbody>

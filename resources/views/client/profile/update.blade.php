@@ -6,7 +6,7 @@
 <div class="col-lg-12 col-lg-12 form-wrapper" id="edit-user">
     <div class="card" style="background-color: #AD48FA; color: #f1f1f1">
       <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="color: #E2DFEB; font-size: 20px;">
-        <a href="/member"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+        <a href="/member" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
         <span class="fw-bolder px-2">Edit Profile</span>
       </section>
     <div class="card-body">

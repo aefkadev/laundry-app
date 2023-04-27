@@ -6,14 +6,19 @@
 
 <!--Detail user-->
 <div class="col-lg-12 col-lg-12 form-wrapper" id="detail-user">
-  <div class="card">
-  <div class="card-header">
-  <h4 class="card-title">Detail user</h4>
-  </div>
-  <div class="card-body">
-    @if(auth()->user()->roles_id == 1)
-        <form method="POST" action="{{ route('super.user.show', $user->id) }}" enctype='multipart/form-data'>
-    @endif
+      @if(auth()->user()->roles_id == 1)
+        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+          <a href="{{ route('super.user.index') }}" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+          <span class="fw-bolder px-2">Detail User</span>
+        </section>
+            <form method="POST" action="{{ route('super.user.show', $user->id) }}" enctype='multipart/form-data'>
+      @elseif(auth()->user()->roles_id == 2)
+        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+          <a href="{{ route('admin.user.index') }}" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+          <span class="fw-bolder px-2">Detail User</span>
+        </section>
+            <form method="POST" action="{{ route('admin.user.show', $user->id) }}" enctype='multipart/form-data'>
+      @endif
     @csrf
     @method('PUT')
       <div class="mb-3 row">
@@ -64,6 +69,8 @@
           <a>
             @if(auth()->user()->roles_id == 1)
                 <a class="btn btn-primary" href="{{ route('super.user.index') }}">Kembali</a>
+            @elseif(auth()->user()->roles_id == 2)
+                <a class="btn btn-primary" href="{{ route('admin.user.index') }}">Kembali</a>
             @endif
           </a>
         </div>

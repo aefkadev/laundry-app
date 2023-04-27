@@ -6,15 +6,15 @@
 <div class="col-lg-12 col-lg-12 form-wrapper" id="edit-user">
     <div class="card">
       @if(auth()->user()->roles_id == 1)
-      <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="color: #E2DFEB; font-size: 20px;">
-        <a href="/super"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+      <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+        <a href="/super" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
         <span class="fw-bolder px-2">Edit Profile</span>
       </section>
     <div class="card-body">
           <form method="POST" action="{{ route('super.profile.update', $user->id) }}" enctype='multipart/form-data'>
       @elseif(auth()->user()->roles_id == 2)
-      <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="color: #E2DFEB; font-size: 20px;">
-        <a href="/admin"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
+      <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+        <a href="/admin" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
         <span class="fw-bolder px-2">Edit Profile</span>
       </section>
     <div class="card-body">

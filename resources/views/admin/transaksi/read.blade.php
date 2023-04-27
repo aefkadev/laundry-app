@@ -78,12 +78,12 @@
                     <!-- Modal -->
                     <div class="modal fade show" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-modal="false" role="dialog">
                         <div class="modal-dialog modal-fullscreen">
-                            <div class="modal-content">
+                            <div class="modal-content bg-dark">
                                 <div class="d-flex px-3 pt-4">
-                                    <button type="button" class="border-0" data-bs-dismiss="modal" aria-label="Close color: #E2DFEB; font-size: 20px;">
-                                        <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
+                                    <button type="button" class="border-0  bg-dark" data-bs-dismiss="modal" aria-label="Close font-size: 20px;">
+                                        <i class="fa-solid fa-arrow-left font-weight-bolder" style="color: white;"></i>
                                     </button>
-                                    <span class="font-weight-bolder px-2" style="color: #E2DFEB; font-size: 20px;">Pembayaran</span>
+                                    <span class="font-weight-bolder px-2" style="color: white; font-size: 20px;">Pembayaran</span>
                                 </div>
                             <div class="d-flex justify-content-center gap-3 align-items-center flex-column w-100">
                                 <div class="input-group d-flex flex-column justify-content-center w-75">
@@ -116,7 +116,7 @@
                                     </div>
                                     <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto-keluhan" id="foto-keluhan" placeholder="dummy__">
                                 </div>
-                                <button type="submit" class="btn w-25 mt-2">Order</button>
+                                <button type="submit" class="btn w-25 mt-2 bg-white" style="color:black;">Order</button>
                             </div>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Deskripsi')
+@section('title', 'Deskripsi Sublayanan')
 
 @section('content')
 
@@ -8,22 +8,43 @@
 <div class="col-lg-12 col-lg-12 form-wrapper" id="detail-sublayanan">
     <form action="">
         <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">
-                    <a class="pr-3 text-dark" href="#"
-                        ><i class="fa fa-arrow-left" aria-hidden="true"></i></a
-                    ><b>Detail Jenis Pelayanan</b>
-                </h4>
-                <div class="d-flex justify-content-end">
-                    <button type="submit" class="btn btn-dark btn-sm">
-                        Simpan
-                    </button>
+            <div class="d-flex px-3 py-3 flex-row justify-content-between align-items-center">
+                <div>
+                    @if(auth()->user()->roles_id == 1)
+                        <div>
+                            <a href="{{ route('super.layanan.show',$layanan->id) }}" class="bg-opacity-10 btn" style="font-size: 1.2rem;">
+                                <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
+                                <span class="font-weight-bolder px-2">Detail Jenis Pelayanan</span>
+                            </a>
+                        </div>
+                    @elseif(auth()->user()->roles_id == 2)
+                        <div>
+                            <a href="{{ route('admin.layanan.show',$layanan->id) }}" class="bg-opacity-10 btn" style="font-size: 1.2rem;">
+                                <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
+                                <span class="font-weight-bolder px-2">Detail Jenis Pelayanan</span>
+                            </a>
+                        </div>
+                    @endif
+                </div>
+                <div>
+                    @if(auth()->user()->roles_id == 1)
+                        <a href="{{ route('super.sublayanan.edit',$sublayanan->id) }}" class="text-decoration-none">
+                            <button class="btn btn-dark">Simpan</button>
+                        </a>
+                        @elseif(auth()->user()->roles_id == 2)
+                        <a href="{{ route('admin.sublayanan.edit',$sublayanan->id) }}" class="text-decoration-none">
+                            <button class="btn btn-dark">Simpan</button>
+                        </a>
+                    @endif
                 </div>
             </div>
             <div class="card-body p-3 mb-2 bg-secondary text-white">
                 @csrf
                 <div class="d-flex justify-content-center m-4">
-                    <img src="assets/img/splash1.png" alt="" width="100">
+                    <label for="ikon_sub">
+                        <img src="{{ asset('assets/ikon') }}/{{ $sublayanan->ikon_sub }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="">
+                        <input type="file" class="visually-hidden" placeholder="ikon_sub" name="ikon_sub" id="ikon_sub" disabled>
+                    </label>
                 </div>
                 <div class="mb-2 pb-2 row">
                     <label class="col-sm-3 col-form-label"
@@ -33,9 +54,9 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="nama-sublayanan"
-                            id="nama-sublayanan"
-                            value="Medium"
+                            name="nama_sub"
+                            id="nama_sub"
+                            value="{{$sublayanan->nama_sub}}"
                             required disabled
                         />
                     </div>
@@ -45,9 +66,9 @@
                     <div class="col-sm-9">
                         <textarea
                             class="form-control"
-                            name="deskripsi-sublayanan"
-                            id="deskripsi-sublayanan"
-                            required disabled cols="30" rows="10">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem eaque, iste similique eum maxime amet perspiciatis recusandae aliquid officia ad tempora, quos molestiae nemo! Nesciunt, nihil nostrum? Exercitationem, a adipisci!</textarea>
+                            name="deskripsi_sub"
+                            id="deskripsi_sub"
+                            required disabled>{{$sublayanan->deskripsi_sub}}</textarea>
                     </div>
                 </div>
                 <div class="mb-2 pb-2 row">
@@ -58,9 +79,9 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="waktu-sublayanan"
-                            id="waktu-sublayanan"
-                            value="10"
+                            name="waktu_sub"
+                            id="waktu_sub"
+                            value="{{$sublayanan->waktu_sub}}"
                             required disabled
                         />
                     </div>
@@ -71,9 +92,9 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="harga-sublayanan"
-                            id="harga-sublayanan"
-                            value="10000"
+                            name="harga_sub"
+                            id="harga_sub"
+                            value="{{$sublayanan->harga_sub}}"
                             required disabled
                         />
                     </div>
@@ -82,7 +103,7 @@
                     <label class="col-sm-3 col-form-label"
                         >Jenis Barang :
                     </label>
-                    <select class="col-sm-9 col-form-label rounded-2" name="barang" id="barang">
+                    <select class="col-sm-9 col-form-label rounded-2" name="barang" id="barang" value="{{$sublayanan->barang_sub}}">
                       <option value="sepatu">sepatu</option>
                       <option value="sendal">sendal</option>
                       <option value="baju">baju</option>

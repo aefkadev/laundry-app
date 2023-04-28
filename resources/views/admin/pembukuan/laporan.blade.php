@@ -4,20 +4,15 @@
 
 @section('content')
 
-<!--pemasukan-->
-<div class="col-lg-12 form-wrapper" id="pemasukan">
+<div class="col-lg-12 form-wrapper pb-5" id="laporan">
   <form action="">
     <div class="container">
-        
         <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">
-                <a class="pr-3 text-dark" href="#">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                </a>
-                <b>Laporan Pembukuan</b>
-                </h3>
-              </div>
+            <div class="card-header">
+              <h4 class="text-center">
+                  <b>Laporan Pembukuan</b>
+              </h4>
+          </div>
               <div class="py-3 px-4 row">
                     <label class="col-sm-3 col-form-label"
                         >Bulan :
@@ -43,126 +38,34 @@
                   <thead>
                   <tr>
                     <th>Tanggal</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
+                    <th>Transaksi</th>
+                    <th>Nominal</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>01/01/2023</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                  </tr>
-                  <tr>
-                    <td>01/01/2023</td>
-                    <td>Internet
-                      Explorer 5.0
-                    </td>
-                    <td>Win 95+</td>
-                  </tr>
-                  <tr>
-                    <td>01/01/2023</td>
-                    <td>Internet
-                      Explorer 5.5
-                    </td>
-                    <td>Win 95+</td>
-                  </tr>
-                  <tr>
-                    <td>01/01/2023</td>
-                    <td>Internet
-                      Explorer 6
-                    </td>
-                    <td>Win 98+</td>
-                  </tr>
-                  <tr>
-                    <td>01/01/2023</td>
-                    <td>Internet Explorer 7</td>
-                    <td>Win XP SP2+</td>
-                  </tr>
-                  <tr>
-                    <td>01/01/2023</td>
-                    <td>AOL browser (AOL desktop)</td>
-                    <td>Win XP</td>
-                  </tr>
-                  <tr>
-                    <td>01/02/2023</td>
-                    <td>Firefox 1.0</td>
-                    <td>Win 98+ / OSX.2+</td>
-                  </tr>
-                  <tr>
-                    <td>01/02/2023</td>
-                    <td>Firefox 1.5</td>
-                    <td>Win 98+ / OSX.2+</td>
-                  </tr>
-                  <tr>
-                    <td>01/02/2023</td>
-                    <td>Firefox 2.0</td>
-                    <td>Win 98+ / OSX.2+</td>
-                  </tr>
-                  <tr>
-                    <td>01/02/2023</td>
-                    <td>Firefox 3.0</td>
-                    <td>Win 2k+ / OSX.3+</td>
-                  </tr>
-                  <tr>
-                    <td>01/02/2023</td>
-                    <td>Camino 1.0</td>
-                    <td>OSX.2+</td>
-                  </tr>
-                  <tr>
-                    <td>01/02/2023</td>
-                    <td>Camino 1.5</td>
-                    <td>OSX.3+</td>
-                  </tr>
-                  <tr>
-                    <td>01/02/2023</td>
-                    <td>Netscape 7.2</td>
-                    <td>Win 95+ / Mac OS 8.6-9.2</td>
-                  </tr>
-                  <tr>
-                    <td>01/02/2023</td>
-                    <td>Netscape Browser 8</td>
-                    <td>Win 98SE+</td>
-                  </tr>
-                  <tr>
-                    <td>01/02/2023</td>
-                    <td>Netscape Navigator 9</td>
-                    <td>Win 98+ / OSX.2+</td>
-                  </tr>
-                  <tr>
-                    <td>01/02/2023</td>
-                    <td>Mozilla 1.0</td>
-                    <td>Win 95+ / OSX.1+</td>
-                  </tr>
-                  <tr>
-                    <td>01/02/2023</td>
-                    <td>Mozilla 1.1</td>
-                    <td>Win 95+ / OSX.1+</td>
-                  </tr>
-                  <tr>
-                    <td>01/02/2023</td>
-                    <td>Mozilla 1.2</td>
-                    <td>Win 95+ / OSX.1+</td>
-                  </tr>
+                  @foreach ($laporans as $transaksi)
+                    <tr>
+                      <td>{{$transaksi->waktu_order}}</td>
+                      <td>{{$transaksi->jenis_transaksi}}</td>
+                      <td>{{$transaksi->harga_order}}</td>
+                    </tr>
+                  @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
+                    <th>Tanggal</th>
+                    <th>Transaksi</th>
+                    <th>Nominal</th>
                   </tr>
                   </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->
             </div>
-
+            @include('admin.menu')
     </div>
   </form>
 </div>
-<!--./pemasukan-->
 
 @endsection
 

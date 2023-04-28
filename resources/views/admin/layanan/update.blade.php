@@ -6,13 +6,18 @@
 
 <!--edit layanan-->
 <div class="col-lg-12 col-lg-12 form-wrapper" id="edit-layanan">
-    <form action="">
+    @if(auth()->user()->roles_id == 1)
+        <form method="POST" action="{{ route('super.layanan.update', $layanan->id) }}" enctype='multipart/form-data'>
+    @endif
+    @csrf
+    @method('PUT')
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">
-                    <a class="pr-3 text-dark" href="#"
-                        ><i class="fa fa-arrow-left" aria-hidden="true"></i></a
-                    ><b>Edit Pelayanan</b>
+                    @if(auth()->user()->roles_id == 1)
+                        <a class="pr-3 text-dark" href="{{ route('super.layanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                    @endif
+                    <b>Edit Pelayanan</b>
                 </h4>
                 <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-dark btn-sm">
@@ -23,13 +28,15 @@
             <div class="card-body p-3 mb-2 bg-secondary text-white">
                 @csrf
                 <div class="d-flex justify-content-center m-4">
-                    <label for="file_input"
-                        ><i class="fa-solid fa-camera fa-2xl"></i></label
-                    ><input
-                        type="file"
-                        id="file_input"
-                        class="visually-hidden"
-                    />
+                    <label for="ikon_layanan" style="cursor: pointer">
+                        @if ($layanan->ikon_layanan == Null)
+                            <i class="fa-solid fa-camera fa-2xl"></i>
+                            <input type="file" class="visually-hidden" placeholder="ikon_layanan" name="ikon_layanan" id="ikon_layanan" enabled>
+                        @else
+                            <img src="{{ asset('assets/ikon') }}/{{ $layanan->ikon_layanan }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="">
+                            <input type="file" class="visually-hidden" placeholder="ikon_layanan" name="ikon_layanan" id="ikon_layanan" enabled>
+                        @endif
+                    </label>
                 </div>
                 <div class="mb-3 pb-4 row">
                     <label class="col-sm-3 col-form-label"
@@ -39,9 +46,24 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="nama-layanan"
-                            id="nama-layanan"
-                            value="Premium Deep Clean"
+                            name="nama_layanan"
+                            id="nama_layanan"
+                            value="{{$layanan->nama_layanan}}"
+                            required
+                        />
+                    </div>
+                </div>
+                <div class="mb-3 pb-4 row">
+                    <label class="col-sm-3 col-form-label"
+                        >Deskripsi Pelayanan :
+                    </label>
+                    <div class="col-sm-9">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="deskripsi_layanan"
+                            id="deskripsi_layanan"
+                            value="{{$layanan->deskripsi_layanan}}"
                             required
                         />
                     </div>

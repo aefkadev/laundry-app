@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('layanan_id')->nullable();
             $table->foreign('layanan_id')->references('id')->on('layanan');
+            $table->string('ikon_sub')->nullable();
             $table->string('nama_sub');
-            $table->string('desc_sub');
-            $table->integer('est_sub');
+            $table->text('deskripsi_sub');
+            $table->integer('waktu_sub');
             $table->integer('harga_sub');
-            $table->string('jenis_barang');
             $table->timestamps();
         });
     }

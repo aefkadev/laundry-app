@@ -10,11 +10,12 @@ class SubLayanan extends Model
     use HasFactory;
     protected $table = 'sublayanan';
     protected $fillable = [
+        'layanan_id',
+        'ikon_sub',
         'nama_sub',
-        'desc_sub',
-        'est_sub',
-        'harga_sub',
-        'jenis_barang',
+        'deskripsi_sub',
+        'waktu_sub',
+        'harga_sub'
     ];
 
 }

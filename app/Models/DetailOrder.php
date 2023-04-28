@@ -16,6 +16,7 @@ class DetailOrder extends Model
         'opsi_pengiriman',
         'pembayaran',
         'foto_pembayaran',
-        'status',
+        'no_rekening',
+        'status'
     ];
 }

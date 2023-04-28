@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('list_order', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_users')->nullable();
-            $table->foreign('id_users')->references('id')->on('users');
-            $table->integer('no_order');
-            $table->string('nama_users');
-            $table->timestamp('waktu_order');
-            $table->string('alamat');
-            $table->string('jenis_pelayanan');
-            $table->integer('harga');
+            $table->string('token')->nullable()->unique();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('user_order')->nullable();
+            $table->string('jenis_pelayanan')->nullable();
+            $table->string('jenis_transaksi')->default("pemasukan");
+            $table->timestamp('waktu_order')->nullable();
+            $table->string('alamat_order')->nullable();
+            $table->integer('harga_order')->nullable();
             $table->timestamps();
         });
     }

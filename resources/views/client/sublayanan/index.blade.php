@@ -13,9 +13,9 @@
         <section class="px-4 body-section d-flex flex-column gap-3 py-3">
             <div class="d-flex align-items-center justify-content-between gap-4 bg-white rounded-4 px-4">
                 @if ($sublayanan->ikon_sub == Null)
-                    <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" height="40" width="40"/>
+                    <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1"/>
                 @else
-                    <img src="{{ asset('assets/ikon') }}/{{ $sublayanan->ikon_sub }}" alt="ikon" height="40" width="40"/>
+                    <img src="{{ asset('assets/ikon') }}/{{ $sublayanan->ikon_sub }}" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1"/>
                 @endif
                 <span class="fw-bolder">{{ $sublayanan->nama_sub }}</span>
                 <div class="d-flex gap-2">

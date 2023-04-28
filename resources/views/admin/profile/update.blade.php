@@ -3,7 +3,7 @@
 @section('title', 'Edit Profile')
 
 @section('content')
-<div class="col-lg-12 col-lg-12 form-wrapper" id="edit-user">
+<div class="col-lg-12 col-lg-12 vh-100 d-flex justify-content-center flex-column" id="edit-user">
     <div class="card">
       @if(auth()->user()->roles_id == 1)
       <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
@@ -59,7 +59,7 @@
         </div>
         <div class="mb-3 row">
           <div class="col-sm-9">
-            <button type="submit" class="btn btn-primary ">Simpan</button>
+            <button type="submit" class="btn btn-dark">Simpan</button>
           </div>
         </div>
         </form>

@@ -29,13 +29,6 @@ class AdminTransaksiController extends Controller
         return view('admin.pembukuan.index', compact('charts'));
     }
 
-    public function search(Request $request)
-    {
-        $month = $request->input('bulan');
-        $laporans = ListOrder::whereMonth('waktu_order', $month)->get();
-        return view('admin.pembukuan.laporan', compact('laporans'));
-    }
-
     public function create()
     {
         return view('admin.transaksi.create');

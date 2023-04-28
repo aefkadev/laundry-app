@@ -10,19 +10,19 @@
             <span class="fw-bolder px-2">Order</span>
         </section>
         <section class="px-4">
-                <form action="" class="py-3 d-flex flex-column gap-3 justify-content-center align-items-center w-100">
+                <form action="{{ route('member.m-order.store') }}" method="POST" class="py-3 d-flex flex-column gap-3 justify-content-center align-items-center w-100">
                     <div class="d-flex flex-column w-100 align-items-center">
                         <div class="d-flex w-75">
-                            <label class="fw-bold text-md text-white" for="nama">Nama</label>
+                            <label class="fw-bold text-md text-white" for="user_order">Nama</label>
                         </div>
-                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="nama" id="nama" value="{{auth()->user()->nama}}" disabled>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="user_order" id="user_order" value="{{auth()->user()->nama}}" disabled>
                     </div>
 
                     <div class="d-flex flex-column w-100 align-items-center">
                         <div class="d-flex w-75">
-                            <label class="fw-bold text-md text-white" for="tanggal">Tanggal Order</label>
+                            <label class="fw-bold text-md text-white" for="waktu_order">Tanggal Order</label>
                         </div>
-                        <input class="border-0 rounded-3 py-2 px-3 w-75" type="date" name="tanggal" id="tanggal" placeholder="dummy__">
+                        <input class="border-0 rounded-3 py-2 px-3 w-75" type="date" name="waktu_order" id="waktu_order" placeholder="dummy__">
                     </div>
 
                     <div class="d-flex flex-column w-100 align-items-center">
@@ -34,9 +34,9 @@
 
                     <div class="d-flex flex-column w-100 align-items-center">
                         <div class="d-flex w-75">
-                            <label class="fw-bold text-md text-white" for="alamat">Alamat</label>
+                            <label class="fw-bold text-md text-white" for="alamat_order">Alamat</label>
                         </div>
-                        <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="alamat" id="alamat" placeholder="dummy__">
+                        <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="alamat_order" id="alamat_order" placeholder="dummy__">
                     </div>
 
                     <div class="d-flex flex-column w-100 align-items-center">
@@ -48,23 +48,23 @@
 
                     <div class="d-flex flex-column w-100 align-items-center">
                         <div class="d-flex w-75">
-                            <label class="fw-bold text-md text-white" for="harga">Harga</label>
+                            <label class="fw-bold text-md text-white" for="harga_order">Harga</label>
                         </div>
-                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="number" name="harga" id="harga" value="{{$order->harga_sub}}" disabled>
+                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="number" name="harga_order" id="harga_order" value="{{$order->harga_sub}}" disabled>
                     </div>
 
                     <div class="d-flex flex-column w-100 align-items-center">
                         <div class="d-flex w-75">
-                            <label class="fw-bold text-md text-white" for="Keluhan">Keluhan</label>
+                            <label class="fw-bold text-md text-white" for="keluhan">Keluhan</label>
                         </div>
-                        <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="Keluhan" id="Keluhan" placeholder="dummy__">
+                        <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="keluhan" id="keluhan" placeholder="dummy__">
                     </div>
 
                     <div class="d-flex flex-column w-100 align-items-center">
                         <div class="d-flex w-75">
-                            <label class="fw-bold text-md text-white" for="foto-keluhan">Foto Keluhan</label>
+                            <label class="fw-bold text-md text-white" for="foto_keluhan">Foto Keluhan</label>
                         </div>
-                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto-keluhan" id="foto-keluhan" placeholder="dummy__">
+                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto_keluhan" id="foto_keluhan" placeholder="dummy__">
                     </div>
 
                     <!-- Modal -->
@@ -99,14 +99,14 @@
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="no_rekening">No. Rekening (optional)</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="no_rekening" id="Keluhan" placeholder="12131">
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="no_rekening" id="no_rekening" placeholder="12131">
                                 </div>
 
                                 <div class="d-flex flex-column w-100 align-items-center">
                                     <div class="d-flex w-75">
-                                        <label class="fw-bold text-md text-white" for="foto-keluhan">Foto Keluhan</label>
+                                        <label class="fw-bold text-md text-white" for="foto_pembayaran">Bukti Pembayaran</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto-keluhan" id="foto-keluhan" placeholder="dummy__">
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto_pembayaran" id="foto_pembayaran" placeholder="dummy__">
                                 </div>
                                 <button type="submit" class="btn w-25 mt-2" style="background-color: #D6C37E;">Order</button>
                             </div>

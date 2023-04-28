@@ -27,7 +27,7 @@
             @foreach ($layanans as $layanan)
             <div class="d-flex align-items-center justify-content-between">
                 @if(auth()->user()->roles_id == 1)
-                    <a href="{{ route('super.layanan.show',$layanan->id) }}" class="text-decoration-none bg-dark px-3 rounded-4 w-60 d-flex align-items-center">
+                    <a href="{{ route('super.layanan.show',$layanan->id) }}" class="text-decoration-none bg-dark px-3 rounded-4 w-60 d-flex align-items-center" style="min-height: 45px; width: 400px;">
                         <div class="d-flex align-items-center px-1">
                             @if ($layanan->ikon_layanan == Null)
                                 <img src="{{ asset('assets/ikon') }}/default.png" style="width: 45px;" alt="ikon">

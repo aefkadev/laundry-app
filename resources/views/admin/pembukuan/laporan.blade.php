@@ -17,20 +17,26 @@
                     <label class="col-sm-3 col-form-label"
                         >Bulan :
                     </label>
-                    <select class="col-sm-9 col-form-label rounded-2" name="bulan" id="bulan">
-                      <option value="Januari">Januari</option>
-                      <option value="Februari">Februari</option>
-                      <option value="Maret">Maret</option>
-                      <option value="April">April</option>
-                      <option value="Mei">Mei</option>
-                      <option value="Juni">Juni</option>
-                      <option value="Juli">Juli</option>
-                      <option value="Agustus">Agustus</option>
-                      <option value="September">September</option>
-                      <option value="Oktober">Oktober</option>
-                      <option value="November">November</option>
-                      <option value="Desember">Desember</option>
-                    </select>
+                    @if(auth()->user()->roles_id == 1)
+                      <form action="{{route('super.transaksi.search')}}" method="POST" enctype='multipart/form-data'>
+                    @elseif(auth()->user()->roles_id == 2)
+                      <form action="{{route('admin.transaksi.search')}}" method="POST" enctype='multipart/form-data'>
+                    @endif
+                      <select class="col-sm-9 col-form-label rounded-2" name="bulan" id="bulan">
+                        <option value="Januari">Januari</option>
+                        <option value="Februari">Februari</option>
+                        <option value="Maret">Maret</option>
+                        <option value="April">April</option>
+                        <option value="Mei">Mei</option>
+                        <option value="Juni">Juni</option>
+                        <option value="Juli">Juli</option>
+                        <option value="Agustus">Agustus</option>
+                        <option value="September">September</option>
+                        <option value="Oktober">Oktober</option>
+                        <option value="November">November</option>
+                        <option value="Desember">Desember</option>
+                      </select>
+                    </form>
                 </div>
               <!-- /.card-header -->
               <div class="card-body">

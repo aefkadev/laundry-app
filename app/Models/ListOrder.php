@@ -17,6 +17,6 @@ class ListOrder extends Model
         'jenis_transaksi',
         'waktu_order',
         'alamat_order',
-        'harga_order',
+        'harga_order'
     ];
 }

@@ -17,6 +17,6 @@ class Layanan extends Model
 
     public function sublayanan()
     {
-        return $this->hasOne(SubLayanan::class, 'layanan_id');
+        return $this->hasMany(SubLayanan::class);
     }
 }

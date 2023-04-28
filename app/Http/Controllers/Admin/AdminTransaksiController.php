@@ -55,21 +55,21 @@ class AdminTransaksiController extends Controller
 
     public function show(string $id)
     {
-        $transaksi = ListOrder::where('id', $id)->first();
-        return view('admin.transaksi.read', compact('transaksi'));
+        $order = ListOrder::where('id', $id)->first();
+        return view('admin.transaksi.read', compact('order'));
     }
 
     public function edit(string $id)
     {
-        $transaksi = ListOrder::where('id', $id)->first();
-        return view('admin.transaksi.update', compact('transaksi'));
+        $order = ListOrder::where('id', $id)->first();
+        return view('admin.transaksi.update', compact('order'));
     }
 
     public function update(Request $request, string $id)
     {
-        $transaksi = ListOrder::where('id', $id)->first();
+        $order = ListOrder::where('id', $id)->first();
         $token = "1324" . Time();
-        $transaksi->update(
+        $order->update(
             [
                 'token' => $token,
                 'user_order' => $request->user_order,

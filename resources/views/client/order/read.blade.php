@@ -65,7 +65,7 @@
                         <div class="d-flex w-75">
                             <label class="fw-bold text-md text-white" for="foto_keluhan">Foto Keluhan</label>
                         </div>
-                        <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto_keluhan" id="foto_keluhan" value="{{$order->foto_keluhan}}" disabled>
+                        <img src="{{asset('assets/img')}}/{{$order->foto_keluhan}}" class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto_keluhan" id="foto_keluhan" disabled>
                     </div>
 
                     <!-- Modal -->
@@ -107,7 +107,7 @@
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="foto_pembayaran">Bukti Pembayaran</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto_pembayaran" id="foto_pembayaran"  value="{{$order->foto_pembayaran}}" disabled>
+                                    <img src="{{asset('assets/img')}}/{{$order->foto_pembayaran}}" class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto_pembayaran" id="foto_pembayaran" disabled>
                                 </div>
                                 <button type="submit" class="btn w-25 mt-2" style="background-color: #D6C37E;">Kembali</button>
                             </div>

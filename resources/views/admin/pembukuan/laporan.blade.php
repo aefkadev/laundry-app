@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="col-lg-12 form-wrapper pb-5" id="laporan">
+<div class="col-lg-12 form-wrapper" style="padding-bottom: 15vh;" id="laporan">
   <form action="">
     <div class="container">
         <div class="card">
@@ -40,22 +40,25 @@
                     <th>Tanggal</th>
                     <th>Transaksi</th>
                     <th>Nominal</th>
+                    <th>Nama User</th>
                   </tr>
-                  </thead>
-                  <tbody>
+                </thead>
+                <tbody>
                   @foreach ($laporans as $transaksi)
-                    <tr>
-                      <td>{{$transaksi->waktu_order}}</td>
-                      <td>{{$transaksi->jenis_transaksi}}</td>
-                      <td>{{$transaksi->harga_order}}</td>
-                    </tr>
+                  <tr>
+                    <td>{{$transaksi->waktu_order}}</td>
+                    <td>{{$transaksi->jenis_transaksi}}</td>
+                    <td>{{$transaksi->harga_order}}</td>
+                    <td>{{$transaksi->user_order}}</td>
+                  </tr>
                   @endforeach
-                  </tbody>
-                  <tfoot>
+                </tbody>
+                <tfoot>
                   <tr>
                     <th>Tanggal</th>
                     <th>Transaksi</th>
                     <th>Nominal</th>
+                    <th>Nama User</th>
                   </tr>
                   </tfoot>
                 </table>

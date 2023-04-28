@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\ListOrder;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AdminTransaksiController extends Controller
@@ -25,8 +27,20 @@ class AdminTransaksiController extends Controller
 
     public function indexChart()
     {
-        $charts = ListOrder::all();
-        return view('admin.pembukuan.index', compact('charts'));
+        $pemasukan = ListOrder::select(DB::raw('MONTH(created_at) as month'), DB::raw('SUM(harga_order) as total'))
+                ->where('jenis_transaksi', 'pemasukan')
+                ->groupBy('month')
+                ->orderBy('month', 'asc')
+                ->get();
+
+    $pengeluaran = ListOrder::select(DB::raw('MONTH(created_at) as month'), DB::raw('SUM(harga_order) as total'))
+                ->where('jenis_transaksi', 'pengeluaran')
+                ->groupBy('month')
+                ->orderBy('month', 'asc')
+                ->get();
+
+    return view('admin.pembukuan.index', compact('pemasukan', 'pengeluaran'));
+    
     }
 
     public function create()

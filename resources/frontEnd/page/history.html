@@ -58,11 +58,21 @@
         </section>
         <section class="px-4 body-section d-flex flex-column gap-3">
             
-            <div href="" class="d-flex align-items-center justify-content-between gap-4 bg-white link-item">
-                <img src="../assets/clean-shoes.png" class="btn-icon" alt="">
-                <span>Medium</span>
+            <div href="" class="d-flex align-items-center justify-content-between bg-white link-item">
+                <div class=" d-flex align-items-center gap-1">
+                    <img src="../assets/clean-shoes.png" class="btn-icon" alt="">
+                    <div class="text-item py-1">
+                        <div class="line">
+                            <span>Premiun deep clean (medium)</span>
+                            <span class="status-text"> menunggu</span>
+                        </div>
+                        <span class="time-text">
+                            12-january 10:20
+                        </span>
+                    </div>
+                </div>
                 <div class="d-flex gap-2">
-                    <button class="toggle-link" id="desc-toggle">Desc</button>
+                    <button class="toggle-link" id="desc-toggle" onclick="presentModal('modal1')">Desc</button>
                 </div>
             </div>
             

@@ -28,28 +28,6 @@ class AdminTransaksiController extends Controller
 
     public function indexChart()
     {
-        // $pemasukan = ListOrder::select(DB::raw('MONTH(waktu_order) as month'), DB::raw('SUM(harga_order) as total'))
-        //     ->where('jenis_transaksi', 'pemasukan')
-        //     ->groupBy('month')
-        //     ->orderBy('month')
-        //     ->get();
-
-        // $pengeluaran = ListOrder::select(DB::raw('MONTH(waktu_order) as month'), DB::raw('SUM(harga_order) as total'))
-        //     ->where('jenis_transaksi', 'pengeluaran')
-        //     ->groupBy('month')
-        //     ->orderBy('month')
-        //     ->get();
-        
-        // $labels = [];
-        // foreach($pemasukan as $p) {
-        //     $month = date('F', mktime(0, 0, 0, $p->month, 1));
-        //     $labels[$p->month] = $month;
-        // }
-        // foreach($pengeluaran as $p) {
-        //     $month = date('F', mktime(0, 0, 0, $p->month, 1));
-        //     $labels[$p->month] = $month;
-        // }
-        // ksort($labels);
         $orders = DB::table('list_order')
                     ->select(DB::raw("MONTH(waktu_order) as month"), 'jenis_transaksi', DB::raw('SUM(harga_order) as total'))
                     ->groupBy('month', 'jenis_transaksi')

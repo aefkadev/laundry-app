@@ -6,12 +6,11 @@
 
 <div class="vh-100">
     <div class="d-flex px-3 pt-4">
-        <a href="" class="text-decoration-none">
-            <button type="button" class="border-0" data-bs-dismiss="modal" aria-label="Close">
-                <i class="fa-solid fa-arrow-left fw-bolder"></i>
-            </button>
-            <span class="fw-bolder px-2" style="color: #E2DFEB; font-size: 20px;">Transaksi</span>
-        </a>
+        <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
+            <a href="/member" style="color:#E2DFEB;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i>
+                <span class="fw-bolder px-2">Transaksi</span>
+            </a>
+        </section>
     </div>
 
     <section class="row d-flex justify-content-center">

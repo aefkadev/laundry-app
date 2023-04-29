@@ -26,10 +26,10 @@
                         <option value="jun">Juni</option>
                         <option value="jul">Juli</option>
                         <option value="aug">Agustus</option>
-                        <option value="sept">September</option>
-                        <option value="oct">Oktober</option>
+                        <option value="sep">September</option>
+                        <option value="october">Oktober</option>
                         <option value="nov">November</option>
-                        <option value="dec">Desember</option>
+                        <option value="de">Desember</option>
                       </select>
                 </div>
               <!-- /.card-header -->
@@ -91,17 +91,17 @@
   });
 
   const searchInput = document.getElementById('search-input');
-  const table = document.getElementById('example1');
+  const tableSearch = document.getElementById('example1');
 
   searchInput.addEventListener('input', () => {
     const searchValue = searchInput.value.toLowerCase();
-    const rows = table.querySelectorAll('tbody tr');
+    const rowsSearch = tableSearch.querySelectorAll('tbody tr');
 
-    rows.forEach((row) => {
+    rowsSearch.forEach((row) => {
       const dateCell = row.querySelector('td:first-child');
-      const date = new Date(dateCell.textContent);
+      const dateSearch = new Date(dateCell.textContent);
 
-      if (date && date.toLocaleString('default', { month: 'long' }).toLowerCase().indexOf(searchValue) === -1) {
+      if (dateSearch && dateSearch.toLocaleString('default', { month: 'long' }).toLowerCase().indexOf(searchValue) === -1) {
         row.classList.add('d-none');
       } else {
         row.classList.remove('d-none');

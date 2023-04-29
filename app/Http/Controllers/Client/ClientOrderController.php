@@ -4,14 +4,16 @@ namespace App\Http\Controllers\Client;
 
 use App\Models\ListOrder;
 use App\Http\Controllers\Controller;
+use App\Models\DetailOrder;
 use App\Models\SubLayanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ClientOrderController extends Controller
 {
     public function index()
     {
-        $orders = ListOrder::all();
+        $orders = ListOrder::where('user_id', Auth::user()->id)->get();
         return view('client.order.index', compact('orders'));
     }
 
@@ -51,6 +53,7 @@ class ClientOrderController extends Controller
     public function show(string $id)
     {
         $order = ListOrder::where('id', $id)->first();
-        return view('client.order.read', compact('order'));
+        $detail = DetailOrder::where('list_id', $id)->first();
+        return view('client.order.read', compact('order', 'detail'));
     }
 }

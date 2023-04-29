@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\ListOrder;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\DetailOrder;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -98,32 +99,36 @@ class AdminTransaksiController extends Controller
     public function edit(string $id)
     {
         $order = ListOrder::where('id', $id)->first();
-        return view('admin.transaksi.update', compact('order'));
+        $detail = DetailOrder::where('list_id', $id)->first();
+        return view('admin.transaksi.update', compact('order', 'detail'));
     }
 
     public function update(Request $request, string $id)
     {
         $order = ListOrder::where('id', $id)->first();
+        $detail = DetailOrder::where('list_id', $id)->first();
         $token = "1324" . Time();
         $order->update(
             [
                 'token' => $token,
                 'user_order' => $request->user_order,
                 'jenis_pelayanan' => $request->jenis_pelayanan,
-                'jenis_transaksi' => $request->jenis_transaksi,
+                'jenis_transaksi' => $request->jenis_transaksi || "pemasukan",
                 'waktu_order' => $request->waktu_order,
                 'alamat_order' => $request->alamat_order,
                 'harga_order' => $request->harga_order,
-                'list_id' => $request->list_id,
-                'keluhan' => $request->keluhan,
-                'foto_keluhan' => $request->foto_keluhan,
-                'opsi_pengiriman' => $request->opsi_pengiriman,
-                'pembayaran' => $request->pembayaran,
-                'foto_pembayaran' => $request->foto_pembayaran,
-                'no_rekening' => $request->no_rekening,
-                'status' => $request->status
-            ]
-        );
+                ]
+            );
+        $detail->update([
+            'list_id' => $id,
+            'keluhan' => $request->keluhan || null,
+            'foto_keluhan' => $request->foto_keluhan || null,
+            'opsi_pengiriman' => $request->opsi_pengiriman || null,
+            'pembayaran' => $request->pembayaran || null,
+            'foto_pembayaran' => $request->foto_pembayaran || null,
+            'no_rekening' => $request->no_rekening || null,
+            'status_order' => $request->status_order || null,
+        ]);
         if (auth()->user()->roles_id == 1) {
             return redirect('super/transaksi')->with('sukses', 'Berhasil Edit Data!');
         } elseif (auth()->user()->roles_id == 2) {

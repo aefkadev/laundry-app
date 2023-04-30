@@ -49,6 +49,7 @@
                         <label class="fw-bold text-md" for="waktu_order">Tanggal Order</label>
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="waktu_order" id="waktu_order" value="{{$order->waktu_order}}" disabled>
+                    <input type="hidden" name="waktu_order" value="{{$order->waktu_order}}">
                 </div>
 
                 <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
@@ -77,6 +78,7 @@
                         <label class="fw-bold text-md" for="harga_order">Harga</label>
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="number" name="harga_order" id="harga_order" value="{{$order->harga_order}}" disabled>
+                    <input type="hidden" name="harga_order" value="{{$order->harga_order}}">
                 </div>
 
                 <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">

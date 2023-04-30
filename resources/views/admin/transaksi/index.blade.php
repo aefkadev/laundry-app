@@ -25,7 +25,7 @@
       </section>
       
       <section class="w-100 d-flex flex-column justify-content-center align-items-center" style="padding-bottom: 15vh;">
-        @foreach ($transaksis as $transaksi)
+        @foreach ($listorders as $transaksi)
             <div class="card p-2 rounded-3" style="width: 75%;">
                 <div class="d-flex mb-3">
                     <div class="d-flex justify-content-center align-content-center">
@@ -45,7 +45,7 @@
                 </div>
                 <hr class="col mt-0" style="background-color: white; color: #3d3c42; height: 3px;">
                 <div class="d-flex px-2 flex-row justify-content-between align-items-center">
-                    <span class="">{{$transaksi->status}}</span>
+                    <span class="">{{$transaksi->status_order}}</span>
                     @if (auth()->user()->roles_id == 1)
                     <a href="{{route('super.transaksi.edit',$transaksi->id)}}" class="text-decoration-none">
                         <button class="btn border border-3">Detail</button>

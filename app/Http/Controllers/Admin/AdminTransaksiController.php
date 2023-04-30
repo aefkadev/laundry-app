@@ -16,8 +16,9 @@ class AdminTransaksiController extends Controller
      */
     public function index()
     {
-        $transaksis = ListOrder::all();
-        return view('admin.transaksi.index', compact('transaksis'));
+        $listorders = ListOrder::all();
+        $detailorders = DetailOrder::all();
+        return view('admin.transaksi.index', compact('listorders', 'detailorders'));
     }
 
     public function indexLaporan()
@@ -104,14 +105,14 @@ class AdminTransaksiController extends Controller
                 ]
             );
         $detail->update([
-            'list_id' => $id,
-            'keluhan' => $request->keluhan || null,
-            'foto_keluhan' => $request->foto_keluhan || null,
-            'opsi_pengiriman' => $request->opsi_pengiriman || null,
-            'pembayaran' => $request->pembayaran || null,
-            'foto_pembayaran' => $request->foto_pembayaran || null,
-            'no_rekening' => $request->no_rekening || null,
-            'status_order' => $request->status_order || null,
+            'list_id' => $order->$id,
+            'keluhan' => $request->keluhan,
+            'foto_keluhan' => $request->foto_keluhan,
+            'opsi_pengiriman' => $request->opsi_pengiriman,
+            'pembayaran' => $request->pembayaran,
+            'foto_pembayaran' => $request->foto_pembayaran,
+            'no_rekening' => $request->no_rekening,
+            'status_order' => $request->status_order,
         ]);
         if (auth()->user()->roles_id == 1) {
             return redirect('super/transaksi')->with('sukses', 'Berhasil Edit Data!');

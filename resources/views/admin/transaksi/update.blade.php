@@ -29,7 +29,7 @@
                     <div class="d-flex w-75">
                         <label class="fw-bold text-md" for="status_order">Status</label>
                     </div>
-                    <select class="custom-select d-flex w-75 rounded-3" id="status_order" value="{{$detail->status_order}}" enabled>
+                    <select class="custom-select d-flex w-75 rounded-3" id="status_order" value="{{$order->status_order}}" enabled>
                         <option value="Belum Dikonfirmasi">Belum Dikonfirmasi</option>
                         <option value="Dikonfirmasi">Dikonfirmasi</option>
                         <option value="Sedang Dikerjakan">Sedang Dikerjakan</option>

@@ -102,6 +102,7 @@ class AdminTransaksiController extends Controller
                 'waktu_order' => $request->waktu_order,
                 'alamat_order' => $request->alamat_order,
                 'harga_order' => $request->harga_order,
+                'status_order' => $request->status_order
                 ]
             );
         $detail->update([
@@ -111,8 +112,7 @@ class AdminTransaksiController extends Controller
             'opsi_pengiriman' => $request->opsi_pengiriman,
             'pembayaran' => $request->pembayaran,
             'foto_pembayaran' => $request->foto_pembayaran,
-            'no_rekening' => $request->no_rekening,
-            'status_order' => $request->status_order,
+            'no_rekening' => $request->no_rekening
         ]);
         if (auth()->user()->roles_id == 1) {
             return redirect('super/transaksi')->with('sukses', 'Berhasil Edit Data!');

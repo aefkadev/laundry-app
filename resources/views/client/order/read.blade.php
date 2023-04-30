@@ -17,7 +17,7 @@
             <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
                 <div class="fw-bold text-md text-white d-flex w-75 align-items-center">
                     <span class="pe-2" >Status Order :</span>
-                    <span class="text-xl">{{$detail->status_order}}</span>
+                    <span class="text-xl">{{$order->status_order}}</span>
                 </div>
             </div>
             <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">

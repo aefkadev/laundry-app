@@ -41,7 +41,7 @@
               </div>
               <hr class="col mt-0" style="background-color: white; color: #3d3c42; height: 3px;">
               <div class="d-flex px-2 flex-row justify-content-between align-items-center">
-                  <span class="">{{$order->status}}</span>
+                  <span class="">{{$order->status_order}}</span>
                   @if (auth()->user()->roles_id == 3)
                   <a href="{{route('member.m-order.show',$order->id)}}" class="text-decoration-none">
                     <button class="btn border border-3">Detail</button>

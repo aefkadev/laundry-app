@@ -32,19 +32,6 @@ class ClientOrderController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'user_order' => 'required',
-            'jenis_pelayanan' => 'required',
-            'no_telepon' => 'required',
-            'waktu_order' => 'required',
-            'alamat_order' => 'required',
-            'harga_order' => 'required|numeric',
-            'foto_keluhan' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'opsi_pengiriman' => 'required',
-            'pembayaran' => 'required',
-            'foto_pembayaran' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'no_rekening' => 'required'
-        ]);
 
         $token = "1324" . Time();
         $listorder = ListOrder::create(
@@ -58,6 +45,7 @@ class ClientOrderController extends Controller
                 'waktu_order' => $request->waktu_order,
                 'alamat_order' => $request->alamat_order,
                 'harga_order' => $request->harga_order,
+                'status_order' => 'menunggu konfirmasi'
                 ]
             );
 
@@ -68,8 +56,7 @@ class ClientOrderController extends Controller
             'opsi_pengiriman' => $request->opsi_pengiriman,
             'pembayaran' => $request->pembayaran,
             'foto_pembayaran' => $request->foto_pembayaran,
-            'no_rekening' => $request->no_rekening,
-            'status_order' => 'menunggu konfirmasi'
+            'no_rekening' => $request->no_rekening
             ]);
 
         if (auth()->user()->roles_id == 3) {

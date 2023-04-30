@@ -55,13 +55,6 @@ class AdminSubLayananController extends Controller
         }
     }
 
-    public function show(string $id)
-    {
-        $layanan = Layanan::where('id', $id)->first();
-        $sublayanan = SubLayanan::where('id', $id)->first();
-        return view('admin.sublayanan.read', compact('sublayanan', 'layanan'));
-    }
-
     public function edit(string $id)
     {
         $layanan = Layanan::where('id', $id)->first();

@@ -36,12 +36,12 @@
             </div>
             <div class="col-5 text-right">
             @if(auth()->user()->roles_id == 1)
-            <a href="{{ route('super.sublayanan.show',$sublayanan->id) }}" class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1">
-            Desc
+            <a href="{{ route('super.sublayanan.edit',$sublayanan->id) }}" class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1">
+            Edit
             </a>
             @elseif(auth()->user()->roles_id == 2)
-            <a href="{{ route('admin.sublayanan.show',$sublayanan->id) }}" class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1">
-            Desc
+            <a href="{{ route('admin.sublayanan.edit',$sublayanan->id) }}" class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1">
+            Edit
             </a>
             @endif
             <button type="submit" class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1" role="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$sublayanan->id}}">

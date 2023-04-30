@@ -85,7 +85,7 @@
                     <div class="d-flex w-75">
                         <label class="fw-bold text-md" for="keluhan">Keluhan</label>
                     </div>
-                    <input class="border-1 rounded-3 py-2 px-3 w-75" type="text" name="keluhan" id="keluhan" value="{{$detail->keluhan}}" enabled>
+                    <input class="border-1 rounded-3 py-2 px-3 w-75" type="text" name="keluhan" id="keluhan" value="{{$order->keluhan}}" enabled>
                 </div>
                 
                 <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">

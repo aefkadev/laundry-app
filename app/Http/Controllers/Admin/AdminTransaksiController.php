@@ -102,12 +102,12 @@ class AdminTransaksiController extends Controller
                 'waktu_order' => $request->waktu_order,
                 'alamat_order' => $request->alamat_order,
                 'harga_order' => $request->harga_order,
-                'status_order' => $request->status_order
+                'status_order' => $request->status_order,
+                'keluhan' => $request->keluhan
                 ]
             );
         $detail->update([
             'list_id' => $order->$id,
-            'keluhan' => $request->keluhan,
             'foto_keluhan' => $request->foto_keluhan,
             'opsi_pengiriman' => $request->opsi_pengiriman,
             'pembayaran' => $request->pembayaran,

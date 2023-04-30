@@ -45,13 +45,13 @@ class ClientOrderController extends Controller
                 'waktu_order' => $request->waktu_order,
                 'alamat_order' => $request->alamat_order,
                 'harga_order' => $request->harga_order,
-                'status_order' => 'menunggu konfirmasi'
+                'status_order' => 'menunggu konfirmasi',
+                'keluhan' => $request->keluhan
                 ]
             );
 
         DetailOrder::create([
             'list_id' => $listorder->id,
-            'keluhan' => $request->keluhan,
             'foto_keluhan' => $request->foto_keluhan,
             'opsi_pengiriman' => $request->opsi_pengiriman,
             'pembayaran' => $request->pembayaran,

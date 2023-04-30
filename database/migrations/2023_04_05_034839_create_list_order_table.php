@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('alamat_order')->nullable();
             $table->integer('harga_order')->nullable();
             $table->string('status_order')->nullable();
+            $table->text('keluhan')->nullable();
             $table->timestamps();
         });
     }

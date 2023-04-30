@@ -12,7 +12,8 @@ class Layanan extends Model
     protected $fillable = [
         'ikon_layanan',
         'nama_layanan',
-        'deskripsi_layanan'
+        'deskripsi_layanan',
+        'keluhan'
     ];
 
     public function sublayanan()

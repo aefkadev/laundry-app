@@ -35,22 +35,27 @@ class ClientOrderController extends Controller
         ListOrder::create(
             [
                 'token' => $token,
+                'user_id' => auth()->user()->id,
                 'user_order' => $request->user_order,
                 'jenis_pelayanan' => $request->jenis_pelayanan,
-                'jenis_transaksi' => $request->jenis_transaksi,
+                'no_telepon' => $request->no_telepon,
+                'jenis_transaksi' => 'pemasukan',
                 'waktu_order' => $request->waktu_order,
                 'alamat_order' => $request->alamat_order,
                 'harga_order' => $request->harga_order,
-                'list_id' => $request->list_id,
-                'keluhan' => $request->keluhan,
-                'foto_keluhan' => $request->foto_keluhan,
-                'opsi_pengiriman' => $request->opsi_pengiriman,
-                'pembayaran' => $request->pembayaran,
-                'foto_pembayaran' => $request->foto_pembayaran,
-                'no_rekening' => $request->no_rekening,
-                'status' => $request->status
-            ]
-        );
+                ]
+            );
+        DetailOrder::create([
+            'list_id' => $request->list_id,
+            'keluhan' => $request->keluhan,
+            'foto_keluhan' => $request->foto_keluhan,
+            'opsi_pengiriman' => $request->opsi_pengiriman,
+            'pembayaran' => $request->pembayaran,
+            'foto_pembayaran' => $request->foto_pembayaran,
+            'no_rekening' => $request->no_rekening,
+            'status_order' => 'menunggu konfirmasi'
+            ]);
+
         if (auth()->user()->roles_id == 3) {
             return redirect('member/m-order')->with('sukses', 'Berhasil Order!');
         }

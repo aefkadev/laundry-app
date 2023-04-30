@@ -19,7 +19,11 @@
                             @csrf
                             <div class="d-flex justify-content-center m-4">
                                 <label for="ikon_sub">
-                                    <img src="{{ asset('assets/ikon') }}/{{ $order->ikon_sub }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="">
+                                    @if ($order->ikon_sub == null)
+                                        <img src="{{ asset('assets/ikon') }}/default.png" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="">
+                                    @else
+                                        <img src="{{ asset('assets/ikon') }}/{{ $order->ikon_sub }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="">
+                                    @endif
                                     <input type="file" class="visually-hidden" placeholder="ikon_sub" name="ikon_sub" id="ikon_sub" disabled>
                                 </label>
                             </div>
@@ -100,7 +104,9 @@
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="user_order">Nama</label>
                                     </div>
+                                    <input type="hidden" name="list_id" value="{{$order->id}}">
                                     <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="user_order" id="user_order" value="{{auth()->user()->nama}}" disabled>
+                                    <input type="hidden" name="user_order" value="{{auth()->user()->nama}}">
                                 </div>
             
                                 <div class="d-flex flex-column w-100 align-items-center">
@@ -109,12 +115,13 @@
                                     </div>
                                     <input class="border-0 rounded-3 py-2 px-3 w-75" type="date" name="waktu_order" id="waktu_order" placeholder="Tanggal Order">
                                 </div>
-            
+                                
                                 <div class="d-flex flex-column w-100 align-items-center">
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="no_telepon">Nomor Whatsapp</label>
                                     </div>
                                     <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="no_telepon" id="no_telepon" value="{{auth()->user()->no_telepon}}" disabled>
+                                    <input type="hidden" name="no_telepon" value="{{auth()->user()->no_telepon}}">
                                 </div>
             
                                 <div class="d-flex flex-column w-100 align-items-center">
@@ -126,16 +133,18 @@
             
                                 <div class="d-flex flex-column w-100 align-items-center">
                                     <div class="d-flex w-75">
-                                        <label class="fw-bold text-md text-white" for="jenis_layanan">Jenis layanan</label>
+                                        <label class="fw-bold text-md text-white" for="jenis_pelayanan">Jenis layanan</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="jenis_layanan" id="jenis_layanan" value="{{$order->nama_sub}}" disabled>
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="jenis_pelayanan" id="jenis_pelayanan" value="{{$order->nama_sub}}" disabled>
+                                    <input type="hidden" name="jenis_pelayanan" value="{{$order->nama_sub}}">
                                 </div>
-            
+                                
                                 <div class="d-flex flex-column w-100 align-items-center">
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="harga_order">Harga</label>
                                     </div>
                                     <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="number" name="harga_order" id="harga_order" value="{{$order->harga_sub}}" disabled>
+                                    <input type="hidden" name="harga_order" value="{{$order->harga_sub}}">
                                 </div>
             
                                 <div class="d-flex flex-column w-100 align-items-center">
@@ -154,7 +163,7 @@
                                 
                                 <div class="input-group d-flex flex-column justify-content-center w-75">
                                     <label class="fw-bold text-md text-white border-0" style="background-color: #AD48FA;" for="pembayaran">Metode Pembayaran</label>
-                                    <select class="custom-select border-0 rounded-3 py-2 px-3 w-100" id="pembayaran">
+                                    <select class="custom-select border-0 rounded-3 py-2 px-3 w-100" id="pembayaran" value="tunai">
                                         <option selected value="tunai">Tunai</option>
                                         <option value="QRIS">QRIS</option>
                                         <option value="BCA">Transfer BCA</option>
@@ -189,7 +198,7 @@
                     </div>
                 </form>
             <div class="pb-5 d-flex justify-content-center align-items-center w-100">
-                <button data-bs-target="#exampleModalFullscreen" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn w-50 mt-4" style="background-color: #D6C37E;">Next</button>
+                <button data-bs-target="#exampleModalFullscreen" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn w-50 mt-4" style="background-color: #D6C37E;">Pesan Layanan</button>
             </div>
         </section>
     </div>

@@ -16,13 +16,23 @@ class AdminSubLayananController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'layanan_id' => 'required',
+            'nama_sub' => 'required',
+            'deskripsi_sub' => 'required',
+            'waktu_sub' => 'required',
+            'harga_sub' => 'required',
+        ]);
+
         $sublayanan = SubLayanan::create([
-            'layanan_id' => $request->layanan_id,
             'nama_sub' => $request->nama_sub,
             'deskripsi_sub' => $request->deskripsi_sub,
             'waktu_sub' => $request->waktu_sub,
             'harga_sub' => $request->harga_sub
         ]);
+
+        Layanan::create(['id' => $sublayanan->layanan_id,]);
+        
 
         $validasi = $request->validate([
             'ikon_sub' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
@@ -38,9 +48,9 @@ class AdminSubLayananController extends Controller
         $file->move($location,$nama_file);
 
         if (auth()->user()->roles_id == 1) {
-            return redirect('super/sublayanan')->with('sukses', 'Berhasil Tambah Data!');
+            return redirect('super/layanan')->with('sukses', 'Berhasil Tambah Data!');
         } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/sublayanan')->with('sukses', 'Berhasil Tambah Data!');
+            return redirect('admin/layanan')->with('sukses', 'Berhasil Tambah Data!');
         }
     }
 
@@ -59,6 +69,13 @@ class AdminSubLayananController extends Controller
 
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'nama_sub' => 'required',
+            'deskripsi_sub' => 'required',
+            'waktu_sub' => 'required',
+            'harga_sub' => 'required',
+        ]);
+
         $sublayanan = SubLayanan::where('id', $id)->first();
         $sublayanan->update(
             [

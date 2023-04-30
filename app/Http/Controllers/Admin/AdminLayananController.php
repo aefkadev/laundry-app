@@ -23,6 +23,11 @@ class AdminLayananController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'nama_layanan' => 'required',
+            'deskripsi_layanan' => 'required',
+        ]);
+
         $layanan = Layanan::create([
             'nama_layanan' => $request->nama_layanan,
             'deskripsi_layanan' => $request->deskripsi_layanan
@@ -61,6 +66,11 @@ class AdminLayananController extends Controller
 
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'nama_layanan' => 'required',
+            'deskripsi_layanan' => 'required',
+        ]);
+
         $layanan = Layanan::where('id', $id)->first();
         $layanan->update(
             [

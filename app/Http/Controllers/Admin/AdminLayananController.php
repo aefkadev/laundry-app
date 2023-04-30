@@ -34,7 +34,7 @@ class AdminLayananController extends Controller
         ]);
 
         $validasi = $request->validate([
-            'ikon_layanan' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+            'ikon_layanan' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:1280 ',
         ]);
 
         $file = $validasi[('ikon_layanan')];

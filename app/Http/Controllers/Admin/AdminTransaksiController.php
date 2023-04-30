@@ -51,6 +51,12 @@ class AdminTransaksiController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'user_order' => 'required',
+            'jenis_transaksi' => 'required',
+            'waktu_order' => 'required',
+            'harga_order' => 'required|numeric'
+        ]);
 
         $token = "1324" . Time();
         ListOrder::create([

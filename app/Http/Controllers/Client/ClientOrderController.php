@@ -32,6 +32,21 @@ class ClientOrderController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'user_order' => 'required',
+            'jenis_pelayanan' => 'required',
+            'no_telepon' => 'required',
+            'waktu_order' => 'required',
+            'alamat_order' => 'required',
+            'harga_order' => 'required|numeric',
+            'keluhan' => 'required',
+            'foto_keluhan' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'opsi_pengiriman' => 'required',
+            'pembayaran' => 'required',
+            'foto_pembayaran' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'no_rekening' => 'required'
+        ]);
+
         $token = "1324" . Time();
         $listorder = ListOrder::create(
             [
@@ -46,6 +61,7 @@ class ClientOrderController extends Controller
                 'harga_order' => $request->harga_order,
                 ]
             );
+
         DetailOrder::create([
             'list_id' => $listorder->id,
             'keluhan' => $request->keluhan,

@@ -74,7 +74,7 @@ class AdminSubLayananController extends Controller
             'nama_sub' => 'required',
             'deskripsi_sub' => 'required',
             'waktu_sub' => 'required',
-            'harga_sub' => 'required',
+            'harga_sub' => 'required|numeric',
         ]);
 
         $sublayanan = SubLayanan::where('id', $id)->first();
@@ -89,7 +89,7 @@ class AdminSubLayananController extends Controller
         );
         
         $validasi = $request->validate([
-            'ikon_sub' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+            'ikon_sub' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:1280 ',
         ]);
 
         $file = $validasi[('ikon_sub')];

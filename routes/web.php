@@ -63,6 +63,7 @@ Route::middleware(['auth'])->group(function () {
       Route::resource('m-order', ClientOrderController::class);
       Route::resource('m-sublayanan', ClientSubLayananController::class);
       Route::resource('profile', UserProfileController::class);
+      Route::get('order/{id}', [ClientOrderController::class, 'order']);
     });
 
   Route::get('/', [HomeController::class, 'index']);

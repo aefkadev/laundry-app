@@ -27,19 +27,19 @@
                     @endif
                 </div>
                 <div>
+                    @csrf
                     @if(auth()->user()->roles_id == 1)
                         <a href="{{ route('super.sublayanan.edit',$sublayanan->id) }}" class="text-decoration-none">
-                            <button class="btn btn-dark">Simpan</button>
+                            <button class="btn btn-dark">Edit</button>
                         </a>
                         @elseif(auth()->user()->roles_id == 2)
                         <a href="{{ route('admin.sublayanan.edit',$sublayanan->id) }}" class="text-decoration-none">
-                            <button class="btn btn-dark">Simpan</button>
+                            <button class="btn btn-dark">Edit</button>
                         </a>
                     @endif
                 </div>
             </div>
             <div class="card-body p-3 mb-2 bg-secondary text-white">
-                @csrf
                 <div class="d-flex justify-content-center m-4">
                     <label for="ikon_sub">
                         <img src="{{ asset('assets/ikon') }}/{{ $sublayanan->ikon_sub }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="">

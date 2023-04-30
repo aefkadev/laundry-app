@@ -49,9 +49,9 @@ class AdminSubLayananController extends Controller
         $file->move($location,$nama_file);
 
         if (auth()->user()->roles_id == 1) {
-            return redirect('super/layanan')->with('sukses', 'Berhasil Tambah Data!');
+            return redirect('super/sublayanan')->with('sukses', 'Berhasil Tambah Data!');
         } elseif (auth()->user()->roles_id == 2) {
-            return redirect('admin/layanan')->with('sukses', 'Berhasil Tambah Data!');
+            return redirect('admin/sublayanan')->with('sukses', 'Berhasil Tambah Data!');
         }
     }
 
@@ -64,8 +64,9 @@ class AdminSubLayananController extends Controller
 
     public function edit(string $id)
     {
+        $layanan = Layanan::where('id', $id)->first();
         $sublayanan = SubLayanan::where('id', $id)->first();
-        return view('admin.sublayanan.update', compact('sublayanan'));
+        return view('admin.sublayanan.update', compact('sublayanan', 'layanan'));
     }
 
     public function update(Request $request, string $id)

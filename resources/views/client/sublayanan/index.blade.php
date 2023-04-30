@@ -19,7 +19,7 @@
                 @endif
                 <span class="fw-bolder">{{ $sublayanan->nama_sub }}</span>
                 <div class="d-flex gap-2">
-                    <a href="{{route('member.m-order.create')}}">
+                    <a href="/member/order/{{$sublayanan->id}}">
                         <button class="btn fw-bold rounded-3" style="background-color: #D6C37E;" id="desc-toggle">
                             Desc
                         </button>

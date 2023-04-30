@@ -19,7 +19,13 @@ class ClientOrderController extends Controller
 
     public function create()
     {
-        $order = SubLayanan::get();
+        $order = SubLayanan::first();
+        return view('client.order.create', compact('order'));
+    }
+
+    public function order(string $id)
+    {
+        $order = SubLayanan::where('id', $id)->first();
         return view('client.order.create', compact('order'));
     }
 

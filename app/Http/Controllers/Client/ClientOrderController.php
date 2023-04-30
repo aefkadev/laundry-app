@@ -8,6 +8,7 @@ use App\Models\DetailOrder;
 use App\Models\SubLayanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ClientOrderController extends Controller
 {
@@ -32,7 +33,7 @@ class ClientOrderController extends Controller
     public function store(Request $request)
     {
         $token = "1324" . Time();
-        ListOrder::create(
+        $listorder = ListOrder::create(
             [
                 'token' => $token,
                 'user_id' => auth()->user()->id,
@@ -46,7 +47,7 @@ class ClientOrderController extends Controller
                 ]
             );
         DetailOrder::create([
-            'list_id' => $request->list_id,
+            'list_id' => $listorder->id,
             'keluhan' => $request->keluhan,
             'foto_keluhan' => $request->foto_keluhan,
             'opsi_pengiriman' => $request->opsi_pengiriman,

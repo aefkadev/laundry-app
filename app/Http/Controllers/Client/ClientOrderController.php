@@ -39,11 +39,10 @@ class ClientOrderController extends Controller
             'waktu_order' => 'required',
             'alamat_order' => 'required',
             'harga_order' => 'required|numeric',
-            'keluhan' => 'required',
-            'foto_keluhan' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'foto_keluhan' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'opsi_pengiriman' => 'required',
             'pembayaran' => 'required',
-            'foto_pembayaran' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'foto_pembayaran' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'no_rekening' => 'required'
         ]);
 

@@ -17,25 +17,25 @@ class LayananSeeder extends Seeder
             [
                 'id' => 1,
                 'nama_layanan' => 'Premium Deep Clean',
-                'ikon_layanan' => 'pain-shoes.png',
+                'ikon_layanan' => 'default.png',
                 'deskripsi_layanan' => 'Bersihkan sepatu anda dengan kami',
             ],
             [
                 'id' => 2,
                 'nama_layanan' => 'Leather Care',
-                'ikon_layanan' => 'pain-shoes.png',
+                'ikon_layanan' => 'default.png',
                 'deskripsi_layanan' => 'Bersihkan bahan kulit anda dengan kami',
             ],
             [
                 'id' => 3,
                 'nama_layanan' => 'Repaint',
-                'ikon_layanan' => 'pain-shoes.png',
+                'ikon_layanan' => 'default.png',
                 'deskripsi_layanan' => 'Perbarui warna barang anda dengan kami',
             ],
             [
                 'id' => 4,
                 'nama_layanan' => 'Repair Package',
-                'ikon_layanan' => 'pain-shoes.png',
+                'ikon_layanan' => 'default.png',
                 'deskripsi_layanan' => 'Perbaiki barang anda dengan kami',
             ],
         ];

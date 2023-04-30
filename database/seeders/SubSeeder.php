@@ -17,7 +17,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 1,
                 'layanan_id' => 1,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Medium',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -26,7 +26,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 2,
                 'layanan_id' => 1,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Hard 1',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -35,7 +35,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 3,
                 'layanan_id' => 1,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Hard 2',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -44,7 +44,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 4,
                 'layanan_id' => 1,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'White Shoes',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -53,7 +53,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 5,
                 'layanan_id' => 1,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Woman Shoes',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -62,7 +62,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 6,
                 'layanan_id' => 1,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Sandals',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -71,7 +71,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 7,
                 'layanan_id' => 1,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Kids',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -80,7 +80,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 8,
                 'layanan_id' => 1,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Bag Cleaning',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -89,7 +89,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 9,
                 'layanan_id' => 1,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Hat',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -98,7 +98,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 10,
                 'layanan_id' => 1,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Helmet',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -107,7 +107,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 11,
                 'layanan_id' => 2,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Shoes',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -116,7 +116,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 12,
                 'layanan_id' => 2,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Bag',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -125,7 +125,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 13,
                 'layanan_id' => 2,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Pouch',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -134,7 +134,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 14,
                 'layanan_id' => 3,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Canvas',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -143,7 +143,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 15,
                 'layanan_id' => 3,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Leather',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -152,7 +152,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 16,
                 'layanan_id' => 3,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Repaint Midsole',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -161,7 +161,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 17,
                 'layanan_id' => 4,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Unyellowing Midsole',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -170,7 +170,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 18,
                 'layanan_id' => 4,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Reglue Package',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,
@@ -179,7 +179,7 @@ class SubSeeder extends Seeder
             [
                 'id' => 19,
                 'layanan_id' => 4,
-                'ikon_sub' => 'pain-shoes.png',
+                'ikon_sub' => 'default.png',
                 'nama_sub' => 'Stitching Package',
                 'deskripsi_sub' => 'Bersihkan sepatu anda dengan kami',
                 'waktu_sub' => 1,

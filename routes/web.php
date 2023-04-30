@@ -39,6 +39,7 @@ Route::middleware(['auth'])->group(function () {
       Route::resource('layanan', AdminLayananController::class);
       Route::resource('transaksi', AdminTransaksiController::class);
       Route::resource('sublayanan', AdminSubLayananController::class);
+      Route::get('createSub/{id}', [AdminSubLayananController::class, 'createSub'])->name('createSub');
       Route::resource('user', AdminUserController::class);
       Route::resource('profile', UserProfileController::class);
       Route::get('laporan', [AdminTransaksiController::class, 'indexLaporan']);

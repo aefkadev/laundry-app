@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="col-lg-12 form-wrapper pb-5" id="laporan">
+<div class="col-lg-12 form-wrapper" style="padding-bottom: 15vh;" id="laporan">
   <form action="">
     <div class="container">
         <div class="card">
@@ -17,26 +17,20 @@
                     <label class="col-sm-3 col-form-label"
                         >Bulan :
                     </label>
-                    @if(auth()->user()->roles_id == 1)
-                      <form action="{{route('super.transaksi.search')}}" method="POST" enctype='multipart/form-data'>
-                    @elseif(auth()->user()->roles_id == 2)
-                      <form action="{{route('admin.transaksi.search')}}" method="POST" enctype='multipart/form-data'>
-                    @endif
-                      <select class="col-sm-9 col-form-label rounded-2" name="bulan" id="bulan">
-                        <option value="Januari">Januari</option>
-                        <option value="Februari">Februari</option>
-                        <option value="Maret">Maret</option>
-                        <option value="April">April</option>
-                        <option value="Mei">Mei</option>
-                        <option value="Juni">Juni</option>
-                        <option value="Juli">Juli</option>
-                        <option value="Agustus">Agustus</option>
-                        <option value="September">September</option>
-                        <option value="Oktober">Oktober</option>
-                        <option value="November">November</option>
-                        <option value="Desember">Desember</option>
+                      <select class="col-sm-9 col-form-label rounded-2" name="search-input" id="search-input">
+                        <option value="jan">Januari</option>
+                        <option value="feb">Februari</option>
+                        <option value="mar">Maret</option>
+                        <option value="apr">April</option>
+                        <option value="may">Mei</option>
+                        <option value="jun">Juni</option>
+                        <option value="jul">Juli</option>
+                        <option value="aug">Agustus</option>
+                        <option value="sep">September</option>
+                        <option value="october">Oktober</option>
+                        <option value="nov">November</option>
+                        <option value="de">Desember</option>
                       </select>
-                    </form>
                 </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -46,22 +40,25 @@
                     <th>Tanggal</th>
                     <th>Transaksi</th>
                     <th>Nominal</th>
+                    <th>Nama User</th>
                   </tr>
-                  </thead>
-                  <tbody>
+                </thead>
+                <tbody>
                   @foreach ($laporans as $transaksi)
-                    <tr>
-                      <td>{{$transaksi->waktu_order}}</td>
-                      <td>{{$transaksi->jenis_transaksi}}</td>
-                      <td>{{$transaksi->harga_order}}</td>
-                    </tr>
+                  <tr>
+                    <td>{{$transaksi->waktu_order}}</td>
+                    <td>{{$transaksi->jenis_transaksi}}</td>
+                    <td>{{$transaksi->harga_order}}</td>
+                    <td>{{$transaksi->user_order}}</td>
+                  </tr>
                   @endforeach
-                  </tbody>
-                  <tfoot>
+                </tbody>
+                <tfoot>
                   <tr>
                     <th>Tanggal</th>
                     <th>Transaksi</th>
                     <th>Nominal</th>
+                    <th>Nama User</th>
                   </tr>
                   </tfoot>
                 </table>
@@ -92,18 +89,38 @@
       "responsive": true,
     });
   });
+
+  const searchInput = document.getElementById('search-input');
+  const tableSearch = document.getElementById('example1');
+
+  searchInput.addEventListener('input', () => {
+    const searchValue = searchInput.value.toLowerCase();
+    const rowsSearch = tableSearch.querySelectorAll('tbody tr');
+
+    rowsSearch.forEach((row) => {
+      const dateCell = row.querySelector('td:first-child');
+      const dateSearch = new Date(dateCell.textContent);
+
+      if (dateSearch && dateSearch.toLocaleString('default', { month: 'long' }).toLowerCase().indexOf(searchValue) === -1) {
+        row.classList.add('d-none');
+      } else {
+        row.classList.remove('d-none');
+      }
+    });
+  });
+
 </script>
 <!-- DataTables  & Plugins -->
-<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="../../plugins/jszip/jszip.min.js"></script>
-<script src="../../plugins/pdfmake/pdfmake.min.js"></script>
-<script src="../../plugins/pdfmake/vfs_fonts.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="{{asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{asset('plugins/jszip/jszip.min.js')}}"></script>
+<script src="{{asset('plugins/pdfmake/pdfmake.min.js')}}"></script>
+<script src="{{asset('plugins/pdfmake/vfs_fonts.js')}}"></script>
+<script src="{{asset('plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 @endsection

@@ -12,13 +12,14 @@
         <form method="POST" action="{{ route('admin.sublayanan.store') }}" enctype='multipart/form-data'>
     @endif
     @csrf
+    <input type="hidden" name="layanan_id" id="layanan_id" value="{{$layanan->id}}">
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">
                     @if(auth()->user()->roles_id == 1)
-                        <a class="pr-3 text-dark" href="{{ route('super.sublayanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                        <a class="pr-3 text-dark" href="{{ route('super.layanan.show',$layanan->id) }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                     @elseif(auth()->user()->roles_id == 2)
-                        <a class="pr-3 text-dark" href="{{ route('admin.sublayanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                        <a class="pr-3 text-dark" href="{{ route('admin.layanan.show',$layanan->id) }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                     @endif
                     <b>Tambah Jenis Pelayanan</b>
                 </h4>
@@ -86,17 +87,6 @@
                             required
                         />
                     </div>
-                </div>
-                <div class="mb-2 pb-2 row">
-                    <label class="col-sm-3 col-form-label"
-                        >Jenis Barang :
-                    </label>
-                    <select class="col-sm-9 col-form-label rounded-2" name="barang" id="barang">
-                      <option value="sepatu">sepatu</option>
-                      <option value="sendal">sendal</option>
-                      <option value="baju">baju</option>
-                      <option value="celana">Audi</option>
-                    </select>
                 </div>
             </div>
         </div>

@@ -4,45 +4,74 @@ namespace App\Http\Controllers\Client;
 
 use App\Models\ListOrder;
 use App\Http\Controllers\Controller;
+use App\Models\DetailOrder;
 use App\Models\SubLayanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ClientOrderController extends Controller
 {
     public function index()
     {
-        $orders = ListOrder::all();
+        $orders = ListOrder::where('user_id', Auth::user()->id)->get();
         return view('client.order.index', compact('orders'));
     }
 
     public function create()
     {
-        $order = SubLayanan::get();
+        $order = SubLayanan::first();
+        return view('client.order.create', compact('order'));
+    }
+
+    public function order(string $id)
+    {
+        $order = SubLayanan::where('id', $id)->first();
         return view('client.order.create', compact('order'));
     }
 
     public function store(Request $request)
     {
+        $request->validate([
+            'user_order' => 'required',
+            'jenis_pelayanan' => 'required',
+            'no_telepon' => 'required',
+            'waktu_order' => 'required',
+            'alamat_order' => 'required',
+            'harga_order' => 'required|numeric',
+            'foto_keluhan' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'opsi_pengiriman' => 'required',
+            'pembayaran' => 'required',
+            'foto_pembayaran' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'no_rekening' => 'required'
+        ]);
+
         $token = "1324" . Time();
-        ListOrder::create(
+        $listorder = ListOrder::create(
             [
                 'token' => $token,
+                'user_id' => auth()->user()->id,
                 'user_order' => $request->user_order,
                 'jenis_pelayanan' => $request->jenis_pelayanan,
-                'jenis_transaksi' => $request->jenis_transaksi,
+                'no_telepon' => $request->no_telepon,
+                'jenis_transaksi' => 'pemasukan',
                 'waktu_order' => $request->waktu_order,
                 'alamat_order' => $request->alamat_order,
                 'harga_order' => $request->harga_order,
-                'list_id' => $request->list_id,
-                'keluhan' => $request->keluhan,
-                'foto_keluhan' => $request->foto_keluhan,
-                'opsi_pengiriman' => $request->opsi_pengiriman,
-                'pembayaran' => $request->pembayaran,
-                'foto_pembayaran' => $request->foto_pembayaran,
-                'no_rekening' => $request->no_rekening,
-                'status' => $request->status
-            ]
-        );
+                ]
+            );
+
+        DetailOrder::create([
+            'list_id' => $listorder->id,
+            'keluhan' => $request->keluhan,
+            'foto_keluhan' => $request->foto_keluhan,
+            'opsi_pengiriman' => $request->opsi_pengiriman,
+            'pembayaran' => $request->pembayaran,
+            'foto_pembayaran' => $request->foto_pembayaran,
+            'no_rekening' => $request->no_rekening,
+            'status_order' => 'menunggu konfirmasi'
+            ]);
+
         if (auth()->user()->roles_id == 3) {
             return redirect('member/m-order')->with('sukses', 'Berhasil Order!');
         }
@@ -51,6 +80,7 @@ class ClientOrderController extends Controller
     public function show(string $id)
     {
         $order = ListOrder::where('id', $id)->first();
-        return view('client.order.read', compact('order'));
+        $detail = DetailOrder::where('list_id', $id)->first();
+        return view('client.order.read', compact('order', 'detail'));
     }
 }

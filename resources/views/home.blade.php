@@ -35,7 +35,7 @@
                                         </a>
                                         <a href="/super/transaksi" class="d-flex align-items-center px-5 w-100">
                                             <i class="fa-solid fa-clock-rotate-left" style="color: #2b2b2b"></i>
-                                            <p class="text-black m-0 px-2 text-lg">Riwayat Transaksi</p>
+                                            <p class="text-black m-0 px-2 text-lg">Transaksi</p>
                                         </a>
                                         <a href="/super/chart" class="d-flex align-items-center px-5 w-100">
                                             <i class="fa-solid fa-book" style="color: #2b2b2b"></i>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     
-                    <button data-bs-target="#exampleModalFullscreen" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn" style="background-color: transparent">
+                    <button data-bs-target="#exampleModalFullscreen" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn border-0" style="background-color: transparent">
                         <i class="fa-solid fa-bars" style="font-size: 3rem; color: #E2DFEB;"></i>
                     </button>
                     <a class="px-2" href="{{route('super.profile.edit',$user->id)}}">
@@ -84,7 +84,7 @@
                                         </a>
                                         <a href="/admin/transaksi" class="d-flex align-items-center px-5 w-100">
                                             <i class="fa-solid fa-clock-rotate-left" style="color: #2b2b2b"></i>
-                                            <p class="text-black m-0 px-2 text-lg">Riwayat Transaksi</p>
+                                            <p class="text-black m-0 px-2 text-lg">Transaksi</p>
                                         </a>
                                         <a href="/admin/chart" class="d-flex align-items-center px-5 w-100">
                                             <i class="fa-solid fa-book" style="color: #2b2b2b"></i>
@@ -102,7 +102,7 @@
                         </div>
                     </div>
                     
-                    <button data-bs-target="#exampleModalFullscreen" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn" style="background-color: transparent">
+                    <button data-bs-target="#exampleModalFullscreen" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn border-0" style="background-color: transparent">
                         <i class="fa-solid fa-bars" style="font-size: 3rem; color: #E2DFEB;"></i>
                     </button>
                     <a class="px-2" href="{{route('admin.profile.edit',$user->id)}}">
@@ -143,7 +143,7 @@
                     </div>
                 </div>
                 
-                <button data-bs-target="#exampleModalFullscreen" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn" style="background-color: transparent">
+                <button data-bs-target="#exampleModalFullscreen" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn border-0" style="background-color: transparent">
                     <i class="fa-solid fa-bars" style="font-size: 3rem; color: #E2DFEB;"></i>
                 </button>
                 <a class="px-2" href="{{route('member.profile.edit',$user->id)}}">
@@ -189,9 +189,9 @@
                 <a href="{{ route('member.m-layanan.show',$layanan->id) }}" class="d-flex align-items-center gap-4 bg-white ps-4 text-decoration-none font-weight-bolder text-black rounded-4">
             @endif
                     @if ($layanan->ikon_layanan == Null)
-                        <img src="{{ asset('assets/ikon/default.png') }}" alt="ikon" style="width: 4.2rem; height: 4.2rem;" alt="">
+                        <img src="{{ asset('assets/ikon/default.png') }}" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1" alt="">
                     @else
-                        <img src="{{ asset("assets/ikon/{$layanan->ikon_layanan}") }}" alt="ikon" style="width: 4.2rem; height: 4.2rem;" alt="">
+                        <img src="{{ asset("assets/ikon/{$layanan->ikon_layanan}") }}" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1" alt="">
                     @endif
                     <span>{{ $layanan->nama_layanan }}</span>
                 </a>
@@ -203,7 +203,7 @@
             @elseif(auth()->user()->roles_id == 3)
                 <a href="{{ route('member.m-layanan.index') }}" class="d-flex align-items-center gap-4 bg-white ps-4 text-decoration-none font-weight-bolder text-black rounded-4">
             @endif
-                    <img src="{{ asset('assets/img/clean-shoes.png')}}" style="width: 4.2rem; height: 4.2rem;" alt="">
+                    <img src="{{ asset('assets/img/clean-shoes.png')}}" style="width: 4.2rem; height: 4.2rem;" class="p-1" alt="">
                     <span>Other</span>
                 </a>
         </section>

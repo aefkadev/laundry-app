@@ -24,7 +24,7 @@
           <hr class="row w-75" style="background-color: rgb(48, 48, 48);; color: #fff; height: 3px;">
       </section>
       
-      <section class="w-100 d-flex flex-column justify-content-center">
+      <section class="w-100 d-flex flex-column justify-content-center align-items-center" style="padding-bottom: 15vh;">
         @foreach ($transaksis as $transaksi)
             <div class="card p-2 rounded-3" style="width: 75%;">
                 <div class="d-flex mb-3">
@@ -47,11 +47,11 @@
                 <div class="d-flex px-2 flex-row justify-content-between align-items-center">
                     <span class="">{{$transaksi->status}}</span>
                     @if (auth()->user()->roles_id == 1)
-                    <a href="{{route('super.transaksi.show',$transaksi->id)}}" class="text-decoration-none">
+                    <a href="{{route('super.transaksi.edit',$transaksi->id)}}" class="text-decoration-none">
                         <button class="btn border border-3">Detail</button>
                     </a> 
                     @elseif (auth()->user()->roles_id == 2)
-                    <a href="{{route('admin.transaksi.show',$transaksi->id)}}" class="text-decoration-none">
+                    <a href="{{route('admin.transaksi.edit',$transaksi->id)}}" class="text-decoration-none">
                         <button class="btn border border-3">Detail</button>
                     </a>                         
                     @endif

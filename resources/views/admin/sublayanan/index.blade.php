@@ -17,9 +17,9 @@
         </div>      
             <div class="d-flex justify-content-end">
                 @if(auth()->user()->roles_id == 1)
-                    <a href="{{ route('super.sublayanan.create') }}" class="btn btn-dark btn-sm mb-4">Tambah</a>  
+                    <a href="/super/createSub/{{$layanans->id}}" class="btn btn-dark btn-sm mb-4">Tambah</a>  
                 @elseif(auth()->user()->roles_id == 2)
-                    <a href="{{ route('admin.sublayanan.create') }}" class="btn btn-dark btn-sm mb-4">Tambah</a> 
+                    <a href="/admin/createSub/{{$layanans->id}}" class="btn btn-dark btn-sm mb-4">Tambah</a> 
                 @endif
             </div>
             @foreach ($sublayanans->where('layanan_id', $layanans->id) as $sublayanan)

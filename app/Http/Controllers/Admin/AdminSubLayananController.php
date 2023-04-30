@@ -9,13 +9,15 @@ use Illuminate\Http\Request;
 
 class AdminSubLayananController extends Controller
 {
-    public function create()
+    public function createSub(string $id)
     {
-        return view('admin.sublayanan.create');
+        $layanan = Layanan::where('id', $id)->first();
+        return view('admin.sublayanan.create', compact('layanan'));
     }
 
     public function store(Request $request)
     {
+
         $request->validate([
             'layanan_id' => 'required',
             'nama_sub' => 'required',
@@ -25,13 +27,12 @@ class AdminSubLayananController extends Controller
         ]);
 
         $sublayanan = SubLayanan::create([
+            'layanan_id' => $request->layanan_id,
             'nama_sub' => $request->nama_sub,
             'deskripsi_sub' => $request->deskripsi_sub,
             'waktu_sub' => $request->waktu_sub,
             'harga_sub' => $request->harga_sub
         ]);
-
-        Layanan::create(['id' => $sublayanan->layanan_id,]);
         
 
         $validasi = $request->validate([

@@ -106,7 +106,7 @@
                                             <label class="fw-bold text-md text-white" for="user_order">Nama</label>
                                         </div>
                                         <input type="hidden" name="list_id" value="{{$order->id}}">
-                                        <input class="border-0 rounded-3 py-2 px-3 w-75 text-white text-lg fw-normal" type="text" name="user_order" id="user_order" value="{{auth()->user()->nama}}" disabled>
+                                        <input class="border-0 rounded-3 py-2 px-3 w-75 text-white text-lg fw-normal" type="text" name="user_order" required id="user_order" value="{{auth()->user()->nama}}" disabled>
                                         <input type="hidden" name="user_order" value="{{auth()->user()->nama}}">
                                     </div>
             
@@ -114,7 +114,7 @@
                                         <div class="d-flex w-75">
                                             <label class="fw-bold text-md text-white" for="no_telepon">Nomor Whatsapp</label>
                                         </div>
-                                        <input class="border-0 rounded-3 py-2 px-3 w-75 text-white text-lg fw-normal" type="text" name="no_telepon" id="no_telepon" value="{{auth()->user()->no_telepon}}" disabled>
+                                        <input class="border-0 rounded-3 py-2 px-3 w-75 text-white text-lg fw-normal" type="text" name="no_telepon" required id="no_telepon" value="{{auth()->user()->no_telepon}}" disabled>
                                         <input type="hidden" name="no_telepon" value="{{auth()->user()->no_telepon}}">
                                     </div>
                 
@@ -122,7 +122,7 @@
                                         <div class="d-flex w-75">
                                             <label class="fw-bold text-md text-white" for="jenis_pelayanan">Jenis layanan</label>
                                         </div>
-                                        <input class="border-0 rounded-3 py-2 px-3 w-75 text-white text-lg fw-normal" type="text" name="jenis_pelayanan" id="jenis_pelayanan" value="{{$order->nama_sub}}" disabled>
+                                        <input class="border-0 rounded-3 py-2 px-3 w-75 text-white text-lg fw-normal" type="text" name="jenis_pelayanan" required id="jenis_pelayanan" value="{{$order->nama_sub}}" disabled>
                                         <input type="hidden" name="jenis_pelayanan" value="{{$order->nama_sub}}">
                                     </div>
                                     
@@ -130,7 +130,7 @@
                                         <div class="d-flex w-75">
                                             <label class="fw-bold text-md text-white" for="harga_order">Harga</label>
                                         </div>
-                                        <input class="border-0 rounded-3 py-2 px-3 w-75 text-white text-lg fw-normal" type="number" name="harga_order" id="harga_order" value="{{$order->harga_sub}}" disabled>
+                                        <input class="border-0 rounded-3 py-2 px-3 w-75 text-white text-lg fw-normal" type="number" name="harga_order" required id="harga_order" value="{{$order->harga_sub}}" disabled>
                                         <input type="hidden" name="harga_order" value="{{$order->harga_sub}}">
                                     </div>
                                 </div>
@@ -139,21 +139,21 @@
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="waktu_order">Tanggal Order</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="date" name="waktu_order" id="waktu_order" placeholder="Tanggal Order" required>
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="date" name="waktu_order" required id="waktu_order" placeholder="Tanggal Order" required>
                                 </div>
 
                                 <div class="d-flex flex-column w-100 align-items-center">
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="alamat_order">Alamat</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="alamat_order" id="alamat_order" placeholder="Jalan .....">
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="alamat_order" required id="alamat_order" placeholder="Jalan .....">
                                 </div>
             
                                 <div class="d-flex flex-column w-100 align-items-center">
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="keluhan">Keluhan</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="keluhan" id="keluhan" placeholder="Contoh : Sepatu kotor di bagian....">
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="keluhan" required id="keluhan" placeholder="Contoh : Sepatu kotor di bagian....">
                                 </div>
             
                                 <div class="d-flex flex-column w-100 align-items-center">
@@ -165,7 +165,7 @@
                                 
                                 <div class="input-group d-flex flex-column justify-content-center w-75">
                                     <label class="fw-bold text-md text-white border-0" style="background-color: #AD48FA;" for="pembayaran">Metode Pembayaran</label>
-                                    <select class="custom-select border-0 rounded-3 py-2 px-3 w-100" id="pembayaran" name="pembayaran">
+                                    <select class="custom-select border-0 rounded-3 py-2 px-3 w-100" required id="pembayaran" name="pembayaran">
                                         <option selected value="tunai">Tunai</option>
                                         <option value="QRIS">QRIS</option>
                                         <option value="BCA">Transfer BCA</option>
@@ -174,7 +174,7 @@
 
                                 <div class="input-group d-flex flex-column justify-content-center w-75">
                                     <label class="fw-bold text-md text-white border-0" style="background-color: #AD48FA;" for="opsi_pengiriman">Opsi Pengiriman</label>
-                                    <select class="custom-select border-0 rounded-3 py-2 px-3 w-100" id="opsi_pengiriman" name="opsi_pengiriman">
+                                    <select class="custom-select border-0 rounded-3 py-2 px-3 w-100" required id="opsi_pengiriman" name="opsi_pengiriman">
                                         <option selected value="pickup">Pick Up</option>
                                         <option value="delivery">Delivery</option>
                                     </select>
@@ -184,7 +184,7 @@
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="no_rekening">No. Rekening (optional)</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="no_rekening" id="no_rekening" placeholder="12131">
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="no_rekening" required id="no_rekening" placeholder="12131">
                                 </div>
 
                                 <div class="d-flex flex-column w-100 align-items-center">

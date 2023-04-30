@@ -47,6 +47,7 @@
                             class="form-control"
                             name="nama_sub"
                             id="nama_sub"
+                            placeholder="Nama Jenis Pelayanan"
                             required
                         />
                     </div>
@@ -58,6 +59,7 @@
                             class="form-control"
                             name="deskripsi_sub"
                             id="deskripsi_sub"
+                            placeholder="Deskripsi"
                             required>
                         </textarea>
                     </div>
@@ -72,6 +74,7 @@
                             class="form-control"
                             name="waktu_sub"
                             id="waktu_sub"
+                            placeholder="2"
                             required
                         />
                     </div>
@@ -84,6 +87,7 @@
                             class="form-control"
                             name="harga_sub"
                             id="harga_sub"
+                            placeholder="50000"
                             required
                         />
                     </div>

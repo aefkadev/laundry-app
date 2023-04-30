@@ -9,8 +9,8 @@
         <a class="pr-3 text-light" href="{{ route('member.m-layanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
         <span class="fw-bolder px-2">{{$layanans->nama_layanan}}</span>
     </section>
+    <section class="px-4 body-section d-flex flex-column gap-3 pt-3" style="padding-bottom: 100px">
     @foreach ($sublayanans as $sublayanan)
-        <section class="px-4 body-section d-flex flex-column gap-3 py-3">
             <div class="d-flex align-items-center justify-content-between gap-4 bg-white rounded-4 px-4">
                 @if ($sublayanan->ikon_sub == Null)
                     <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1"/>
@@ -31,11 +31,11 @@
                     </a>
                 </div>
             </div>
+            @endforeach
         </section>
-    @endforeach
     
 </div>
 
+@include('menu')
 @endsection
 
-@include('menu')

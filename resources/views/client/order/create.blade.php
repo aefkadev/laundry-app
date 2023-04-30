@@ -87,7 +87,7 @@
             
             
             <!-- Modal -->
-            <div class="modal fade show" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-modal="false" role="dialog">
+            <div class="modal fade show d-block" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-modal="false" role="dialog">
                         <div class="modal-dialog modal-fullscreen pb-4">
                             <div class="modal-content overflow-auto pb-4" style="background-color: #AD48FA;">
                                 <div class="d-flex px-3 pt-4">
@@ -100,51 +100,53 @@
                             <form action="{{ route('member.m-order.store') }}" method="POST" class="py-3 d-flex flex-column gap-3 justify-content-center align-items-center w-100">
                             @csrf
                                 <div class="d-flex justify-content-center gap-3 align-items-center flex-column w-100">
-                                <div class="d-flex flex-column w-100 align-items-center">
-                                    <div class="d-flex w-75">
-                                        <label class="fw-bold text-md text-white" for="user_order">Nama</label>
+                                <div class="card w-75 bg-transparent p-3">
+                                    <div class="d-flex flex-column w-100 align-items-center">
+                                        <div class="d-flex w-75">
+                                            <label class="fw-bold text-md text-white" for="user_order">Nama</label>
+                                        </div>
+                                        <input type="hidden" name="list_id" value="{{$order->id}}">
+                                        <input class="border-0 rounded-3 py-2 px-3 w-75 text-white text-lg fw-normal" type="text" name="user_order" id="user_order" value="{{auth()->user()->nama}}" disabled>
+                                        <input type="hidden" name="user_order" value="{{auth()->user()->nama}}">
                                     </div>
-                                    <input type="hidden" name="list_id" value="{{$order->id}}">
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="user_order" id="user_order" value="{{auth()->user()->nama}}" disabled>
-                                    <input type="hidden" name="user_order" value="{{auth()->user()->nama}}">
-                                </div>
             
+                                    <div class="d-flex flex-column w-100 align-items-center">
+                                        <div class="d-flex w-75">
+                                            <label class="fw-bold text-md text-white" for="no_telepon">Nomor Whatsapp</label>
+                                        </div>
+                                        <input class="border-0 rounded-3 py-2 px-3 w-75 text-white text-lg fw-normal" type="text" name="no_telepon" id="no_telepon" value="{{auth()->user()->no_telepon}}" disabled>
+                                        <input type="hidden" name="no_telepon" value="{{auth()->user()->no_telepon}}">
+                                    </div>
+                
+                                    <div class="d-flex flex-column w-100 align-items-center">
+                                        <div class="d-flex w-75">
+                                            <label class="fw-bold text-md text-white" for="jenis_pelayanan">Jenis layanan</label>
+                                        </div>
+                                        <input class="border-0 rounded-3 py-2 px-3 w-75 text-white text-lg fw-normal" type="text" name="jenis_pelayanan" id="jenis_pelayanan" value="{{$order->nama_sub}}" disabled>
+                                        <input type="hidden" name="jenis_pelayanan" value="{{$order->nama_sub}}">
+                                    </div>
+                                    
+                                    <div class="d-flex flex-column w-100 align-items-center">
+                                        <div class="d-flex w-75">
+                                            <label class="fw-bold text-md text-white" for="harga_order">Harga</label>
+                                        </div>
+                                        <input class="border-0 rounded-3 py-2 px-3 w-75 text-white text-lg fw-normal" type="number" name="harga_order" id="harga_order" value="{{$order->harga_sub}}" disabled>
+                                        <input type="hidden" name="harga_order" value="{{$order->harga_sub}}">
+                                    </div>
+                                </div>
+
                                 <div class="d-flex flex-column w-100 align-items-center">
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="waktu_order">Tanggal Order</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="date" name="waktu_order" id="waktu_order" placeholder="Tanggal Order">
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="date" name="waktu_order" id="waktu_order" placeholder="Tanggal Order" required>
                                 </div>
-                                
-                                <div class="d-flex flex-column w-100 align-items-center">
-                                    <div class="d-flex w-75">
-                                        <label class="fw-bold text-md text-white" for="no_telepon">Nomor Whatsapp</label>
-                                    </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="no_telepon" id="no_telepon" value="{{auth()->user()->no_telepon}}" disabled>
-                                    <input type="hidden" name="no_telepon" value="{{auth()->user()->no_telepon}}">
-                                </div>
-            
+
                                 <div class="d-flex flex-column w-100 align-items-center">
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="alamat_order">Alamat</label>
                                     </div>
                                     <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="alamat_order" id="alamat_order" placeholder="Jalan .....">
-                                </div>
-            
-                                <div class="d-flex flex-column w-100 align-items-center">
-                                    <div class="d-flex w-75">
-                                        <label class="fw-bold text-md text-white" for="jenis_pelayanan">Jenis layanan</label>
-                                    </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="jenis_pelayanan" id="jenis_pelayanan" value="{{$order->nama_sub}}" disabled>
-                                    <input type="hidden" name="jenis_pelayanan" value="{{$order->nama_sub}}">
-                                </div>
-                                
-                                <div class="d-flex flex-column w-100 align-items-center">
-                                    <div class="d-flex w-75">
-                                        <label class="fw-bold text-md text-white" for="harga_order">Harga</label>
-                                    </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="number" name="harga_order" id="harga_order" value="{{$order->harga_sub}}" disabled>
-                                    <input type="hidden" name="harga_order" value="{{$order->harga_sub}}">
                                 </div>
             
                                 <div class="d-flex flex-column w-100 align-items-center">
@@ -158,7 +160,7 @@
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="foto_keluhan">Foto Keluhan</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto_keluhan" id="foto_keluhan" placeholder="dummy__">
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto_keluhan" id="foto_keluhan">
                                 </div>
                                 
                                 <div class="input-group d-flex flex-column justify-content-center w-75">
@@ -189,7 +191,7 @@
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="foto_pembayaran">Bukti Pembayaran</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto_pembayaran" id="foto_pembayaran" placeholder="dummy__">
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto_pembayaran" id="foto_pembayaran">
                                 </div>
                                 <button type="submit" class="btn w-25 mt-2" style="background-color: #D6C37E;">Order</button>
                             </div>

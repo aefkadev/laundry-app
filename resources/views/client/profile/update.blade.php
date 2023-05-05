@@ -49,7 +49,7 @@
         <div class="mb-3 row">
           <label class="col-sm-3 col-form-label">Password Baru</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" name="password" id="password" enabled>
+            <input type="text" class="form-control" name="password" id="password" placeholder="{{$user->password}}" enabled>
           </div>
         </div>
         <div class="mb-3 row">

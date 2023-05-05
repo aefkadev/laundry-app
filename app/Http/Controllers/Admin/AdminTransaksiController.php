@@ -40,9 +40,9 @@ class AdminTransaksiController extends Controller
         foreach ($orders as $order) {
             $data[$order->month][$order->jenis_transaksi] = $order->total;
         }
-
+        
     return view('admin.pembukuan.index', compact('data'));
-
+    
     }
 
     public function create()
@@ -60,22 +60,25 @@ class AdminTransaksiController extends Controller
         ]);
 
         $token = "1324" . Time();
-        $listorder = ListOrder::create([
+        ListOrder::create([
             'token' => $token,
             'user_order' => $request->user_order,
             'jenis_transaksi' => $request->jenis_transaksi,
             'waktu_order' => $request->waktu_order,
             'harga_order' => $request->harga_order
         ]);
-        DetailOrder::create([
-            'list_id' => $listorder->id
-            ]);
 
         if (auth()->user()->roles_id == 1) {
             return redirect('super/laporan')->with('sukses', 'Berhasil Tambah Data!');
         } elseif (auth()->user()->roles_id == 2) {
             return redirect('admin/laporan')->with('sukses', 'Berhasil Tambah Data!');
         }
+    }
+
+    public function show(string $id)
+    {
+        $order = ListOrder::where('id', $id)->first();
+        return view('admin.transaksi.read', compact('order'));
     }
 
     public function edit(string $id)

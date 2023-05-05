@@ -38,8 +38,10 @@
                   <thead>
                   <tr>
                     <th>Tanggal</th>
+                    <th>No. Order</th>
                     <th>Transaksi</th>
                     <th>Nominal</th>
+                    <th>Deskripsi</th>
                     <th>Nama User</th>
                   </tr>
                 </thead>
@@ -47,8 +49,10 @@
                   @foreach ($laporans as $transaksi)
                   <tr>
                     <td>{{$transaksi->waktu_order}}</td>
+                    <td>{{$transaksi->token}}</td>
                     <td>{{$transaksi->jenis_transaksi}}</td>
                     <td>{{$transaksi->harga_order}}</td>
+                    <td>{{$transaksi->keluhan}}</td>
                     <td>{{$transaksi->user_order}}</td>
                   </tr>
                   @endforeach
@@ -56,8 +60,10 @@
                 <tfoot>
                   <tr>
                     <th>Tanggal</th>
+                    <th>No. Order</th>
                     <th>Transaksi</th>
                     <th>Nominal</th>
+                    <th>Deskripsi</th>
                     <th>Nama User</th>
                   </tr>
                   </tfoot>
@@ -76,18 +82,10 @@
 <script>
   $(function () {
     $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["csv", "excel", "pdf", "print"]
+      "responsive": true, "lengthChange": true, "autoWidth": false,
+      "buttons": ["csv", "excel", "pdf", "print"],
+      
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
   });
 
   const searchInput = document.getElementById('search-input');

@@ -164,7 +164,7 @@
         <section class="px-4">
             <div class="d-flex gap-4 align-items-center text-white text-md fw-normal mt-1">
                 <i class="fa-solid fa-calendar-days"></i>
-                <span>Senin - Jum'at</span>
+                <span>Senin - Sabtu</span>
             </div>
             <div class="d-flex gap-4 align-items-center text-white text-md fw-normal mt-1">
                 <i class="fa-regular fa-clock"></i>

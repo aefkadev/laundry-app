@@ -21,6 +21,12 @@
             </a>
         </section>
         @endif
+        <div class="input-group d-flex flex-column w-100 align-items-center pt-3 pb-0">
+            <a href="https://wa.me/+62{{$order->no_telepon}}?text=Halo saya admin SOC Clean Lampung">
+                        <button class="btn fw-bold rounded-3" style="background-color: #D6C37E; text-align: center;" id="Chat">
+                            Chat User
+                        </button>
+                    </a></div>
         <section class="px-4 pb-5">
             <form action="{{route("super.transaksi.update",$order->id)}}" method="POST">
                 @csrf

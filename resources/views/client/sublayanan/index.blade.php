@@ -24,16 +24,16 @@
                             Order
                         </button>
                     </a>
-                    <a href="#">
+                    <a href="https://wa.me/+6281397575460?text=Halo admin SOC Clean Lampung, Saya {{auth()->user()->nama}}">
                         <button class="btn fw-bold rounded-3" style="background-color: #D6C37E;" id="Chat">
                             Chat
-                        </button> 
+                        </button>
                     </a>
                 </div>
             </div>
             @endforeach
         </section>
-    
+
 </div>
 
 @include('menu')

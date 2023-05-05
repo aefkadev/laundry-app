@@ -27,7 +27,8 @@ class ClientOrderController extends Controller
     public function order(string $id)
     {
         $order = SubLayanan::where('id', $id)->first();
-        return view('client.order.create', compact('order'));
+        $now = date('Y-m-d H:i:s');
+        return view('client.order.create', compact('order', 'now'));
     }
 
     public function store(Request $request)

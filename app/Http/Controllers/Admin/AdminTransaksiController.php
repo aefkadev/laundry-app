@@ -107,7 +107,6 @@ class AdminTransaksiController extends Controller
                 ]
             );
         $detail->update([
-            'list_id' => $order->$id,
             'foto_keluhan' => $request->foto_keluhan,
             'opsi_pengiriman' => $request->opsi_pengiriman,
             'pembayaran' => $request->pembayaran,

@@ -35,6 +35,7 @@ class ClientOrderController extends Controller
     {
 
         $token = "1324" . Time();
+        
         $listorder = ListOrder::create(
             [
                 'token' => $token,
@@ -46,19 +47,34 @@ class ClientOrderController extends Controller
                 'waktu_order' => $request->waktu_order,
                 'alamat_order' => $request->alamat_order,
                 'harga_order' => $request->harga_order,
-                'status_order' => 'menunggu konfirmasi',
+                'status_order' => 'Menunggu Konfirmasi',
                 'keluhan' => $request->keluhan
                 ]
             );
 
-        DetailOrder::create([
+        $detailorder = DetailOrder::create([
             'list_id' => $listorder->id,
-            'foto_keluhan' => $request->foto_keluhan,
             'opsi_pengiriman' => $request->opsi_pengiriman,
             'pembayaran' => $request->pembayaran,
-            'foto_pembayaran' => $request->foto_pembayaran,
             'no_rekening' => $request->no_rekening
-            ]);
+        ]);
+        
+        $validasi = $request->validate([
+            'foto_keluhan' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+            'foto_pembayaran' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+        ]);
+        if($request->hasFile('foto_keluhan')){
+            $foto_keluhan = $validasi[('foto_keluhan')];
+            $detailorder->foto_keluhan = time().'_'.$foto_keluhan->getClientOriginalName();
+            $detailorder->update();
+            $foto_keluhan->move('../public/assets/img/keluhan/',time().'_'.$foto_keluhan->getClientOriginalName());
+        }
+        if($request->hasFile('foto_pembayaran')){
+            $foto_pembayaran = $validasi[('foto_pembayaran')];
+            $detailorder->foto_pembayaran = time().'_'.$foto_pembayaran->getClientOriginalName();
+            $detailorder->update();
+            $foto_pembayaran->move('../public/assets/img/pembayaran/',time().'_'.$foto_pembayaran->getClientOriginalName());
+        }
 
         if (auth()->user()->roles_id == 3) {
             return redirect('member/m-order')->with('sukses', 'Berhasil Order!');

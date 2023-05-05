@@ -104,12 +104,16 @@
                 <div class="d-flex flex-row w-100 align-items-center pt-3 pb-0">
                     <div class="d-flex flex-column w-75 align-items-center">
                         <label class="fw-bold text-md" for="foto_keluhan">Foto Keluhan</label>
-                        <img src="{{asset('assets/img/keluhan')}}/{{$detail->foto_keluhan}}" class="border-1 rounded-3 py-2 px-3 bg-white" style="width: 8.2rem; height: 8.2rem;" name="foto_keluhan" id="foto_keluhan">
+                        <a href="{{asset('assets/img/keluhan')}}/{{$detail->foto_keluhan}}">
+                            <img src="{{asset('assets/img/keluhan')}}/{{$detail->foto_keluhan}}" class="border-1 rounded-3 py-2 px-3 bg-white" style="width: 8.2rem; height: 8.2rem;" name="foto_keluhan" id="foto_keluhan">
+                        </a>
                         <input class="visually-hidden" type="text" name="foto_keluhan" id="foto_keluhan" value="{{$detail->foto_keluhan}}">
                     </div>
                     <div class="d-flex flex-column w-75 align-items-center">
                         <label class="fw-bold text-md" for="foto_pembayaran">Foto Pembayaran</label>
-                        <img src="{{asset('assets/img/pembayaran')}}/{{$detail->foto_pembayaran}}" class="border-1 rounded-3 py-2 px-3 bg-white" style="width: 8.2rem; height: 8.2rem;" name="foto_pembayaran" id="foto_pembayaran">
+                        <a href="{{asset('assets/img/pembayaran')}}/{{$detail->foto_pembayaran}}">
+                            <img src="{{asset('assets/img/pembayaran')}}/{{$detail->foto_pembayaran}}" class="border-1 rounded-3 py-2 px-3 bg-white" style="width: 8.2rem; height: 8.2rem;" name="foto_pembayaran" id="foto_pembayaran">
+                        </a>
                         <input class="visually-hidden" type="text" name="foto_pembayaran" id="foto_pembayaran" value="{{$detail->foto_pembayaran}}">
                     </div>
                 </div>

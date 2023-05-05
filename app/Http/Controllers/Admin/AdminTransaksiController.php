@@ -31,6 +31,7 @@ class AdminTransaksiController extends Controller
     {
         $orders = DB::table('list_order')
                     ->select(DB::raw("MONTH(waktu_order) as month"), 'jenis_transaksi', DB::raw('SUM(harga_order) as total'))
+                    ->where('status_order', 'Selesai')
                     ->groupBy('month', 'jenis_transaksi')
                     ->orderBy('month', 'asc')
                     ->get();
@@ -67,7 +68,8 @@ class AdminTransaksiController extends Controller
             'jenis_transaksi' => $request->jenis_transaksi,
             'waktu_order' => $request->waktu_order,
             'harga_order' => $request->harga_order,
-            'keluhan' => $request->keluhan
+            'keluhan' => $request->keluhan,
+            'status_order' => "Selesai"
         ]);
 
         DetailOrder::create([

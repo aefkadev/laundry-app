@@ -105,7 +105,7 @@
                     <div class="d-flex flex-column w-75 align-items-center">
                         <label class="fw-bold text-md" for="foto_keluhan">Foto Keluhan</label>
                         <img src="{{asset('assets/img/keluhan')}}/{{$detail->foto_keluhan}}" class="border-1 rounded-3 py-2 px-3 bg-white" style="width: 8.2rem; height: 8.2rem;" name="foto_keluhan" id="foto_keluhan">
-                        <input class="visually-hidden" type="text" name="foto_keluhan" id="foto_keluhan" value="{{$detail->foto_pembayaran}}">
+                        <input class="visually-hidden" type="text" name="foto_keluhan" id="foto_keluhan" value="{{$detail->foto_keluhan}}">
                     </div>
                     <div class="d-flex flex-column w-75 align-items-center">
                         <label class="fw-bold text-md" for="foto_pembayaran">Foto Pembayaran</label>

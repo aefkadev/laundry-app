@@ -55,6 +55,7 @@ class AdminTransaksiController extends Controller
         $request->validate([
             'user_order' => 'required',
             'jenis_transaksi' => 'required',
+            'keluhan' => 'required',
             'waktu_order' => 'required',
             'harga_order' => 'required|numeric'
         ]);

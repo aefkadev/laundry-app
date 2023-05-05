@@ -32,7 +32,9 @@
 </head>
 <body style="background-color: #AD48FA;">
     <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="color: #E2DFEB; font-size: 20px;">
-        <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
+        <a href="/login" style="color: #E2DFEB;">
+            <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
+        </a>
         <span class="font-weight-bolder px-2">Buat Akun</span>
     </section>
     <div class="d-flex justify-content-center mb-4 mt-0">

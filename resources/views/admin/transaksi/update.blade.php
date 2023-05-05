@@ -8,14 +8,14 @@
     <div class="vh-100">
         @if(auth()->user()->roles_id == 1)
         <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
-            <a href="{{ url()->previous() }}" style="color:black;">
+            <a href="{{route('super.transaksi.index')}}" style="color:black;">
                 <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
                 <span class="fw-bolder px-2">Konfirmasi Order</span>
             </a>
         </section>
         @elseif(auth()->user()->roles_id == 2)
         <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
-            <a href="{{ url()->previous() }}" style="color:black;">
+            <a href="{{route('admin.transaksi.index')}}" style="color:black;">
                 <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
                 <span class="fw-bolder px-2">Konfirmasi Order</span>
             </a>

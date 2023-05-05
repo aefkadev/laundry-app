@@ -35,7 +35,7 @@
                     <div class="d-flex w-75">
                         <label class="fw-bold text-md" for="status_order">Status</label>
                     </div>
-                    <select class="custom-select d-flex w-75 rounded-3" id="status_order" value="{{$order->status_order}}" enabled>
+                    <select class="custom-select d-flex w-75 rounded-3" id="status_order" name="status_order" value="{{$order->status_order}}" enabled>
                         <option value="Belum Dikonfirmasi">Belum Dikonfirmasi</option>
                         <option value="Dikonfirmasi">Dikonfirmasi</option>
                         <option value="Sedang Dikerjakan">Sedang Dikerjakan</option>
@@ -127,6 +127,8 @@
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="no_rekening" id="no_rekening" value="{{$detail->no_rekening}}" enabled>
                 </div>
+
+                <input type="hidden" name="jenis_transaksi" value="{{$order->jenis_transaksi}}">
 
                 <div class="d-flex justify-content-center w-100 py-4">
                     <button class="btn btn-dark w-50" type="submit">Submit</button>

@@ -216,6 +216,9 @@
                                     </div>
                                     <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto_pembayaran" id="foto_pembayaran">
                                 </div>
+
+                                <input type="hidden" name="jenis_transaksi" value="pemasukan">
+
                                 <button type="submit" class="btn w-25 mt-2" style="background-color: #D6C37E;">Order</button>
                             </div>
                             </div>

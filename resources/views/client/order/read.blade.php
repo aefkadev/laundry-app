@@ -20,6 +20,14 @@
                     <span class="text-xl">{{$order->status_order}}</span>
                 </div>
             </div>
+
+            <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
+                <div class="d-flex w-75">
+                    <label class="fw-bold text-md text-white" for="token">ID Transaksi</label>
+                </div>
+                <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="token" id="token" value="{{$order->token}}" disabled>
+            </div>
+
             <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
                 <div class="d-flex w-75">
                     <label class="fw-bold text-md text-white" for="user_order">Nama</label>

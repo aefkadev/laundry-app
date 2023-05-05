@@ -106,7 +106,7 @@ class AdminTransaksiController extends Controller
                 'token' => $token,
                 'user_order' => $request->user_order,
                 'jenis_pelayanan' => $request->jenis_pelayanan,
-                'jenis_transaksi' => $request->jenis_transaksi || "pemasukan",
+                'jenis_transaksi' => $request->jenis_transaksi,
                 'waktu_order' => $request->waktu_order,
                 'alamat_order' => $request->alamat_order,
                 'harga_order' => $request->harga_order,

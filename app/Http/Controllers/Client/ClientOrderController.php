@@ -14,7 +14,9 @@ class ClientOrderController extends Controller
 {
     public function index()
     {
-        $orders = ListOrder::where('user_id', Auth::user()->id)->get();
+        $orders = ListOrder::where('user_id', Auth::user()->id)
+        ->orderBy('id', 'desc')
+        ->get();
         return view('client.order.index', compact('orders'));
     }
 

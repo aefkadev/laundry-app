@@ -28,9 +28,10 @@
                             class="form-control"
                             name="user_order"
                             id="user_order"
-                            placeholder="nama"
-                            required enabled
+                            value="{{ auth()->user()->name }}"
+                            required disabled
                         />
+                        <input type="hidden" name="user_order" id="user_order" value={{ auth()->user()->name }}>
                     </div>
                 </div>
                 <div class="mb-2 pb-2 row">
@@ -44,6 +45,19 @@
                         </select>
                       </div>
                 </div>
+                <div class="mb-2 pb-2 row">
+                    <label class="col-sm-3 col-form-label"
+                        >Deskripsi :
+                    </label>
+                    <div class="col-sm-9">
+                        <input
+                            type="date"
+                            class="form-control"
+                            name="keluhan"
+                            id="keluhan"
+                            required enabled
+                        />
+                    </div>
                 <div class="mb-2 pb-2 row">
                     <label class="col-sm-3 col-form-label"
                         >Tanggal :
@@ -83,7 +97,7 @@
                     class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1"
                 >
                     Batal
-            </button>            
+            </button>
         </div>
     </form>
 </div>

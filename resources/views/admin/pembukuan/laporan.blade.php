@@ -52,7 +52,7 @@
                     <td>{{$transaksi->token}}</td>
                     <td>{{$transaksi->jenis_transaksi}}</td>
                     <td>{{$transaksi->harga_order}}</td>
-                    <td>{{$transaksi->keluhan}}</td>
+                    <td>{{Str::limit($transaksi->keluhan, 150)}}</td>
                     <td>{{$transaksi->user_order}}</td>
                   </tr>
                   @endforeach

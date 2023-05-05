@@ -61,12 +61,17 @@ class AdminTransaksiController extends Controller
         ]);
 
         $token = "1324" . Time();
-        ListOrder::create([
+        $listorder = ListOrder::create([
             'token' => $token,
             'user_order' => $request->user_order,
             'jenis_transaksi' => $request->jenis_transaksi,
             'waktu_order' => $request->waktu_order,
-            'harga_order' => $request->harga_order
+            'harga_order' => $request->harga_order,
+            'keluhan' => $request->keluhan
+        ]);
+
+        DetailOrder::create([
+            'list_id' => $listorder->id,
         ]);
 
         if (auth()->user()->roles_id == 1) {

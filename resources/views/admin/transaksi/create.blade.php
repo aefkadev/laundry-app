@@ -26,12 +26,11 @@
                         <input
                             type="text"
                             class="form-control"
-                            name="user_order"
-                            id="user_order"
-                            value="{{ auth()->user()->name }}"
-                            required disabled
+                            name="user"
+                            id="user"
+                            value="{{ auth()->user()->nama }}" disabled
                         />
-                        <input type="hidden" name="user_order" id="user_order" value={{ auth()->user()->name }}>
+                        <input type="hidden" name="user_order" id="user_order" value={{ auth()->user()->nama }}>
                     </div>
                 </div>
                 <div class="mb-2 pb-2 row">
@@ -43,7 +42,7 @@
                             <option value="pemasukan">Pemasukan</option>
                             <option value="pengeluaran">Pengeluaran</option>
                         </select>
-                      </div>
+                    </div>
                 </div>
                 <div class="mb-2 pb-2 row">
                     <label class="col-sm-3 col-form-label"
@@ -51,20 +50,21 @@
                     </label>
                     <div class="col-sm-9">
                         <input
-                            type="date"
+                            type="text"
                             class="form-control"
                             name="keluhan"
                             id="keluhan"
                             required enabled
                         />
                     </div>
+                </div>
                 <div class="mb-2 pb-2 row">
                     <label class="col-sm-3 col-form-label"
                         >Tanggal :
                     </label>
                     <div class="col-sm-9">
                         <input
-                            type="date"
+                            type="datetime-local"
                             class="form-control"
                             name="waktu_order"
                             id="waktu_order"

@@ -8,11 +8,7 @@
 <div class="col-lg-12 form-wrapper" id="sublayanan">
     <div class="container">
         <div class="d-flex flex-row">
-            @if(auth()->user()->roles_id == 1)
-                <a class="pr-3 text-dark" href="{{ route('super.layanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-            @elseif(auth()->user()->roles_id == 2)
-                <a class="pr-3 text-dark" href="{{ route('admin.layanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-            @endif
+                <a class="pr-3 text-dark" href="{{ url()->previous() }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                 <h4 class="card-title mb-4"><b>{{$layanans->nama_layanan}}</b></h4>
         </div>
             <div class="d-flex justify-content-end">

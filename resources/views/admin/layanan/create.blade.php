@@ -29,7 +29,7 @@
                 <div class="d-flex justify-content-center m-4">
                     <label for="ikon_layanan" style="cursor: pointer">
                             <i class="fa-solid fa-camera fa-2xl"></i>
-                            <input type="file" class="visually-hidden @error('ikon_layanan') is-invalid @enderror" name="ikon_layanan" id="ikon_layanan" enabled>
+                            <input type="file" class="visually-hidden" name="ikon_layanan" id="ikon_layanan" enabled>
                             @error('ikon_layanan')
                                 <span class="invalid-feedback text-center" role="alert">
                                     <strong>{{ $message }}</strong>

@@ -64,39 +64,6 @@
                     @endif
                     </div>
                 </div>
-                {{-- <div class="col-5 bg-secondary text-white d-flex align-items-center text-center rounded-end">
-                    <b>{{ $sublayanan->nama_sub }}</b>
-                </div>
-                <div class="col-5 text-right">
-                    @if(auth()->user()->roles_id == 1)
-                        <a href="{{ route('super.sublayanan.edit',$sublayanan->id) }}" class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1">
-                        Edit
-                        </a>
-                        <button type="submit" class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1" role="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$sublayanan->id}}">
-                        Hapus
-                        </button>
-                        <!-- Modal -->
-                        <div class="modal fade bd-example-modal-sm{{$sublayanan->id}}" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog ">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title"><strong>Hapus Jenis Layanan?</strong></h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal">
-                                        </button>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <form action="{{route('super.sublayanan.destroy', $sublayanan->id)}}" method="POST">
-                                            @method('DELETE')
-                                            @csrf
-                                            <input type="submit" class="btn btn-dark light" name="" id="" value="Ya">
-                                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Tidak</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-                </div> --}}
             </div>
             @endforeach
     </div>

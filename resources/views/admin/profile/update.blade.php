@@ -7,7 +7,7 @@
     <div class="card">
       @if(auth()->user()->roles_id == 1)
       <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
-        <a href="/super" style="color:#E2DFEB;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i>
+        <a href="/super" style="color:#000000;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i>
           <span class="fw-bolder px-2">Edit Profile</span>
         </a>
       </section>
@@ -15,7 +15,7 @@
           <form method="POST" action="{{ route('super.profile.update', $user->id) }}" enctype='multipart/form-data'>
       @elseif(auth()->user()->roles_id == 2)
       <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
-        <a href="/admin" style="color:#E2DFEB;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i>
+        <a href="/admin" style="color:#000000;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i>
           <span class="fw-bolder px-2">Edit Profile</span>
         </a>
       </section>
@@ -28,7 +28,7 @@
         <label for="gambar_user">
             @if ($user->gambar_user == Null)
               <img src="{{ asset('assets/profile') }}/default.png" class="img-circle elevation-2" style="width:200px !important; height:200px !important;" alt="">
-              <input type="file" class="visually-hidden @error('gambar_user') is-invalid @enderror" accept="image/*" onchange="loadFile(event)" placeholder="gambar_user" name="gambar_user" id="gambar_user" enabled>
+              <input type="file" class="visually-hidden" accept="image/*" onchange="loadFile(event)" placeholder="gambar_user" name="gambar_user" id="gambar_user" enabled>
               @error('gambar_user')
                   <span class="invalid-feedback text-center" role="alert">
                       <strong>{{ $message }}</strong>
@@ -36,7 +36,7 @@
               @enderror
             @else
               <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="">
-              <input type="file" class="visually-hidden @error('gambar_user') is-invalid @enderror" accept="image/*" onchange="loadFile(event)" placeholder="gambar_user" name="gambar_user" id="gambar_user" enabled>
+              <input type="file" class="visually-hidden" accept="image/*" onchange="loadFile(event)" placeholder="gambar_user" name="gambar_user" id="gambar_user" enabled>
               @error('gambar_user')
                   <span class="invalid-feedback text-center" role="alert">
                       <strong>{{ $message }}</strong>
@@ -49,12 +49,12 @@
         <div class="mb-3 row">
           <label class="col-sm-3 col-form-label">Nama</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="name" name="name" id="name" value="{{$user->name}}" enabled>
-            @error('name')
+            <input type="text" class="form-control" placeholder="nama" name="nama" id="nama" value="{{$user->nama}}" enabled>
+            @error('nama')
               <span class="invalid-feedback text-center" role="alert">
                 <strong>{{ $message }}</strong>
               </span>
-            @enderror
+            @enderror            
           </div>
         </div>
         <div class="mb-3 row">

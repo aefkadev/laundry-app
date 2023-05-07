@@ -31,10 +31,20 @@
                     <label for="ikon_layanan" style="cursor: pointer">
                         @if ($layanan->ikon_layanan == Null)
                             <i class="fa-solid fa-camera fa-2xl"></i>
-                            <input type="file" class="visually-hidden" placeholder="ikon_layanan" name="ikon_layanan" id="ikon_layanan" enabled>
+                            <input type="file" class="visually-hidden" name="ikon_layanan" id="ikon_layanan" enabled>
+                            @error('ikon_layanan')
+                                <span class="invalid-feedback text-center" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         @else
                             <img src="{{ asset('assets/ikon') }}/{{ $layanan->ikon_layanan }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="">
-                            <input type="file" class="visually-hidden" placeholder="ikon_layanan" name="ikon_layanan" id="ikon_layanan" enabled>
+                            <input type="file" class="visually-hidden" name="ikon_layanan" id="ikon_layanan" enabled>
+                            @error('ikon_layanan')
+                                <span class="invalid-feedback text-center" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         @endif
                     </label>
                 </div>
@@ -65,7 +75,7 @@
                     <div class="col-sm-9">
                         <input
                             type="text"
-                            class="form-control @error('deskripsi_layanan') is-invalid @enderror
+                            class="form-control @error('deskripsi_layanan') is-invalid @enderror"
                             name="deskripsi_layanan"
                             id="deskripsi_layanan"
                             value="{{$layanan->deskripsi_layanan}}"

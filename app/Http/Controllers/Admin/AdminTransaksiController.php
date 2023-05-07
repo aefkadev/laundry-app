@@ -119,20 +119,6 @@ class AdminTransaksiController extends Controller
                 'pembayaran' => 'required',
                 'foto_pembayaran' => 'mimes:jpg,jpeg,png|max:2048',
                 'no_rekening' => 'required'
-            ],[
-                'user_order.required' => 'Nama Pemesan tidak boleh kosong',
-                'jenis_transaksi.required' => 'Jenis Transaksi tidak boleh kosong',
-                'keluhan.required' => 'Keluhan tidak boleh kosong',
-                'waktu_order.required' => 'Waktu Order tidak boleh kosong',
-                'harga_order.required' => 'Harga Order tidak boleh kosong',
-                'harga_order.numeric' => 'Harga Order harus berupa angka',
-                'foto_keluhan.mimes' => 'Foto Keluhan harus berupa file gambar',
-                'foto_keluhan.max' => 'Foto Keluhan maksimal 2MB',
-                'opsi_pengiriman.required' => 'Opsi Pengiriman tidak boleh kosong',
-                'pembayaran.required' => 'Pembayaran tidak boleh kosong',
-                'foto_pembayaran.mimes' => 'Foto Pembayaran harus berupa file gambar',
-                'foto_pembayaran.max' => 'Foto Pembayaran maksimal 2MB',
-                'no_rekening.required' => 'No Rekening tidak boleh kosong'
             ]
         );
 

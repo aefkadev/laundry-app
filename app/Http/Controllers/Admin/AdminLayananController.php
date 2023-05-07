@@ -25,10 +25,12 @@ class AdminLayananController extends Controller
     {
         $request->validate(
             [
-                'nama_layanan' => 'required',
+                'nama_layanan' => 'required|max:255',
                 'deskripsi_layanan' => 'required',
-            ],[
+            ],
+            [
                 'nama_layanan.required' => 'Nama Layanan Tidak Boleh Kosong!',
+                'nama_layanan.max' => 'Nama Layanan Terlalu Panjang!',
                 'deskripsi_layanan.required' => 'Deskripsi Layanan Tidak Boleh Kosong!',
             ]
         );
@@ -38,14 +40,9 @@ class AdminLayananController extends Controller
             'deskripsi_layanan' => $request->deskripsi_layanan
         ]);
 
-        $validasi = $request->validate(
-            [
-                'ikon_layanan' => 'mimes:jpg,bmp,png,svg,jpeg|max:1280 ',
-            ],[
-                'ikon_layanan.mimes' => 'Format Ikon Tidak Sesuai!',
-                'ikon_layanan.max' => 'Ukuran Ikon Terlalu Besar!',
-            ]
-        );
+        $validasi = $request->validate([
+            'ikon_layanan' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:1280 ',
+        ]);
 
         $file = $validasi[('ikon_layanan')];
         $layanan->ikon_layanan = time().'_'.$file->getClientOriginalName();
@@ -96,10 +93,12 @@ class AdminLayananController extends Controller
 
         $validasi = $request->validate(
             [
-                'ikon_layanan' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
-            ],[
-                'ikon_layanan.mimes' => 'Format Ikon Tidak Sesuai!',
-                'ikon_layanan.max' => 'Ukuran Ikon Terlalu Besar!',
+                'ikon_layanan' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+            ],
+            [
+                'ikon_layanan.required' => 'Ikon Layanan Tidak Boleh Kosong!',
+                'ikon_layanan.mimes' => 'Ikon Layanan Harus Berupa File: jpg,bmp,png,svg,jpeg!',
+                'ikon_layanan.max' => 'Ikon Layanan Terlalu Besar!'
             ]
         );
 

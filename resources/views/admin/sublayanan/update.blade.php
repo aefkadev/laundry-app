@@ -39,7 +39,7 @@
                 <label for="ikon_sub" style="cursor: pointer">
                     @if ($sublayanan->ikon_sub == Null)
                         <i class="fa-solid fa-camera fa-2xl"></i>
-                        <input type="file" class="visually-hidden @error('ikon_sub') is-invalid @enderror" name="ikon_sub" id="ikon_sub" enabled>
+                        <input type="file" class="visually-hidden" name="ikon_sub" id="ikon_sub" enabled>
                         @error('ikon_sub')
                             <span class="invalid-feedback text-center" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -47,7 +47,7 @@
                         @enderror
                     @else
                         <img src="{{ asset('assets/ikon') }}/{{ $sublayanan->ikon_sub }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="">
-                        <input type="file" class="visually-hidden @error('ikon_sub') is-invalid @enderror" name="ikon_sub" id="ikon_sub" enabled>
+                        <input type="file" class="visually-hidden" name="ikon_sub" id="ikon_sub" enabled>
                         @error('ikon_sub')
                             <span class="invalid-feedback text-center" role="alert">
                                 <strong>{{ $message }}</strong>

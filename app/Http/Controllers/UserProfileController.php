@@ -30,7 +30,10 @@ class UserProfileController extends Controller
                     'no_telepon' => $request->no_telepon,
                 ],[
                     'nama.required' => 'Nama harus diisi!',
+                    'nama.max' => 'Nama maksimal 255 karakter!',
                     'email.required' => 'Email harus diisi!',
+                    'email.max' => 'Email maksimal 255 karakter!',
+                    'email.unique' => 'Email sudah terdaftar!',
                     'no_telepon.required' => 'No Telepon harus diisi!',
                 ]
             );
@@ -43,18 +46,25 @@ class UserProfileController extends Controller
                     'password' => Hash::make($request->password)
                 ],[
                     'nama.required' => 'Nama harus diisi!',
+                    'nama.max' => 'Nama maksimal 255 karakter!',
                     'email.required' => 'Email harus diisi!',
+                    'email.max' => 'Email maksimal 255 karakter!',
+                    'email.unique' => 'Email sudah terdaftar!',
                     'no_telepon.required' => 'No Telepon harus diisi!',
-                    'password.required' => 'Password harus diisi!',]
+                    'password.required' => 'Password harus diisi!',
+                    'password.min' => 'Password minimal 8 karakter!',
+                    'password.confirmed' => 'Password tidak sama!',
+                ]
             );
         }
         $validasi = $request->validate(
             [
-                'gambar_user' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+                'gambar_user' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
             ],
             [
-                'gambar_user.mimes' => 'Format gambar harus jpg, bmp, png, svg, jpeg!',
-                'gambar_user.max' => 'Ukuran gambar maksimal 2,5 MB!',
+                'gambar_user.required' => 'Gambar harus diisi!',
+                'gambar_user.mimes' => 'Gambar harus berformat jpg, bmp, png, svg, jpeg!',
+                'gambar_user.max' => 'Gambar maksimal 2560 KB!',
             ]
         );
 

@@ -24,15 +24,18 @@ class AdminUserController extends Controller
     {
         $request->validate(
             [
-                'nama' => 'required',
-                'email' => 'required',
+                'nama' => 'required|max:255',
+                'email' => 'required|max:255|unique:users,email',
                 'no_telepon' => 'required',
                 'password' => 'required',
                 'roles_id' => 'required'
             ],
             [
                 'nama.required' => 'Nama harus diisi!',
+                'nama.max' => 'Nama maksimal 255 karakter!',
                 'email.required' => 'Email harus diisi!',
+                'email.max' => 'Email maksimal 255 karakter!',
+                'email.unique' => 'Email sudah terdaftar!',
                 'no_telepon.required' => 'No Telepon harus diisi!',
                 'password.required' => 'Password harus diisi!',
                 'roles_id.required' => 'Roles harus diisi!'
@@ -66,6 +69,23 @@ class AdminUserController extends Controller
 
     public function update(Request $request, string $id)
     {
+        $request->validate(
+            [
+                'nama' => 'required|max:255',
+                'email' => 'required|max:255',
+                'no_telepon' => 'required',
+                'roles_id' => 'required'
+            ],
+            [
+                'nama.required' => 'Nama harus diisi!',
+                'nama.max' => 'Nama maksimal 255 karakter!',
+                'email.required' => 'Email harus diisi!',
+                'email.max' => 'Email maksimal 255 karakter!',
+                'no_telepon.required' => 'No Telepon harus diisi!',
+                'roles_id.required' => 'Roles harus diisi!'
+            ]
+        );
+
         $user = User::where('id', $id)->first();
         $user->update(
             [
@@ -74,13 +94,6 @@ class AdminUserController extends Controller
                 'no_telepon' => $request->no_telepon,
                 'password' => Hash::make($request->password),
                 'roles_id' => $request->roles_id
-            ],
-            [
-                'nama.required' => 'Nama harus diisi!',
-                'email.required' => 'Email harus diisi!',
-                'no_telepon.required' => 'No Telepon harus diisi!',
-                'password.required' => 'Password harus diisi!',
-                'roles_id.required' => 'Roles harus diisi!'
             ]
         );
         if (auth()->user()->roles_id == 1) {

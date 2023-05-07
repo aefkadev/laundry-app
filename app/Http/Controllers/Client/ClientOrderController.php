@@ -37,7 +37,7 @@ class ClientOrderController extends Controller
     {
         $request->validate(
             [
-                'user_order' => 'required',
+                'user_order' => 'required|max:255',
                 'jenis_pelayanan' => 'required',
                 'no_telepon' => 'required',
                 'waktu_order' => 'required',
@@ -52,6 +52,7 @@ class ClientOrderController extends Controller
             ],
             [
                 'user_order.required' => 'Nama Pemesan tidak boleh kosong',
+                'user_order.max' => 'Nama Pemesan tidak boleh lebih dari 255 karakter',
                 'jenis_pelayanan.required' => 'Jenis Pelayanan tidak boleh kosong',
                 'no_telepon.required' => 'Nomor Telepon tidak boleh kosong',
                 'waktu_order.required' => 'Waktu Order tidak boleh kosong',

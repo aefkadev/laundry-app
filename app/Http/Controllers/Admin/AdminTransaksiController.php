@@ -109,9 +109,9 @@ class AdminTransaksiController extends Controller
     {
         $request->validate(
             [
-                'user_order' => 'required',
+                'user_order' => 'required|max:255',
                 'jenis_transaksi' => 'required',
-                'keluhan' => 'required',
+                'keluhan' => 'required|max:255',
                 'waktu_order' => 'required',
                 'harga_order' => 'required|numeric',
                 'foto_keluhan' => 'mimes:jpg,jpeg,png|max:2048',

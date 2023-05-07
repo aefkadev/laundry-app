@@ -21,13 +21,14 @@ class AdminSubLayananController extends Controller
         $request->validate(
             [
                 'layanan_id' => 'required',
-                'nama_sub' => 'required',
+                'nama_sub' => 'required|max:255',
                 'deskripsi_sub' => 'required',
                 'waktu_sub' => 'required|numeric',
                 'harga_sub' => 'required|numeric',
             ],[
                 'layanan_id.required' => 'Layanan Tidak Boleh Kosong!',
                 'nama_sub.required' => 'Nama Sub Layanan Tidak Boleh Kosong!',
+                'nama_sub.max' => 'Nama Sub Layanan Terlalu Panjang!',
                 'deskripsi_sub.required' => 'Deskripsi Sub Layanan Tidak Boleh Kosong!',
                 'waktu_sub.required' => 'Waktu Sub Layanan Tidak Boleh Kosong!',
                 'waktu_sub.numeric' => 'Waktu Sub Layanan Harus Berupa Angka!',
@@ -81,12 +82,13 @@ class AdminSubLayananController extends Controller
     {
         $request->validate(
             [
-                'nama_sub' => 'required',
+                'nama_sub' => 'required|max:255',
                 'deskripsi_sub' => 'required',
                 'waktu_sub' => 'required|numeric',
                 'harga_sub' => 'required|numeric',
             ],[
                 'nama_sub.required' => 'Nama Sub Layanan Tidak Boleh Kosong!',
+                'nama_sub.max' => 'Nama Sub Layanan Terlalu Panjang!',
                 'deskripsi_sub.required' => 'Deskripsi Sub Layanan Tidak Boleh Kosong!',
                 'waktu_sub.required' => 'Waktu Sub Layanan Tidak Boleh Kosong!',
                 'waktu_sub.numeric' => 'Waktu Sub Layanan Harus Berupa Angka!',

@@ -75,10 +75,11 @@ class AdminLayananController extends Controller
     {
         $request->validate(
             [
-                'nama_layanan' => 'required',
+                'nama_layanan' => 'required|max:255',
                 'deskripsi_layanan' => 'required',
             ],[
                 'nama_layanan.required' => 'Nama Layanan Tidak Boleh Kosong!',
+                'nama_layanan.max' => 'Nama Layanan Terlalu Panjang!',
                 'deskripsi_layanan.required' => 'Deskripsi Layanan Tidak Boleh Kosong!',
             ]
         );

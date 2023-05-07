@@ -17,31 +17,56 @@
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Nama</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" placeholder="nama" name="nama" id="nama" required>
+              <input type="text" class="form-control @error('nama') is-invalid @enderror" placeholder="nama" name="nama" id="nama" required>
+              @error('nama')
+                <span class="invalid-feedback text-center" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+              @enderror
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Email</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" placeholder="email" name="email" id="email" required>
+              <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="email" name="email" id="email" required>
+              @error('email')
+                <span class="invalid-feedback text-center" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+              @enderror
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Gambar User</label>
             <div class="col-sm-9">
-              <input type="file" class="form-control" placeholder="gambar_user" name="gambar_user" id="gambar_user" required>
+              <input type="file" class="form-control @error('gambar_user') is-invalid @enderror" placeholder="gambar_user" name="gambar_user" id="gambar_user" required>
+              @error('gambar_user')
+                <span class="invalid-feedback text-center" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+              @enderror
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">No Telepon</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" placeholder="no_telepon" name="no_telepon" id="no_telepon" required>
+              <input type="text" class="form-control @error('no_telepon') is-invalid @enderror" placeholder="no_telepon" name="no_telepon" id="no_telepon" required>
+              @error('no_telepon')
+                <span class="invalid-feedback text-center" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+              @enderror
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Password</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" placeholder="password" name="password" id="password" required>
+              <input type="text" class="form-control @error('password') is-invalid @enderror" placeholder="password" name="password" id="password" required>
+              @error('password')
+                <span class="invalid-feedback text-center" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+              @enderror
             </div>
           </div>
           <div class="mb-3 row">

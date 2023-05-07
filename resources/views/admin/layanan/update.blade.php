@@ -45,12 +45,17 @@
                     <div class="col-sm-9">
                         <input
                             type="text"
-                            class="form-control"
+                            class="form-control @error('nama_layanan') is-invalid @enderror"
                             name="nama_layanan"
                             id="nama_layanan"
                             value="{{$layanan->nama_layanan}}"
                             required
                         />
+                        @error('nama_layanan')
+                            <span class="invalid-feedback text-center" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3 pb-4 row">
@@ -60,12 +65,17 @@
                     <div class="col-sm-9">
                         <input
                             type="text"
-                            class="form-control"
+                            class="form-control @error('deskripsi_layanan') is-invalid @enderror
                             name="deskripsi_layanan"
                             id="deskripsi_layanan"
                             value="{{$layanan->deskripsi_layanan}}"
                             required
                         />
+                        @error('deskripsi_layanan')
+                            <span class="invalid-feedback text-center" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
             </div>

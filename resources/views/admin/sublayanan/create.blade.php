@@ -34,7 +34,12 @@
                 <div class="d-flex justify-content-center m-4">
                     <label for="ikon_sub" style="cursor: pointer">
                         <i class="fa-solid fa-camera fa-2xl"></i>
-                        <input type="file" class="visually-hidden" placeholder="ikon_sub" name="ikon_sub" id="ikon_sub" enabled>
+                        <input type="file" class="visually-hidden @error('ikon_sub') is-invalid @enderror" name="ikon_sub" id="ikon_sub" enabled>
+                        @error('ikon_sub')
+                            <span class="invalid-feedback text-center" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </label>
                 </div>
                 <div class="mb-2 pb-2 row">

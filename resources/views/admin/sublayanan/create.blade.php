@@ -51,7 +51,7 @@
                             required
                         />
                         @error('nama_sub')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback text-center" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -68,7 +68,7 @@
                             required>
                         </textarea>
                         @error('deskripsi_sub')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback text-center" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -88,7 +88,7 @@
                             required
                         />
                         @error('waktu_sub')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback text-center" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -106,7 +106,7 @@
                             required
                         />
                         @error('harga_sub')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback text-center" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror

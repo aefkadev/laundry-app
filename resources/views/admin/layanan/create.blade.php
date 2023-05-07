@@ -46,7 +46,7 @@
                             required
                         />
                         @error('nama_layanan')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback text-center" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -65,7 +65,7 @@
                             required>
                         </textarea>
                         @error('deskripsi_layanan')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback text-center" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror

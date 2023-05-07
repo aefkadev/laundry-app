@@ -49,7 +49,7 @@
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('user_order') is-invalid @enderror" type="text" name="user_order" id="user_order" value="{{$order->user_order}}" enabled>
                     @error('user_order')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-center" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -62,7 +62,7 @@
                     <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('waktu_order') is-invalid @enderror" type="text" name="waktu_order" id="waktu_order" value="{{$order->waktu_order}}" disabled>
                     <input type="hidden" name="waktu_order" value="{{$order->waktu_order}}">
                     @error('waktu_order')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-center" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -74,7 +74,7 @@
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('no_telepon') is-invalid @enderror" type="text" name="no_telepon" id="no_telepon" value="{{$order->no_telepon}}" enabled>
                     @error('no_telepon')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-center" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -86,7 +86,7 @@
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75" type="text" name="alamat_order" id="alamat_order" value="{{$order->alamat_order}}" enabled>
                     @error('alamat_order')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-center" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -98,7 +98,7 @@
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('jenis_pelayanan') is-invalid @enderror" type="text" name="jenis_pelayanan" id="jenis_pelayanan" value="{{$order->jenis_pelayanan}}" enabled>
                     @error('jenis_pelayanan')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-center" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -111,7 +111,7 @@
                     <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('harga_order') is-invalid @enderror" type="number" name="harga_order" id="harga_order" value="{{$order->harga_order}}" disabled>
                     <input type="hidden" name="harga_order" value="{{$order->harga_order}}">
                     @error('harga_order')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-center" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -123,7 +123,7 @@
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75" type="text" name="keluhan" id="keluhan" value="{{$order->keluhan}}" enabled>
                     @error('keluhan')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-center" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -135,7 +135,7 @@
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75" type="text" name="pembayaran" id="pembayaran" value="{{$detail->pembayaran}}" enabled>
                     @error('pembayaran')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-center" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -149,7 +149,7 @@
                         </a>
                         <input class="visually-hidden" type="text" name="foto_keluhan" id="foto_keluhan" value="{{$detail->foto_keluhan}}">
                         @error('foto_keluhan')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback text-center" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -161,7 +161,7 @@
                         </a>
                         <input class="visually-hidden" type="text" name="foto_pembayaran" id="foto_pembayaran" value="{{$detail->foto_pembayaran}}">
                         @error('foto_pembayaran')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback text-center" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -174,7 +174,7 @@
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('opsi_pengiriman') is-invalid @enderror" type="text" name="opsi_pengiriman" id="opsi_pengiriman" value="{{$detail->opsi_pengiriman}}" enabled>
                     @error('opsi_pengiriman')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-center" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -186,7 +186,7 @@
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('no_rekening') is-invalid @enderror" type="text" name="no_rekening" id="no_rekening" value="{{$detail->no_rekening}}" enabled>
                     @error('no_rekening')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-center" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror

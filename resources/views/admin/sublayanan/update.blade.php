@@ -17,11 +17,11 @@
             <div class="card-header">
                 <h4 class="card-title">
                     @if(auth()->user()->roles_id == 1)
-                        <a href="{{ route('super.layanan.show',$layanan->id) }}" class="pr-3 text-dark">
+                        <a href="{{ back()->getTargetUrl() }}" class="pr-3 text-dark">
                             <i class="fa fa-arrow-left" aria-hidden="true"></i>
                         </a>
                     @elseif(auth()->user()->roles_id == 2)
-                        <a href="{{ route('admin.layanan.show',$layanan->id) }}" class="pr-3 text-dark">
+                        <a href="{{ back()->getTargetUrl() }}" class="pr-3 text-dark">
                             <i class="fa fa-arrow-left" aria-hidden="true"></i>
                         </a>
                     @endif

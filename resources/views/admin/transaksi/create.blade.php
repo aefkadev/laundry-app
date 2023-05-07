@@ -93,7 +93,7 @@
                     Simpan
             </button>
             <button
-                    type="submit"
+                    type="reset"
                     class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1"
                 >
                     Batal

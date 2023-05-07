@@ -6,7 +6,7 @@
 <body class="" style="background-color: #AD48FA;">
     <div class="vh-100">
         <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
-            <a href="{{ route('member.m-layanan.index') }}" class="bg-opacity-10 btn" style="color: #E2DFEB;font-size: 1.2rem;">
+            <a href="{{ back()->getTargetUrl() }}" class="bg-opacity-10 btn" style="color: #E2DFEB;font-size: 1.2rem;">
                 <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
                 <span class="fw-bolder px-2">Order</span>
             </a>

@@ -12,15 +12,11 @@
                 @csrf
                 <input class="border-0 rounded-3 py-2 px-3 w-75 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autofocus type="text" name="email" id="email" placeholder="email">
                 @error('email')
-                                    <span class="invalid-feedback text-center" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                 <input class="border-0 rounded-3 py-2 px-3 w-75 @error('password') is-invalid @enderror" name="password" required type="password" id="password" placeholder="password">
                 @error('password')
-                                    <span class="invalid-feedback text-center" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                 <button type="submit" class="btn w-25" style="background-color: #D6C37E;">Login</button>
             </form>

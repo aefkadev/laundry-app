@@ -45,15 +45,11 @@
                 @csrf
                 <input class="border-0 rounded-3 py-2 px-3 w-75 @error('nama') is-invalid @enderror" value="{{ old('nama') }}" required autocomplete="nama" autofocus type="text" name="nama" placeholder="Nama" required>
                 @error('nama')
-                                    <span class="invalid-feedback text-center" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                 <input class="border-0 rounded-3 py-2 px-3 w-75 @error('password') is-invalid @enderror" type="password" name="password" id="password" placeholder="Password" required autocomplete="current-password">
                 @error('password')
-                                    <span class="invalid-feedback text-center" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                 <!-- Modal -->
                 <div class="modal fade show" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-modal="false" role="dialog">
@@ -70,21 +66,15 @@
                             <div class="d-flex flex-column gap-3 justify-content-center align-items-center w-100">
                                 <input class="border-0 rounded-3 py-2 px-3 w-75  @error('email') is-invalid @enderror" type="email" name="email" placeholder="Email" required>
                                 @error('email')
-                                    <span class="invalid-feedback text-center" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                                 <input class="border-0 rounded-3 py-2 px-3 w-75  @error('no_telepon') is-invalid @enderror" type="text" name="no_telepon" placeholder="Nomor Telepon" required>
                                 @error('no_telepon')
-                                    <span class="invalid-feedback text-center" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                                 <input class="border-0 rounded-3 py-2 px-3 w-75  @error('alamat') is-invalid @enderror" type="text" name="alamat" id="alamat" placeholder="Alamat">
                                 @error('alamat')
-                                    <span class="invalid-feedback text-center" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                                 <input class="border-0 rounded-3 py-2 px-3 w-75" type="password" name="password_confirmation" id="password-confirm"  placeholder="Konfirmasi Password" required autocomplete="current-password">
                                 

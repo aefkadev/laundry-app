@@ -19,9 +19,7 @@
             <div class="col-sm-9">
               <input type="text" class="form-control @error('nama') is-invalid @enderror" placeholder="nama" name="nama" id="nama" required>
               @error('nama')
-                <span class="invalid-feedback text-center" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
+                <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
           </div>
@@ -30,9 +28,7 @@
             <div class="col-sm-9">
               <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="email" name="email" id="email" required>
               @error('email')
-                <span class="invalid-feedback text-center" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
+                <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
           </div>
@@ -41,9 +37,7 @@
             <div class="col-sm-9">
               <input type="file" class="form-control @error('gambar_user') is-invalid @enderror" placeholder="gambar_user" name="gambar_user" id="gambar_user" required>
               @error('gambar_user')
-                <span class="invalid-feedback text-center" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
+                <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
           </div>
@@ -52,9 +46,7 @@
             <div class="col-sm-9">
               <input type="text" class="form-control @error('no_telepon') is-invalid @enderror" placeholder="no_telepon" name="no_telepon" id="no_telepon" required>
               @error('no_telepon')
-                <span class="invalid-feedback text-center" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
+                <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
           </div>
@@ -63,9 +55,7 @@
             <div class="col-sm-9">
               <input type="text" class="form-control @error('password') is-invalid @enderror" placeholder="password" name="password" id="password" required>
               @error('password')
-                <span class="invalid-feedback text-center" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
+                <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
           </div>

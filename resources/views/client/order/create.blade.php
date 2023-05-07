@@ -41,9 +41,7 @@
                                         required disabled
                                     />
                                     @error('nama_sub')
-                                        <span class="invalid-feedback text-center" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                        <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -76,9 +74,7 @@
                                         required disabled
                                     />
                                     @error('waktu_sub')
-                                        <span class="invalid-feedback text-center" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                        <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -94,9 +90,7 @@
                                         required disabled
                                     />
                                     @error('harga_sub')
-                                        <span class="invalid-feedback text-center" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                        <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -181,9 +175,7 @@
                                     </div>
                                     <input class="border-0 rounded-3 py-2 px-3 w-75 @error('alamat_order') is-invalid @enderror" type="text" name="alamat_order" required id="alamat_order" placeholder="Masukkan alamat anda">
                                     @error('alamat_order')
-                                        <span class="invalid-feedback text-center" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                        <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
             
@@ -193,9 +185,7 @@
                                     </div>
                                     <input class="border-0 rounded-3 py-2 px-3 w-75 @error('keluhan') is-invalid @enderror" type="text" name="keluhan" required id="keluhan" placeholder="Masukkan keluhan anda">
                                     @error('keluhan')
-                                        <span class="invalid-feedback text-center" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                        <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 
@@ -205,9 +195,7 @@
                                     </div>
                                     <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white @error('foto_keluhan') is-invalid @enderror" type="file" name="foto_keluhan" required id="foto_keluhan">
                                     @error('foto_keluhan')
-                                        <span class="invalid-feedback text-center" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                        <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
 
@@ -249,9 +237,7 @@
                                     </div>
                                     <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="text" name="no_rekening" id="no_rekening" placeholder="Masukkan no.rekening anda">
                                     @error('no_rekening')
-                                        <span class="invalid-feedback text-center" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                        <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
 
@@ -261,9 +247,7 @@
                                     </div>
                                     <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white @error('foto_pembayaran') is-invalid @enderror" type="file" name="foto_pembayaran" id="foto_pembayaran">
                                     @error('foto_pembayaran')
-                                        <span class="invalid-feedback text-center" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                        <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
 

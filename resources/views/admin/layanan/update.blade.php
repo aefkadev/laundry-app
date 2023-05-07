@@ -62,9 +62,7 @@
                             required
                         />
                         @error('nama_layanan')
-                            <span class="invalid-feedback text-center" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
@@ -82,9 +80,7 @@
                             required
                         />
                         @error('deskripsi_layanan')
-                            <span class="invalid-feedback text-center" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>

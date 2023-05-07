@@ -22,17 +22,13 @@
                   <img src="{{ asset('assets/profile') }}/default.png" class="img-circle elevation-2" style="width:200px !important; height:200px !important;" alt="">
                   <input type="file" class="visually-hidden" accept="image/*" onchange="loadFile(event)" placeholder="gambar_user" name="gambar_user" id="gambar_user" enabled>
                   @error('gambar_user')
-                      <span class="invalid-feedback text-center" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
+                      <div class="alert alert-danger">{{ $message }}</div>
                   @enderror
               @else
                   <img src="{{ asset('assets/profile') }}/{{ $user->gambar_user }}" style="width:200px !important; height:200px !important;" class="img-circle elevation-2" alt="">
                   <input type="file" class="visually-hidden" accept="image/*" onchange="loadFile(event)" placeholder="gambar_user" name="gambar_user" id="gambar_user" enabled>
                   @error('gambar_user')
-                      <span class="invalid-feedback text-center" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
+                      <div class="alert alert-danger">{{ $message }}</div>
                   @enderror
               @endif
           </label>
@@ -43,9 +39,7 @@
           <div class="col-sm-9">
             <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="nama" name="nama" id="nama" value="{{$user->nama}}" enabled>
             @error('nama')
-              <span class="invalid-feedback text-center" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
+              <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
         </div>
@@ -54,9 +48,7 @@
           <div class="col-sm-9">
             <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="email" name="email" id="email" value="{{$user->email}}" enabled>
             @error('email')
-              <span class="invalid-feedback text-center" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
+              <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
         </div>
@@ -65,9 +57,7 @@
           <div class="col-sm-9">
             <input type="text" class="form-control @error('no_telepon') is-invalid @enderror" placeholder="no_telepon" name="no_telepon" id="no_telepon" value="{{$user->no_telepon}}" enabled>
             @error('no_telepon')
-              <span class="invalid-feedback text-center" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
+              <div class="alert alert-danger">{{ $message }}</div>
             @enderror
           </div>
         </div>

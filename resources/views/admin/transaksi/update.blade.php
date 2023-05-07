@@ -149,9 +149,7 @@
                         </a>
                         <input class="visually-hidden" type="text" name="foto_keluhan" id="foto_keluhan" value="{{$detail->foto_keluhan}}">
                         @error('foto_keluhan')
-                            <span class="invalid-feedback text-center" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="d-flex flex-column w-75 align-items-center">
@@ -161,9 +159,7 @@
                         </a>
                         <input class="visually-hidden" type="text" name="foto_pembayaran" id="foto_pembayaran" value="{{$detail->foto_pembayaran}}">
                         @error('foto_pembayaran')
-                            <span class="invalid-feedback text-center" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>

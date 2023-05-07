@@ -36,9 +36,7 @@
                         <i class="fa-solid fa-camera fa-2xl"></i>
                         <input type="file" class="visually-hidden @error('ikon_sub') is-invalid @enderror" name="ikon_sub" id="ikon_sub" enabled>
                         @error('ikon_sub')
-                            <span class="invalid-feedback text-center" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </label>
                 </div>
@@ -56,9 +54,7 @@
                             required
                         />
                         @error('nama_sub')
-                            <span class="invalid-feedback text-center" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
@@ -73,9 +69,7 @@
                             required>
                         </textarea>
                         @error('deskripsi_sub')
-                            <span class="invalid-feedback text-center" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
@@ -93,9 +87,7 @@
                             required
                         />
                         @error('waktu_sub')
-                            <span class="invalid-feedback text-center" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
@@ -111,9 +103,7 @@
                             required
                         />
                         @error('harga_sub')
-                            <span class="invalid-feedback text-center" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>

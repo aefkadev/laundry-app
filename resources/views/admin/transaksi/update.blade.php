@@ -47,22 +47,37 @@
                     <div class="d-flex w-75">
                         <label class="fw-bold text-md" for="user_order">Nama</label>
                     </div>
-                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="user_order" id="user_order" value="{{$order->user_order}}" enabled>
+                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('user_order') is-invalid @enderror" type="text" name="user_order" id="user_order" value="{{$order->user_order}}" enabled>
+                    @error('user_order')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
                     <div class="d-flex w-75">
                         <label class="fw-bold text-md" for="waktu_order">Tanggal Order</label>
                     </div>
-                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="waktu_order" id="waktu_order" value="{{$order->waktu_order}}" disabled>
+                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('waktu_order') is-invalid @enderror" type="text" name="waktu_order" id="waktu_order" value="{{$order->waktu_order}}" disabled>
                     <input type="hidden" name="waktu_order" value="{{$order->waktu_order}}">
+                    @error('waktu_order')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
                     <div class="d-flex w-75">
                         <label class="fw-bold text-md" for="no_telepon">Nomor Whatsapp</label>
                     </div>
-                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="no_telepon" id="no_telepon" value="{{$order->no_telepon}}" enabled>
+                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('no_telepon') is-invalid @enderror" type="text" name="no_telepon" id="no_telepon" value="{{$order->no_telepon}}" enabled>
+                    @error('no_telepon')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
@@ -70,21 +85,36 @@
                         <label class="fw-bold text-md" for="alamat_order">Alamat</label>
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75" type="text" name="alamat_order" id="alamat_order" value="{{$order->alamat_order}}" enabled>
+                    @error('alamat_order')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
                     <div class="d-flex w-75">
                         <label class="fw-bold text-md" for="jenis_pelayanan">Jenis layanan</label>
                     </div>
-                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="jenis_pelayanan" id="jenis_pelayanan" value="{{$order->jenis_pelayanan}}" enabled>
+                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('jenis_pelayanan') is-invalid @enderror" type="text" name="jenis_pelayanan" id="jenis_pelayanan" value="{{$order->jenis_pelayanan}}" enabled>
+                    @error('jenis_pelayanan')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
                     <div class="d-flex w-75">
                         <label class="fw-bold text-md" for="harga_order">Harga</label>
                     </div>
-                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="number" name="harga_order" id="harga_order" value="{{$order->harga_order}}" disabled>
+                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('harga_order') is-invalid @enderror" type="number" name="harga_order" id="harga_order" value="{{$order->harga_order}}" disabled>
                     <input type="hidden" name="harga_order" value="{{$order->harga_order}}">
+                    @error('harga_order')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
@@ -92,6 +122,11 @@
                         <label class="fw-bold text-md" for="keluhan">Keluhan</label>
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75" type="text" name="keluhan" id="keluhan" value="{{$order->keluhan}}" enabled>
+                    @error('keluhan')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
@@ -99,6 +134,11 @@
                         <label class="fw-bold text-md" for="pembayaran">Pembayaran</label>
                     </div>
                     <input class="border-1 rounded-3 py-2 px-3 w-75" type="text" name="pembayaran" id="pembayaran" value="{{$detail->pembayaran}}" enabled>
+                    @error('pembayaran')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="d-flex flex-row w-100 align-items-center pt-3 pb-0">
@@ -108,6 +148,11 @@
                             <img src="{{asset('assets/img/keluhan')}}/{{$detail->foto_keluhan}}" class="border-1 rounded-3 py-2 px-3 bg-white" style="width: 8.2rem; height: 8.2rem;" name="foto_keluhan" id="foto_keluhan">
                         </a>
                         <input class="visually-hidden" type="text" name="foto_keluhan" id="foto_keluhan" value="{{$detail->foto_keluhan}}">
+                        @error('foto_keluhan')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="d-flex flex-column w-75 align-items-center">
                         <label class="fw-bold text-md" for="foto_pembayaran">Foto Pembayaran</label>
@@ -115,6 +160,11 @@
                             <img src="{{asset('assets/img/pembayaran')}}/{{$detail->foto_pembayaran}}" class="border-1 rounded-3 py-2 px-3 bg-white" style="width: 8.2rem; height: 8.2rem;" name="foto_pembayaran" id="foto_pembayaran">
                         </a>
                         <input class="visually-hidden" type="text" name="foto_pembayaran" id="foto_pembayaran" value="{{$detail->foto_pembayaran}}">
+                        @error('foto_pembayaran')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
 
@@ -122,14 +172,24 @@
                     <div class="d-flex w-75">
                         <label class="fw-bold text-md" for="opsi_pengiriman">Opsi Pengiriman</label>
                     </div>
-                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="opsi_pengiriman" id="opsi_pengiriman" value="{{$detail->opsi_pengiriman}}" enabled>
+                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('opsi_pengiriman') is-invalid @enderror" type="text" name="opsi_pengiriman" id="opsi_pengiriman" value="{{$detail->opsi_pengiriman}}" enabled>
+                    @error('opsi_pengiriman')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
                     <div class="d-flex w-75">
                         <label class="fw-bold text-md" for="no_rekening">No. Rekening (optional)</label>
                     </div>
-                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75" type="text" name="no_rekening" id="no_rekening" value="{{$detail->no_rekening}}" enabled>
+                    <input class="border-1 rounded-3 py-2 px-3 w-75 bg-white bg-opacity-75 @error('no_rekening') is-invalid @enderror" type="text" name="no_rekening" id="no_rekening" value="{{$detail->no_rekening}}" enabled>
+                    @error('no_rekening')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <input type="hidden" name="jenis_transaksi" value="{{$order->jenis_transaksi}}">

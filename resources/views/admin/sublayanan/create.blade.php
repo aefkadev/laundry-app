@@ -44,24 +44,34 @@
                     <div class="col-sm-9">
                         <input
                             type="text"
-                            class="form-control"
+                            class="form-control @error('nama_sub') is-invalid @enderror" value="{{ old('nama_sub') }}"
                             name="nama_sub"
                             id="nama_sub"
                             placeholder="Nama Jenis Pelayanan"
                             required
                         />
+                        @error('nama_sub')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-2 pb-2 row">
                     <label class="col-sm-3 col-form-label">Deskripsi : </label>
                     <div class="col-sm-9">
                         <textarea
-                            class="form-control"
+                            class="form-control @error('deskripsi_sub') is-invalid @enderror" value="{{ old('deskripsi_sub') }}"
                             name="deskripsi_sub"
                             id="deskripsi_sub"
                             placeholder="Deskripsi"
                             required>
                         </textarea>
+                        @error('deskripsi_sub')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-2 pb-2 row">
@@ -71,12 +81,17 @@
                     <div class="col-sm-9">
                         <input
                             type="text"
-                            class="form-control"
+                            class="form-control @error('waktu_sub') is-invalid @enderror" value="{{ old('waktu_sub') }}"
                             name="waktu_sub"
                             id="waktu_sub"
                             placeholder="2"
                             required
                         />
+                        @error('waktu_sub')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-2 pb-2 row">
@@ -84,12 +99,17 @@
                     <div class="col-sm-9">
                         <input
                             type="text"
-                            class="form-control"
+                            class="form-control @error('harga_sub') is-invalid @enderror" value="{{ old('harga_sub') }}"
                             name="harga_sub"
                             id="harga_sub"
                             placeholder="50000"
                             required
                         />
+                        @error('harga_sub')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
             </div>

@@ -98,6 +98,14 @@ class AdminTransaksiController extends Controller
 
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'user_order' => 'required',
+            'jenis_transaksi' => 'required',
+            'keluhan' => 'required',
+            'waktu_order' => 'required',
+            'harga_order' => 'required|numeric'
+        ]);
+
         $order = ListOrder::where('id', $id)->first();
         $detail = DetailOrder::where('list_id', $id)->first();
         $token = "1324" . Time();
@@ -121,6 +129,7 @@ class AdminTransaksiController extends Controller
             'foto_pembayaran' => $request->foto_pembayaran,
             'no_rekening' => $request->no_rekening
         ]);
+
         if (auth()->user()->roles_id == 1) {
             return redirect('super/transaksi')->with('sukses', 'Berhasil Edit Data!');
         } elseif (auth()->user()->roles_id == 2) {

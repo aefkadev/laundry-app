@@ -34,22 +34,32 @@
                                 <div class="col-sm-9">
                                     <input
                                         type="text"
-                                        class="form-control"
+                                        class="form-control @error('nama_sub') is-invalid @enderror"
                                         name="nama_sub"
                                         id="nama_sub"
                                         value="{{$order->nama_sub}}"
                                         required disabled
                                     />
+                                    @error('nama_sub')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="mb-2 pb-2 row">
                                 <label class="col-sm-3 col-form-label">Deskripsi : </label>
                                 <div class="col-sm-9">
                                     <textarea
-                                        class="form-control"
+                                        class="form-control @error('deskripsi_sub') is-invalid @enderror"
                                         name="deskripsi_sub"
                                         id="deskripsi_sub"
                                         required disabled>{{$order->deskripsi_sub}}</textarea>
+                                        @error('deskripsi_sub')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                             </div>
                             <div class="mb-2 pb-2 row">
@@ -59,12 +69,17 @@
                                 <div class="col-sm-9">
                                     <input
                                         type="text"
-                                        class="form-control"
+                                        class="form-control @error('waktu_sub') is-invalid @enderror"
                                         name="waktu_sub"
                                         id="waktu_sub"
                                         value="{{$order->waktu_sub}} hari"
                                         required disabled
                                     />
+                                    @error('waktu_sub')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="mb-2 pb-2 row">
@@ -72,12 +87,17 @@
                                 <div class="col-sm-9">
                                     <input
                                         type="text"
-                                        class="form-control"
+                                        class="form-control @error('harga_sub') is-invalid @enderror"
                                         name="harga_sub"
                                         id="harga_sub"
                                         value="{{$order->harga_sub}}"
                                         required disabled
                                     />
+                                    @error('harga_sub')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -130,7 +150,12 @@
                                         <div class="d-flex w-100">
                                             <label class="fw-bold text-md text-white mb-0 mt-2" for="harga_order">Estimasi Waktu</label>
                                         </div>
-                                        <input class="border-0 rounded-3 py-2 px-3 w-100 text-white text-lg fw-normal" type="text" name="harga_order" required id="harga_order" value="{{$order->waktu_sub}} hari" disabled>
+                                        <input class="border-0 rounded-3 py-2 px-3 w-100 text-white text-lg fw-normal @error('harga_order') is-invalid @enderror" type="text" name="harga_order" required id="harga_order" value="{{$order->waktu_sub}} hari" disabled>
+                                        @error('harga_order')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
 
                                     <div class="d-flex flex-column w-100 align-items-center">
@@ -154,21 +179,36 @@
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="alamat_order">Alamat</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="alamat_order" required id="alamat_order" placeholder="Jalan .....">
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75 @error('alamat_order') is-invalid @enderror" type="text" name="alamat_order" required id="alamat_order" placeholder="Masukkan alamat anda">
+                                    @error('alamat_order')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
             
                                 <div class="d-flex flex-column w-100 align-items-center">
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="keluhan">Keluhan</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="keluhan" required id="keluhan" placeholder="Contoh : Sepatu kotor di bagian....">
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75 @error('keluhan') is-invalid @enderror" type="text" name="keluhan" required id="keluhan" placeholder="Masukkan keluhan anda">
+                                    @error('keluhan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 
                                 <div class="d-flex flex-column w-100 align-items-center">
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="foto_keluhan">Foto Keluhan</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto_keluhan" id="foto_keluhan">
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white @error('foto_keluhan') is-invalid @enderror" type="file" name="foto_keluhan" required id="foto_keluhan">
+                                    @error('foto_keluhan')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
 
                                 <div class="d-flex flex-column w-100 align-items-center">
@@ -207,14 +247,24 @@
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="no_rekening">No. Rekening (optional)</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75" type="text" name="no_rekening" id="no_rekening" placeholder="12131">
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="text" name="no_rekening" id="no_rekening" placeholder="Masukkan no.rekening anda">
+                                    @error('no_rekening')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
 
                                 <div class="d-flex flex-column w-100 align-items-center">
                                     <div class="d-flex w-75">
                                         <label class="fw-bold text-md text-white" for="foto_pembayaran">Bukti Pembayaran</label>
                                     </div>
-                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white" type="file" name="foto_pembayaran" id="foto_pembayaran">
+                                    <input class="border-0 rounded-3 py-2 px-3 w-75 bg-white @error('foto_pembayaran') is-invalid @enderror" type="file" name="foto_pembayaran" id="foto_pembayaran">
+                                    @error('foto_pembayaran')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
 
                                 <input type="hidden" name="jenis_transaksi" value="pemasukan">

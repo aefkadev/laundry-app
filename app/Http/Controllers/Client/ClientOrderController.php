@@ -35,6 +35,20 @@ class ClientOrderController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'user_order' => 'required',
+            'jenis_pelayanan' => 'required',
+            'no_telepon' => 'required',
+            'waktu_order' => 'required',
+            'alamat_order' => 'required',
+            'harga_order' => 'required',
+            'keluhan' => 'required',
+            'opsi_pengiriman' => 'required',
+            'pembayaran' => 'required',
+            'no_rekening' => 'required',
+            'foto_keluhan' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+            'foto_pembayaran' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+        ]);
 
         $token = "1324" . Time();
         

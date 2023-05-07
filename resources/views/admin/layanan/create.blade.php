@@ -39,12 +39,17 @@
                     <div class="col-sm-9">
                         <input
                             type="text"
-                            class="form-control"
+                            class="form-control @error('nama_layanan') is-invalid @enderror" value="{{ old('nama_layanan') }}"
                             name="nama_layanan"
                             id="nama_layanan"
                             placeholder="Nama Pelayanan"
                             required
                         />
+                        @error('nama_layanan')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3 pb-4 row">
@@ -53,12 +58,17 @@
                     </label>
                     <div class="col-sm-9">
                         <textarea
-                            class="form-control"
+                            class="form-control @error('deskripsi_layanan') is-invalid @enderror" value="{{ old('deskripsi_layanan') }}"
                             name="deskripsi_layanan"
                             id="deskripsi_layanan"
                             placeholder="Deskripsi Pelayanan"
                             required>
                         </textarea>
+                        @error('deskripsi_layanan')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
             </div>

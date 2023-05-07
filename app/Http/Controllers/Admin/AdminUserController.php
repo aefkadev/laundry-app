@@ -22,13 +22,22 @@ class AdminUserController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'nama' => 'required',
-            'email' => 'required',
-            'no_telepon' => 'required',
-            'password' => 'required',
-            'roles_id' => 'required'
-        ]);
+        $request->validate(
+            [
+                'nama' => 'required',
+                'email' => 'required',
+                'no_telepon' => 'required',
+                'password' => 'required',
+                'roles_id' => 'required'
+            ],
+            [
+                'nama.required' => 'Nama harus diisi!',
+                'email.required' => 'Email harus diisi!',
+                'no_telepon.required' => 'No Telepon harus diisi!',
+                'password.required' => 'Password harus diisi!',
+                'roles_id.required' => 'Roles harus diisi!'
+            ]
+        );
         
         User::create([
             'nama' => $request->nama,
@@ -65,6 +74,13 @@ class AdminUserController extends Controller
                 'no_telepon' => $request->no_telepon,
                 'password' => Hash::make($request->password),
                 'roles_id' => $request->roles_id
+            ],
+            [
+                'nama.required' => 'Nama harus diisi!',
+                'email.required' => 'Email harus diisi!',
+                'no_telepon.required' => 'No Telepon harus diisi!',
+                'password.required' => 'Password harus diisi!',
+                'roles_id.required' => 'Roles harus diisi!'
             ]
         );
         if (auth()->user()->roles_id == 1) {

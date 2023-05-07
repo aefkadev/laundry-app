@@ -35,20 +35,36 @@ class ClientOrderController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'user_order' => 'required',
-            'jenis_pelayanan' => 'required',
-            'no_telepon' => 'required',
-            'waktu_order' => 'required',
-            'alamat_order' => 'required',
-            'harga_order' => 'required',
-            'keluhan' => 'required',
-            'opsi_pengiriman' => 'required',
-            'pembayaran' => 'required',
-            'no_rekening' => 'required',
-            'foto_keluhan' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
-            'foto_pembayaran' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
-        ]);
+        $request->validate(
+            [
+                'user_order' => 'required',
+                'jenis_pelayanan' => 'required',
+                'no_telepon' => 'required',
+                'waktu_order' => 'required',
+                'alamat_order' => 'required',
+                'harga_order' => 'required',
+                'keluhan' => 'required',
+                'opsi_pengiriman' => 'required',
+                'pembayaran' => 'required',
+                'no_rekening' => 'required',
+                'foto_keluhan' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+                'foto_pembayaran' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+            ],
+            [
+                'user_order.required' => 'Nama Pemesan tidak boleh kosong',
+                'jenis_pelayanan.required' => 'Jenis Pelayanan tidak boleh kosong',
+                'no_telepon.required' => 'Nomor Telepon tidak boleh kosong',
+                'waktu_order.required' => 'Waktu Order tidak boleh kosong',
+                'alamat_order.required' => 'Alamat Order tidak boleh kosong',
+                'harga_order.required' => 'Harga Order tidak boleh kosong',
+                'keluhan.required' => 'Keluhan tidak boleh kosong',
+                'opsi_pengiriman.required' => 'Opsi Pengiriman tidak boleh kosong',
+                'pembayaran.required' => 'Pembayaran tidak boleh kosong',
+                'no_rekening.required' => 'Nomor Rekening tidak boleh kosong',
+                'foto_keluhan.mimes' => 'Foto Keluhan harus berupa file: jpg, bmp, png, svg, jpeg',
+                'foto_pembayaran.mimes' => 'Foto Pembayaran harus berupa file: jpg, bmp, png, svg, jpeg',
+            ]
+        );
 
         $token = "1324" . Time();
         

@@ -18,13 +18,22 @@ class AdminSubLayananController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([
-            'layanan_id' => 'required',
-            'nama_sub' => 'required',
-            'deskripsi_sub' => 'required',
-            'waktu_sub' => 'required',
-            'harga_sub' => 'required',
-        ]);
+        $request->validate(
+            [
+                'layanan_id' => 'required',
+                'nama_sub' => 'required',
+                'deskripsi_sub' => 'required',
+                'waktu_sub' => 'required',
+                'harga_sub' => 'required|numeric',
+            ],[
+                'layanan_id.required' => 'Layanan Tidak Boleh Kosong!',
+                'nama_sub.required' => 'Nama Sub Layanan Tidak Boleh Kosong!',
+                'deskripsi_sub.required' => 'Deskripsi Sub Layanan Tidak Boleh Kosong!',
+                'waktu_sub.required' => 'Waktu Sub Layanan Tidak Boleh Kosong!',
+                'harga_sub.required' => 'Harga Sub Layanan Tidak Boleh Kosong!',
+                'harga_sub.numeric' => 'Harga Sub Layanan Harus Berupa Angka!',
+            ]
+        );
 
         $sublayanan = SubLayanan::create([
             'layanan_id' => $request->layanan_id,
@@ -35,9 +44,14 @@ class AdminSubLayananController extends Controller
         ]);
         
 
-        $validasi = $request->validate([
-            'ikon_sub' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
-        ]);
+        $validasi = $request->validate(
+            [
+                'ikon_sub' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+            ],[
+                'ikon_sub.mimes' => 'Format Ikon Tidak Sesuai!',
+                'ikon_sub.max' => 'Ukuran Ikon Terlalu Besar!',
+            ]
+        );
 
         $file = $validasi[('ikon_sub')];
         $sublayanan->ikon_sub = time().'_'.$file->getClientOriginalName();
@@ -64,12 +78,20 @@ class AdminSubLayananController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $request->validate([
-            'nama_sub' => 'required',
-            'deskripsi_sub' => 'required',
-            'waktu_sub' => 'required',
-            'harga_sub' => 'required|numeric',
-        ]);
+        $request->validate(
+            [
+                'nama_sub' => 'required',
+                'deskripsi_sub' => 'required',
+                'waktu_sub' => 'required',
+                'harga_sub' => 'required|numeric',
+            ],[
+                'nama_sub.required' => 'Nama Sub Layanan Tidak Boleh Kosong!',
+                'deskripsi_sub.required' => 'Deskripsi Sub Layanan Tidak Boleh Kosong!',
+                'waktu_sub.required' => 'Waktu Sub Layanan Tidak Boleh Kosong!',
+                'harga_sub.required' => 'Harga Sub Layanan Tidak Boleh Kosong!',
+                'harga_sub.numeric' => 'Harga Sub Layanan Harus Berupa Angka!',
+            ]
+        );
 
         $sublayanan = SubLayanan::where('id', $id)->first();
         $sublayanan->update(
@@ -82,9 +104,14 @@ class AdminSubLayananController extends Controller
             ]
         );
         
-        $validasi = $request->validate([
-            'ikon_sub' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:1280 ',
-        ]);
+        $validasi = $request->validate(
+            [
+                'ikon_sub' => 'mimes:jpg,bmp,png,svg,jpeg|max:1280 ',
+            ],[
+                'ikon_sub.mimes' => 'Format Ikon Tidak Sesuai!',
+                'ikon_sub.max' => 'Ukuran Ikon Terlalu Besar!',
+            ]
+        );
 
         $file = $validasi[('ikon_sub')];
         $sublayanan->ikon_sub = time().'_'.$file->getClientOriginalName();

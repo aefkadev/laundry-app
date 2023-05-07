@@ -23,19 +23,29 @@ class AdminLayananController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'nama_layanan' => 'required',
-            'deskripsi_layanan' => 'required',
-        ]);
+        $request->validate(
+            [
+                'nama_layanan' => 'required',
+                'deskripsi_layanan' => 'required',
+            ],[
+                'nama_layanan.required' => 'Nama Layanan Tidak Boleh Kosong!',
+                'deskripsi_layanan.required' => 'Deskripsi Layanan Tidak Boleh Kosong!',
+            ]
+        );
 
         $layanan = Layanan::create([
             'nama_layanan' => $request->nama_layanan,
             'deskripsi_layanan' => $request->deskripsi_layanan
         ]);
 
-        $validasi = $request->validate([
-            'ikon_layanan' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:1280 ',
-        ]);
+        $validasi = $request->validate(
+            [
+                'ikon_layanan' => 'mimes:jpg,bmp,png,svg,jpeg|max:1280 ',
+            ],[
+                'ikon_layanan.mimes' => 'Format Ikon Tidak Sesuai!',
+                'ikon_layanan.max' => 'Ukuran Ikon Terlalu Besar!',
+            ]
+        );
 
         $file = $validasi[('ikon_layanan')];
         $layanan->ikon_layanan = time().'_'.$file->getClientOriginalName();
@@ -66,10 +76,15 @@ class AdminLayananController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $request->validate([
-            'nama_layanan' => 'required',
-            'deskripsi_layanan' => 'required',
-        ]);
+        $request->validate(
+            [
+                'nama_layanan' => 'required',
+                'deskripsi_layanan' => 'required',
+            ],[
+                'nama_layanan.required' => 'Nama Layanan Tidak Boleh Kosong!',
+                'deskripsi_layanan.required' => 'Deskripsi Layanan Tidak Boleh Kosong!',
+            ]
+        );
 
         $layanan = Layanan::where('id', $id)->first();
         $layanan->update(
@@ -79,9 +94,14 @@ class AdminLayananController extends Controller
             ]
         );
 
-        $validasi = $request->validate([
-            'ikon_layanan' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
-        ]);
+        $validasi = $request->validate(
+            [
+                'ikon_layanan' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+            ],[
+                'ikon_layanan.mimes' => 'Format Ikon Tidak Sesuai!',
+                'ikon_layanan.max' => 'Ukuran Ikon Terlalu Besar!',
+            ]
+        );
 
         $file = $validasi[('ikon_layanan')];
         $layanan->ikon_layanan = time().'_'.$file->getClientOriginalName();

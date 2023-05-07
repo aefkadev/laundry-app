@@ -28,6 +28,10 @@ class UserProfileController extends Controller
                     'nama' => $request->nama,
                     'email' => $request->email,
                     'no_telepon' => $request->no_telepon,
+                ],[
+                    'nama.required' => 'Nama harus diisi!',
+                    'email.required' => 'Email harus diisi!',
+                    'no_telepon.required' => 'No Telepon harus diisi!',
                 ]
             );
         } else {
@@ -37,12 +41,22 @@ class UserProfileController extends Controller
                     'email' => $request->email,
                     'no_telepon' => $request->no_telepon,
                     'password' => Hash::make($request->password)
-                ]
+                ],[
+                    'nama.required' => 'Nama harus diisi!',
+                    'email.required' => 'Email harus diisi!',
+                    'no_telepon.required' => 'No Telepon harus diisi!',
+                    'password.required' => 'Password harus diisi!',]
             );
         }
-        $validasi = $request->validate([
-            'gambar_user' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
-        ]);
+        $validasi = $request->validate(
+            [
+                'gambar_user' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+            ],
+            [
+                'gambar_user.mimes' => 'Format gambar harus jpg, bmp, png, svg, jpeg!',
+                'gambar_user.max' => 'Ukuran gambar maksimal 2,5 MB!',
+            ]
+        );
 
         $file = $validasi[('gambar_user')];
         $user->gambar_user = time().'_'.$file->getClientOriginalName();

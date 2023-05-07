@@ -21,7 +21,7 @@
     </section>
     
     <section class="w-100 d-flex flex-column justify-content-center align-items-center" style="padding-bottom: 15vh;">
-      @foreach ($orders as $order)
+      @foreach ($orders->where('user_id') as $order)
           <div class="card p-2 rounded-3" style="width: 75%;">
               <div class="d-flex mb-3">
                   <div class="d-flex justify-content-center align-content-center">

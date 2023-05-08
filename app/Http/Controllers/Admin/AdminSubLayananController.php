@@ -118,14 +118,12 @@ class AdminSubLayananController extends Controller
             ]
         );
 
-        $file = $validasi[('ikon_sub')];
-        $sublayanan->ikon_sub = time().'_'.$file->getClientOriginalName();
-        $sublayanan->update();
-        $nama_file = time().'_'.$file->getClientOriginalName();
-
-        $location = '../public/assets/ikon/';
-
-        $file->move($location,$nama_file);
+        if($request->hasFile('ikon_sub')){
+            $ikon_sub = $validasi[('ikon_sub')];
+            $sublayanan->ikon_sub = time().'_'.$ikon_sub->getClientOriginalName();
+            $sublayanan->update();
+            $ikon_sub->move('../public/assets/ikon/',time().'_'.$ikon_sub->getClientOriginalName());
+        }
 
         if (auth()->user()->roles_id == 1) {
             return redirect('super/sublayanan/'.$id.'/edit')->with('sukses', 'Berhasil Edit Data!');

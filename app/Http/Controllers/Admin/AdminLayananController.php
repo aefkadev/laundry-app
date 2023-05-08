@@ -103,14 +103,12 @@ class AdminLayananController extends Controller
             ]
         );
 
-        $file = $validasi[('ikon_layanan')];
-        $layanan->ikon_layanan = time().'_'.$file->getClientOriginalName();
-        $layanan->update();
-        $nama_file = time().'_'.$file->getClientOriginalName();
-
-        $location = '../public/assets/ikon/';
-
-        $file->move($location,$nama_file);
+        if($request->hasFile('ikon_layanan')){
+            $ikon_layanan = $validasi[('ikon_layanan')];
+            $layanan->ikon_layanan = time().'_'.$ikon_layanan->getClientOriginalName();
+            $layanan->update();
+            $ikon_layanan->move('../public/assets/ikon/',time().'_'.$ikon_layanan->getClientOriginalName());
+        }
 
         if (auth()->user()->roles_id == 1) {
             return redirect('super/layanan/'.$id.'/edit')->with('sukses', 'Berhasil Edit Data!');

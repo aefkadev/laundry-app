@@ -59,23 +59,20 @@ class UserProfileController extends Controller
         }
         $validasi = $request->validate(
             [
-                'gambar_user' => 'required|mimes:jpg,bmp,png,svg,jpeg,heif,hevc|max:10240 ',
+                'gambar_user' => 'mimes:jpg,bmp,png,svg,jpeg,heif,hevc|max:10240 ',
             ],
             [
-                'gambar_user.required' => 'Gambar harus diisi!',
                 'gambar_user.mimes' => 'Gambar harus berformat jpg, bmp, png, svg, jpeg, heif, hevc!',
                 'gambar_user.max' => 'Gambar maksimal 10MB!',
             ]
         );
 
-        $file = $validasi[('gambar_user')];
-        $user->gambar_user = time().'_'.$file->getClientOriginalName();
-        $user->update();
-        $nama_file = time().'_'.$file->getClientOriginalName();
-
-        $location = '../public/assets/profile/';
-
-        $file->move($location,$nama_file);
+        if($request->hasFile('gambar_user')){
+            $gambar_user = $validasi[('gambar_user')];
+            $user->gambar_user = time().'_'.$gambar_user->getClientOriginalName();
+            $user->update();
+            $gambar_user->move('../public/assets/profile/',time().'_'.$gambar_user->getClientOriginalName());
+        }
 
         if (auth()->user()->roles_id == 1) {
             return redirect('super/profile/'.$id.'/edit')->with('sukses', 'Berhasil Edit Data!');

@@ -33,8 +33,8 @@
                           <span class="text-md">
                               {{$order->waktu_order}}
                           </span>
-                          <span class="text-md px-2 text-truncate w-50">
-                              {{$order->keluhan}}
+                          <span class="text-md px-2 w-50">
+                              {{Str::limit($order->keluhan, 8)}}
                           </span>
                       </div>
                   </div>

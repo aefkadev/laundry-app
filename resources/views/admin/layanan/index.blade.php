@@ -16,15 +16,15 @@
                 @endif
                 <span class="font-weight-bolder px-2">Detail Jenis Pelayanan</span>
             </div>
-            <div class="d-flex">
+            <div class="d-flex px-0">
                 @if(auth()->user()->roles_id == 1)
-                <div class="d-flex justify-content-end">
-                        <a href="{{ route('super.layanan.create') }}" class="btn">
-                            <button type="submit" class="btn btn-dark btn-sm">
-                                Tambah
-                            </button>
-                        </a>
-                    </div>
+                <div class="d-flex justify-content-end px-0">
+                    <a href="{{ route('super.layanan.create') }}" class="btn px-0">
+                        <button type="submit" class="btn btn-dark btn-sm">
+                            Tambah
+                        </button>
+                    </a>
+                </div>
                 @endif
             </div>
         </div>
@@ -32,7 +32,7 @@
             @foreach ($layanans as $layanan)
             <div class="d-flex align-items-center justify-content-between">
                 @if(auth()->user()->roles_id == 1)
-                    <a href="{{ route('super.layanan.show',$layanan->id) }}" class="text-decoration-none bg-dark px-3 rounded-4 w-60 d-flex align-items-center" style="min-height: 45px; width: 400px;">
+                    <a href="{{ route('super.layanan.show',$layanan->id) }}" class="text-decoration-none bg-dark px-3 me-1 rounded-4 w-60 d-flex align-items-center" style="min-height: 45px; width: 400px;">
                         <div class="d-flex align-items-center px-1">
                             @if ($layanan->ikon_layanan == Null)
                                 <img src="{{ asset('assets/ikon') }}/default.png" style="width: 45px;" alt="ikon">

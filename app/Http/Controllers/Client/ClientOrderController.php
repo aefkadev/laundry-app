@@ -46,9 +46,8 @@ class ClientOrderController extends Controller
                 'keluhan' => 'required',
                 'opsi_pengiriman' => 'required',
                 'pembayaran' => 'required',
-                'no_rekening' => 'required',
-                'foto_keluhan' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
-                'foto_pembayaran' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+                'foto_keluhan' => 'mimes:jpg,bmp,png,svg,jpeg,heif,hevc|max:10240',
+                'foto_pembayaran' => 'mimes:jpg,bmp,png,svg,jpeg,heif,hevc|max:10240',
             ],
             [
                 'user_order.required' => 'Nama Pemesan tidak boleh kosong',
@@ -62,8 +61,10 @@ class ClientOrderController extends Controller
                 'opsi_pengiriman.required' => 'Opsi Pengiriman tidak boleh kosong',
                 'pembayaran.required' => 'Pembayaran tidak boleh kosong',
                 'no_rekening.required' => 'Nomor Rekening tidak boleh kosong',
-                'foto_keluhan.mimes' => 'Foto Keluhan harus berupa file: jpg, bmp, png, svg, jpeg',
-                'foto_pembayaran.mimes' => 'Foto Pembayaran harus berupa file: jpg, bmp, png, svg, jpeg',
+                'foto_keluhan.mimes' => 'Foto Keluhan harus berupa file: jpg, bmp, png, svg, jpeg, heif, hevc',
+                'foto_keluhan.max' => 'Foto Keluhan tidak boleh lebih dari 10 MB',
+                'foto_pembayaran.mimes' => 'Foto Pembayaran harus berupa file: jpg, bmp, png, svg, jpeg, heif, hevc',
+                'foto_pembayaran.max' => 'Foto Pembayaran tidak boleh lebih dari 10 MB',
             ]
         );
 

@@ -59,12 +59,12 @@ class UserProfileController extends Controller
         }
         $validasi = $request->validate(
             [
-                'gambar_user' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+                'gambar_user' => 'required|mimes:jpg,bmp,png,svg,jpeg,heif,hevc|max:10240 ',
             ],
             [
                 'gambar_user.required' => 'Gambar harus diisi!',
-                'gambar_user.mimes' => 'Gambar harus berformat jpg, bmp, png, svg, jpeg!',
-                'gambar_user.max' => 'Gambar maksimal 2560 KB!',
+                'gambar_user.mimes' => 'Gambar harus berformat jpg, bmp, png, svg, jpeg, heif, hevc!',
+                'gambar_user.max' => 'Gambar maksimal 10MB!',
             ]
         );
 

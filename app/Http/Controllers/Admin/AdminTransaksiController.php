@@ -107,44 +107,13 @@ class AdminTransaksiController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $request->validate(
-            [
-                'user_order' => 'required|max:255',
-                'jenis_transaksi' => 'required',
-                'keluhan' => 'required|max:255',
-                'waktu_order' => 'required',
-                'harga_order' => 'required|numeric',
-                'foto_keluhan' => 'mimes:jpg,jpeg,png|max:2048',
-                'opsi_pengiriman' => 'required',
-                'pembayaran' => 'required',
-                'foto_pembayaran' => 'mimes:jpg,jpeg,png|max:2048',
-                'no_rekening' => 'required'
-            ]
-        );
 
         $order = ListOrder::where('id', $id)->first();
-        $detail = DetailOrder::where('list_id', $id)->first();
-        $token = "1324" . Time();
         $order->update(
             [
-                'token' => $token,
-                'user_order' => $request->user_order,
-                'jenis_pelayanan' => $request->jenis_pelayanan,
-                'jenis_transaksi' => $request->jenis_transaksi,
-                'waktu_order' => $request->waktu_order,
-                'alamat_order' => $request->alamat_order,
-                'harga_order' => $request->harga_order,
                 'status_order' => $request->status_order,
-                'keluhan' => $request->keluhan
                 ]
             );
-        $detail->update([
-            'foto_keluhan' => $request->foto_keluhan,
-            'opsi_pengiriman' => $request->opsi_pengiriman,
-            'pembayaran' => $request->pembayaran,
-            'foto_pembayaran' => $request->foto_pembayaran,
-            'no_rekening' => $request->no_rekening
-        ]);
 
         if (auth()->user()->roles_id == 1) {
             return redirect('super/transaksi')->with('sukses', 'Berhasil Edit Data!');

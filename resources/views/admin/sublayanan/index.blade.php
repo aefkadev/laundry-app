@@ -31,14 +31,14 @@
                     <img src="{{ asset('assets/ikon') }}/{{ $sublayanan->ikon_sub }}" alt="ikon" height="40" width="40"/>
                     @endif
                 </div>
-                <div class="col bg-secondary  d-flex flex-column flex-md-row justify-content-between"> 
+                <div class="col bg-secondary d-flex flex-column flex-md-row justify-content-between"> 
                     <span class="fw-bolder py-1">{{ $sublayanan->nama_sub }}</span>
                     <div class="d-flex justify-content-end gap-2">
                         @if(auth()->user()->roles_id == 1)
-                        <a href="{{ route('super.sublayanan.edit',$sublayanan->id) }}" class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1">
+                        <a href="{{ route('super.sublayanan.edit',$sublayanan->id) }}" class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1 my-auto">
                         Edit
                         </a>
-                        <button type="submit" class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1" role="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$sublayanan->id}}">
+                        <button type="submit" class="btn btn-dark btn-sm mb-3 ml-1 mt-1 p-1 my-auto" role="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$sublayanan->id}}">
                         Hapus
                         </button>
                         <!-- Modal -->

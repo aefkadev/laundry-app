@@ -94,10 +94,9 @@ class AdminLayananController extends Controller
 
         $validasi = $request->validate(
             [
-                'ikon_layanan' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
+                'ikon_layanan' => 'mimes:jpg,bmp,png,svg,jpeg|max:2560 ',
             ],
             [
-                'ikon_layanan.required' => 'Ikon Layanan Tidak Boleh Kosong!',
                 'ikon_layanan.mimes' => 'Ikon Layanan Harus Berupa File: jpg,bmp,png,svg,jpeg!',
                 'ikon_layanan.max' => 'Ikon Layanan Terlalu Besar!'
             ]

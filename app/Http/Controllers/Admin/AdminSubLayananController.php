@@ -110,9 +110,8 @@ class AdminSubLayananController extends Controller
         
         $validasi = $request->validate(
             [
-                'ikon_sub' => 'required|mimes:jpg,bmp,png,svg,jpeg|max:1280 ',
+                'ikon_sub' => 'mimes:jpg,bmp,png,svg,jpeg|max:1280 ',
             ],[
-                'ikon_sub.required' => 'Ikon Tidak Boleh Kosong!',
                 'ikon_sub.mimes' => 'Format Ikon Tidak Sesuai!',
                 'ikon_sub.max' => 'Ukuran Ikon Terlalu Besar!',
             ]

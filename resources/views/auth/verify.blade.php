@@ -31,7 +31,7 @@
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/2a99f4df77.js" crossorigin="anonymous"></script>
 </head>
-<body style="background-color: #AD48FA;">
+<body style="background-color: #24A384;">
     <div class="vh-100 d-flex justify-content-center">
         <div class="d-flex justify-content-center align-items-center flex-column w-100">
             <img src="{{asset('assets/img/main-logo.png')}}" style="width: 20rem;" alt="">

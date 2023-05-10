@@ -30,7 +30,7 @@
     <!-- font awasom -->
     <script src="https://kit.fontawesome.com/2a99f4df77.js" crossorigin="anonymous"></script>
 </head>
-<body style="background-color: #AD48FA;">
+<body style="background-color: #24A384;">
     <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="color: #E2DFEB; font-size: 20px;">
         <a href="/login" style="color: #E2DFEB;">
             <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
@@ -54,9 +54,9 @@
                 <!-- Modal -->
                 <div class="modal fade show" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-modal="false" role="dialog">
                     <div class="modal-dialog modal-fullscreen">
-                        <div class="modal-content" style="background-color: #AD48FA;">
+                        <div class="modal-content" style="background-color: #24A384;">
                             <div class="d-flex px-3 pt-4">
-                                <button type="button" class="border-0" data-bs-dismiss="modal" aria-label="Close" style="background-color: #AD48FA; color: #E2DFEB; font-size: 20px;">
+                                <button type="button" class="border-0" data-bs-dismiss="modal" aria-label="Close" style="background-color: #24A384; color: #E2DFEB; font-size: 20px;">
                                     <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
                                 </button>
                                 <span class="font-weight-bolder px-2" style="color: #E2DFEB; font-size: 20px;">Lengkapi Akun</span>

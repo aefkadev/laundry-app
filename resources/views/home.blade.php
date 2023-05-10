@@ -10,7 +10,7 @@
         <section class="nev-section py-5 px-4 d-flex justify-content-between align-items-center">
             <div class="p-2 d-flex rounded-4" style="background-color: #f1f1f1; color:black;">
 @else
-<body style="background-color: #AD48FA;">
+<body style="background-color: #24A384;">
     <div class="vh-100">
         <section class="nev-section py-5 px-4 d-flex justify-content-between align-items-center">
             <div class="p-2 d-flex rounded-4" style="background-color: #D6C37E;">

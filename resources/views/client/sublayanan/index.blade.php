@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="vh-100"  style="background-color: #AD48FA;">
+<div class="vh-100"  style="background-color: #24A384;">
     <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="color: #E2DFEB; font-size: 20px;">
         <a class="pr-3 text-light" href="{{ route('member.m-layanan.index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
         <span class="fw-bolder px-2">{{$layanans->nama_layanan}}</span>

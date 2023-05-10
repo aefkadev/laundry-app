@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
-<body class="overflow-y-hidden" style="background-color: #AD48FA;">
+<body class="overflow-y-hidden" style="background-color: #24A384;">
     <div class="vh-100 justify-content-center d-flex mb-4 mt-0">
         <div class="d-flex justify-content-center align-items-center flex-column">
             <img src="../assets/img/main-logo.png" style="width: 20rem;" alt="">

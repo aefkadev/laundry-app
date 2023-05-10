@@ -3,7 +3,7 @@
 @section('title', 'Order')
 
 @section('content')
-<body class="" style="background-color: #AD48FA;">
+<body class="" style="background-color: #24A384;">
     <div class="vh-100">
         <section class="nav-section py-3 px-4 d-flex align-items-center gap-1" style="font-size: 20px;">
             <a href="/member/m-layanan" class="bg-opacity-10 btn" style="color: #E2DFEB;font-size: 1.2rem;">
@@ -103,9 +103,9 @@
             <!-- Modal -->
             <div class="modal fade show" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-modal="false" role="dialog">
                         <div class="modal-dialog modal-fullscreen pb-4">
-                            <div class="modal-content overflow-auto pb-4" style="background-color: #AD48FA;">
+                            <div class="modal-content overflow-auto pb-4" style="background-color: #24A384;">
                                 <div class="d-flex px-3 pt-4">
-                                    <button type="button" class="border-0" data-bs-dismiss="modal" aria-label="Close" style="background-color: #AD48FA; color: #E2DFEB; font-size: 20px;">
+                                    <button type="button" class="border-0" data-bs-dismiss="modal" aria-label="Close" style="background-color: #24A384; color: #E2DFEB; font-size: 20px;">
                                         <i class="fa-solid fa-arrow-left font-weight-bolder"></i>
                                     </button>
                                     <span class="font-weight-bolder px-2" style="color: #E2DFEB; font-size: 20px;">Order</span>
@@ -215,7 +215,7 @@
                                 </div>
                                 
                                 <div class="input-group d-flex flex-column justify-content-center w-75">
-                                    <label class="fw-bold text-md text-white border-0" style="background-color: #AD48FA;" for="pembayaran">Metode Pembayaran</label>
+                                    <label class="fw-bold text-md text-white border-0" style="background-color: #24A384;" for="pembayaran">Metode Pembayaran</label>
                                     <select class="custom-select border-0 rounded-3 py-2 px-3 w-100" required id="pembayaran" name="pembayaran">
                                         <option selected value="tunai">Tunai</option>
                                         <option value="QRIS">QRIS</option>
@@ -224,7 +224,7 @@
                                 </div>
 
                                 <div class="input-group d-flex flex-column justify-content-center w-75">
-                                    <label class="fw-bold text-md text-white border-0" style="background-color: #AD48FA;" for="opsi_pengiriman">Opsi Pengiriman</label>
+                                    <label class="fw-bold text-md text-white border-0" style="background-color: #24A384;" for="opsi_pengiriman">Opsi Pengiriman</label>
                                     <select class="custom-select border-0 rounded-3 py-2 px-3 w-100" required id="opsi_pengiriman" name="opsi_pengiriman">
                                         <option selected value="pickup">Pick Up</option>
                                         <option value="delivery">Delivery</option>

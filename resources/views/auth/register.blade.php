@@ -60,7 +60,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <input class="border-0 rounded-3 py-2 px-3 w-75 @error('password') is-invalid @enderror" type="password" name="password" id="password" placeholder="Password" required autocomplete="current-password">
-                <input class="border-0 rounded-3 py-2 px-3 w-75" type="password" name="password_confirmation" id="password-confirm"  placeholder="Konfirmasi Password" required autocomplete="current-password">
+                <input class="border-0 rounded-3 py-2 px-3 w-75 @error('password') is-invalid @enderror" type="password" name="password_confirmation" id="password-confirm"  placeholder="Konfirmasi Password" required autocomplete="current-password">
                 @error('password')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

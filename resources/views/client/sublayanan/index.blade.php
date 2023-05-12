@@ -14,9 +14,9 @@
             <div class="d-flex align-items-center bg-white rounded-4 px-4 py-2">
                 <div class="d-flex">
                     @if ($sublayanan->ikon_sub == Null)
-                        <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1"/>
+                        <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1 rounded-circle"/>
                     @else
-                        <img src="{{ asset('assets/ikon') }}/{{ $sublayanan->ikon_sub }}" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1"/>
+                        <img src="{{ asset('assets/ikon') }}/{{ $sublayanan->ikon_sub }}" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1 rounded-circle"/>
                     @endif
                 </div>
                 <div class="col d-flex flex-column flex-md-row justify-content-between"> 

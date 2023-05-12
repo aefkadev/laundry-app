@@ -15,9 +15,9 @@
         <a href="{{ route('member.m-layanan.show',$layanan->id) }}" class="d-flex align-items-center bg-white rounded-4 px-4 py-2 ">
                 <div class="d-flex">
                    @if ($layanan->ikon_layanan == Null)
-                        <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1"/>
+                        <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1 rounded-circle"/>
                     @else
-                        <img src="{{ asset('assets/ikon') }}/{{ $layanan->ikon_layanan }}" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1"/>
+                        <img src="{{ asset('assets/ikon') }}/{{ $layanan->ikon_layanan }}" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1 rounded-circle"/>
                     @endif
                 </div>
                 <div class="col d-flex flex-column justify-content-between"> 

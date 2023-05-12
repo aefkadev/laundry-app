@@ -18,13 +18,11 @@
             <div class="d-flex justify-content-end">
                 @if(auth()->user()->roles_id == 1)
                     <a href="/super/createSub/{{$layanans->id}}" class="btn btn-dark btn-sm mb-4">Tambah</a>
-                @elseif(auth()->user()->roles_id == 2)
-                    <a href="/admin/createSub/{{$layanans->id}}" class="btn btn-dark btn-sm mb-4">Tambah</a>
                 @endif
             </div>
             @foreach ($sublayanans->where('layanan_id', $layanans->id) as $sublayanan)
             <div class="d-flex bg-secondary align-items-center rounded-4 px-4 py-2 my-4">
-                <div class="d-flex  text-white d-flex align-items-center rounded-start">
+                <div class="d-flex text-white d-flex align-items-center rounded-start">
                     @if ($sublayanan->ikon_sub == Null)
                     <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" height="40" width="40"/>
                     @else

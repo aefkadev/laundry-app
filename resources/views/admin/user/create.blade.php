@@ -11,7 +11,7 @@
           <a href="/super/user" style="color:black;"><i class="fa-solid fa-arrow-left font-weight-bolder"></i></a>
           <span class="fw-bolder px-2">Tambah User</span>
         </section>
-            <form method="POST" action="{{ route('super.profile.store') }}" enctype='multipart/form-data'>
+            <form method="POST" action="{{ route('super.user.store') }}" enctype='multipart/form-data'>
         @endif
             @csrf
           <div class="mb-3 row">
@@ -28,15 +28,6 @@
             <div class="col-sm-9">
               <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="email" name="email" id="email" required>
               @error('email')
-                <div class="alert alert-danger">{{ $message }}</div>
-              @enderror
-            </div>
-          </div>
-          <div class="mb-3 row">
-            <label class="col-sm-3 col-form-label">Gambar User</label>
-            <div class="col-sm-9">
-              <input type="file" class="form-control @error('gambar_user') is-invalid @enderror" placeholder="gambar_user" name="gambar_user" id="gambar_user" required>
-              @error('gambar_user')
                 <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>

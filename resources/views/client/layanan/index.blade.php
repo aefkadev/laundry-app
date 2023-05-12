@@ -23,7 +23,7 @@
                 <div class="col d-flex flex-column justify-content-between"> 
                     <span class="fw-bolder py-1">{{ $layanan->nama_layanan }}</span>
                     <div class="font-weight-normal text-black">
-                        <span>deskripsi</span>
+                        <span>{{$layanan->deskripsi_layanan}}</span>
                     </div>
                 </div>
             </div>

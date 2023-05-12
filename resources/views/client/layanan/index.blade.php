@@ -12,7 +12,7 @@
     </section>
     <section class="px-4 body-section d-flex flex-column gap-3 pt-3" style="padding-bottom: 100px">
     @foreach ($layanans as $layanan)
-        <div class="d-flex align-items-center bg-white rounded-4 px-4 py-2 ">
+        <a href="{{ route('member.m-layanan.show',$layanan->id) }}" class="d-flex align-items-center bg-white rounded-4 px-4 py-2 ">
                 <div class="d-flex">
                    @if ($layanan->ikon_layanan == Null)
                         <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" style="width: 4.2rem; height: 4.2rem;" class="p-1"/>
@@ -26,7 +26,7 @@
                         <span>{{$layanan->deskripsi_layanan}}</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
     {{-- <section class="row d-flex justify-content-center gap-3 px-4 pt-5">
         <a href="{{ route('member.m-layanan.show',$layanan->id) }}" class="d-flex align-items-center gap-4 bg-white ps-4 text-decoration-none font-weight-bolder text-black rounded-4">

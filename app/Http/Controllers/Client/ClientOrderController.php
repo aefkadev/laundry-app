@@ -68,7 +68,7 @@ class ClientOrderController extends Controller
             ]
         );
 
-        $token = "1324" . Time();
+        $token = "usr" . date('His');
         
         $listorder = ListOrder::create(
             [

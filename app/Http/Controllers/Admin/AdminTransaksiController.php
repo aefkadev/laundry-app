@@ -70,7 +70,7 @@ class AdminTransaksiController extends Controller
             ]
         );
 
-        $token = "1324" . Time();
+        $token = "adm" . date('His');
         $listorder = ListOrder::create([
             'token' => $token,
             'user_order' => $request->user_order,

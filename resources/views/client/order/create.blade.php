@@ -226,8 +226,8 @@
                                 <div class="input-group d-flex flex-column justify-content-center w-75">
                                     <label class="fw-bold text-md text-white border-0" style="background-color: #24A384;" for="opsi_pengiriman">Opsi Pengiriman</label>
                                     <select class="custom-select border-0 rounded-3 py-2 px-3 w-100" required id="opsi_pengiriman" name="opsi_pengiriman">
-                                        <option selected value="pickup">Pick Up</option>
-                                        <option value="delivery">Delivery</option>
+                                        <option selected value="kunjungi toko">Kunjungi Toko</option>
+                                        <option value="antar jemput">Antar Jemput</option>
                                     </select>
                                 </div>
 

@@ -133,7 +133,7 @@ class AdminSubLayananController extends Controller
 
     public function destroy(string $id)
     {
-        $data = SubLayanan::where('id', $id)->first();
+        $data = SubLayanan::findOrFail($id);
         $data->delete();
 
         if (auth()->user()->roles_id == 1) {

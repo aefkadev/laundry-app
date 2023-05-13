@@ -44,7 +44,7 @@
                             <div class="modal-dialog ">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title"><strong>Hapus Jenis Layanan?</strong></h5>
+                                        <h5 class="modal-title text-dark"><strong>Hapus Jenis Layanan?</strong></h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal">
                                         </button>
                                     </div>
@@ -52,7 +52,7 @@
                                         <form action="{{route('super.sublayanan.destroy', $sublayanan->id)}}" method="POST">
                                             @method('DELETE')
                                             @csrf
-                                            <input type="submit" class="btn btn-dark light" name="" id="" value="Ya">
+                                            <button type="submit" class="btn btn-dark light" name="" id="">Ya</button>
                                             <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Tidak</button>
                                         </form>
                                     </div>

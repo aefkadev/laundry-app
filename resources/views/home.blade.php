@@ -207,7 +207,7 @@
             @elseif(auth()->user()->roles_id == 3)
                 <a href="{{ route('member.m-layanan.index') }}" class="d-flex align-items-center gap-4 bg-white ps-4 text-decoration-none font-weight-bolder text-black rounded-4">
             @endif
-                    <img src="{{ asset('assets/img/clean-shoes.png')}}" style="width: 4.2rem; height: 4.2rem;" class="p-1 rounded-circle" alt="">
+                    <img src="{{ asset('assets/ikon/default.png')}}" style="width: 4.2rem; height: 4.2rem;" class="p-1 rounded-circle" alt="">
                     <span>Other</span>
                 </a>
         </section>

@@ -71,17 +71,6 @@
                         </span>
                     @enderror
                 </div>
-                <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
-                    <div class="d-flex w-75">
-                        <label class="fw-bold text-md" for="user_order">Nama</label>
-                    </div>
-                    <input class="border-1 rounded-3 py-2 px-3 w-75 @error('user_order') is-invalid @enderror" type="text" name="user_order" id="user_order" value="{{$order->user_order}}" disabled>
-                    @error('user_order')
-                        <span class="invalid-feedback text-center" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
 
                 <div class="d-flex flex-column w-100 align-items-center pt-3 pb-0">
                     <div class="d-flex w-75">

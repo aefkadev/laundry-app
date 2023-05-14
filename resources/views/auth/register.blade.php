@@ -51,7 +51,7 @@
                 @error('email')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-                <input class="border-0 rounded-3 py-2 px-3 w-75  @error('no_telepon') is-invalid @enderror" type="text" name="no_telepon" placeholder="Nomor Telepon" required>
+                <input class="border-0 rounded-3 py-2 px-3 w-75  @error('no_telepon') is-invalid @enderror" type="text" name="no_telepon" placeholder="Nomor Telepon : 08..." required>
                 @error('no_telepon')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

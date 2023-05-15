@@ -37,7 +37,7 @@
             <img src="{{asset('assets/img/main-logo.png')}}" style="width: 20rem;" alt="">
             <span class="text-white text-lg fw-medium text-center px-2">Akun anda berhasil dibuat, hubungi admin SOC Lampung untuk verifikasi</span>
             <div class="d-flex flex-row gap-3 pt-4">
-                <a href="https://wa.me/+6281397575460?text=Verifikasi akun dengan email {{$pengguna->email}}, nama {{$pengguna->nama}}" class="d-flex text-decoration-none btn align-items-center" style="background-color: #D6C37E;">
+                <a href="https://wa.me/+6281397575460?text=Verifikasi akun dengan email {{auth()->user()->email}}, nama {{auth()->user()->nama}}" class="d-flex text-decoration-none btn align-items-center" style="background-color: #D6C37E;">
                     <i class="fa-brands fa-whatsapp"></i>
                     <span class="mx-2">Minta verifikasi admin</span>
                 </a>

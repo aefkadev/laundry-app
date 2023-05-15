@@ -26,7 +26,7 @@
                     @if ($sublayanan->ikon_sub == Null)
                     <img src="{{ asset('assets/ikon') }}/default.png" alt="ikon" height="40" width="40" class=" rounded-circle"/>
                     @else
-                    <img src="{{ asset('assets/ikon') }}/{{ $sublayanan->ikon_sub }}" alt="ikon" height="40" width="40" class=" rounded-circle"/>
+                    <img src="{{ asset('assets/ikon') }}/{{ $sublayanan->ikon_sub }}" alt="ikon" height="40" width="40" class="rounded-circle "/>
                     @endif
                 </div>
                 <div class="col bg-secondary d-flex flex-column flex-md-row justify-content-between"> 

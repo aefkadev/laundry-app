@@ -116,7 +116,7 @@ class AdminLayananController extends Controller
 
     public function destroy(string $id)
     {
-        $data = Layanan::where('id', $id)->first();
+        $data = Layanan::findOrFail($id);
         $data->delete();
 
         if (auth()->user()->roles_id == 1) {

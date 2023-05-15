@@ -124,7 +124,7 @@ class AdminTransaksiController extends Controller
 
     public function destroy(string $id)
     {
-        $data = ListOrder::where('id', $id)->first();
+        $data = ListOrder::findOrFail($id);
         $data->delete();
 
         if (auth()->user()->roles_id == 1) {

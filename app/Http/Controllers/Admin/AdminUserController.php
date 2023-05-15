@@ -103,7 +103,7 @@ class AdminUserController extends Controller
 
     public function destroy(string $id)
     {
-        $data = User::where('id', $id)->first();
+        $data = User::findOrFail($id);
         $data->delete();
 
         if (auth()->user()->roles_id == 1) {

@@ -57,6 +57,8 @@
           @if ($user->roles_id==1)
             <input class="form-control" name="roles_id" id="roles_id" value="Admin" disabled>
           @elseif($user->roles_id==2)
+              <input class="form-control" name="roles_id" id="roles_id" value="Admin" disabled>
+          @elseif($user->roles_id==3)
               <input class="form-control" name="roles_id" id="roles_id" value="Member" disabled>
           @elseif($user->roles_id==99)
               <input class="form-control" name="roles_id" id="roles_id" value="Guest" disabled>
